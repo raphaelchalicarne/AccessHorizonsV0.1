@@ -1,14 +1,16 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      AccessHorizons : Le tourisme pour tous
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
+  Quel type de handicap présentez vous?
+  <!--<p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  </p>-->
+  <button (click)="goToUserProfilePage()" ion-button color="dark" outline block large>Moteur</button>
+  <button (click)="goToUserProfilePage()" ion-button color="dark" outline block large>Visuel</button>
 </ion-content>
