@@ -7,8 +7,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController) {}
+  
+  goToUserProfilePage() {
+      this.navCtrl.push(UserProfilePage);
   }
 
 }
+class UserProfilePage { }
