@@ -6,13 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+<<<<<<< HEAD
 import { userProfile } from '../user-profile/user-profile';
+=======
+>>>>>>> parent of 6c0df32... Ajout de la page UserProfilePage
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    UserProfilePage
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -21,8 +23,7 @@ import { userProfile } from '../user-profile/user-profile';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    UserProfilePage
+    HomePage
   ],
   providers: [
     StatusBar,
