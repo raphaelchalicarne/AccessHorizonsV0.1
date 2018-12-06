@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-//import { userProfile } from '..pages/user-profile/user-profile';
+import { userProfile } from '../user-profile/user-profile';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { UserProfilePage } from '..pages/user-profile/user-profile';
+import { UserProfilePage } from '../user-profile/user-profile';
 
 @Component({
   selector: 'page-home',
