@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-
+import {MenuServicesPage} from '../menu-services/menu-services';
 /**
  * Generated class for the UserProfilePage page.
  *
@@ -21,5 +21,7 @@ export class UserProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserProfilePage');
   }
-
+  goToMenuServicesPage() {
+      this.navCtrl.push(MenuServicesPage);
+  }
 }
