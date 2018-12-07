@@ -11,12 +11,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-user-profile',
-  templateUrl: 'user-profile.html',
+  templateUrl: 'user-profile.html'
 })
 export class UserProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserProfilePage');

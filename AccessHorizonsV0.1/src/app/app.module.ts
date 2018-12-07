@@ -8,8 +8,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 
-//import { userProfile } from '..pages/user-profile/user-profile';
-
 
 @NgModule({
   declarations: [
