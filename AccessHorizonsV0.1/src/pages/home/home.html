@@ -7,7 +7,9 @@
 </ion-header>
 
 <ion-content padding text-center>
-  <h5>Quel type de handicap présentez vous?</h5>
-  <button ion-button (click)="goToUserProfilePage()" color="dark" large outline round block>Moteur</button>
-  <button ion-button (click)="goToUserProfilePage()" color="dark" large outline round block>Visuel</button>
+  <div>
+  	<h5>Quel type de handicap présentez vous?</h5>
+    <button ion-button (click)="goToUserProfilePage('moteur')" color="dark" large outline round block>Moteur</button>
+    <button ion-button (click)="goToUserProfilePage('visuel')" color="dark" large outline round block icon-start><ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>  Visuel</button>
+  </div>
 </ion-content>
