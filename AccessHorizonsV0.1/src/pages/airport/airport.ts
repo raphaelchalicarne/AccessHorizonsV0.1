@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import {TransportsPage} from '../transports/transports';
 /**
- * Generated class for the MenuServicesPage page.
+ * Generated class for the AirportPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +10,16 @@ import {TransportsPage} from '../transports/transports';
 
 @IonicPage()
 @Component({
-  selector: 'page-menu-services',
-  templateUrl: 'menu-services.html',
+  selector: 'page-airport',
+  templateUrl: 'airport.html',
 })
-export class MenuServicesPage {
+export class AirportPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuServicesPage');
+    console.log('ionViewDidLoad AirportPage');
   }
-  goToTransportsPage(){
-  	this.navCtrl.push(TransportsPage)
-  }
+
 }
