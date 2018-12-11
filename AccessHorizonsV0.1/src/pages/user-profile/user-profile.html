@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>Profil de l'utilisateur</ion-title>
+    <ion-title text-center>Profil de l'utilisateur</ion-tistle>
   </ion-navbar>
 
 </ion-header>
@@ -15,6 +15,6 @@
 <ion-content padding> 
 <!--Cette partie pourrait s'optimiser avec un FOR -->
   <button ion-button color="dark" large outline  round block (click)="goToMenuServicesPage()">Je suis autonome</button>
-  <button ion-button color="dark" large outline  round block (click)="goToMenuServicesPage()">J'ai un chien guide</button>
+  <button *ngIf="handicapType == 'visuel'" ion-button color="dark" large outline  round block (click)="goToMenuServicesPage()">J'ai un chien guide</button>
   <button ion-button color="dark" large outline  round block (click)="goToMenuServicesPage()">J'ai besoin d'une assistance</button>
 </ion-content>

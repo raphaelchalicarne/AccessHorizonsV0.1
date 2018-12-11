@@ -10,8 +10,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {}
   
-  goToUserProfilePage() {
-      this.navCtrl.push(UserProfilePage);
+  goToUserProfilePage(type : string) {
+      this.navCtrl.push(UserProfilePage, {handicapType : type});
   }
 
 }
