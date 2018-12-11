@@ -8,13 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
+import { TransportsPage } from '../pages/transports/transports';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     UserProfilePage,
-    MenuServicesPage
+    MenuServicesPage, 
+    TransportsPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,7 @@ import { MenuServicesPage} from '../pages/menu-services/menu-services';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,HomePage,UserProfilePage, MenuServicesPage
+    MyApp,HomePage,UserProfilePage, MenuServicesPage, TransportsPage
   ],
   providers: [
     StatusBar,

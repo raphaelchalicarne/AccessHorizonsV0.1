@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import {TransportsPage} from '../transports/transports';
 /**
  * Generated class for the MenuServicesPage page.
  *
@@ -21,5 +22,7 @@ export class MenuServicesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuServicesPage');
   }
-
+  goToTransportsPage(){
+  	this.navCtrl.push(TransportsPage)
+  }
 }
