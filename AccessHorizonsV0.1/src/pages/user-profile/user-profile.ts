@@ -14,7 +14,12 @@ import {MenuServicesPage} from '../menu-services/menu-services';
   selector: 'page-user-profile',
   templateUrl: 'user-profile.html'
 })
-export class UserProfilePage {
+export class UserProfilePage implements OnInit {
+  
+  handicapType : string;
+  ngOnInit() {
+      this.handicapType = this.navParams.get('userHandicap');
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
