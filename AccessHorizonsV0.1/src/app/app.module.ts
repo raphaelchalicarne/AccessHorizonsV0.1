@@ -9,14 +9,15 @@ import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { TransportsPage } from '../pages/transports/transports';
-
+import {AirportPage} from '../pages/airport/airport';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     UserProfilePage,
     MenuServicesPage, 
-    TransportsPage
+    TransportsPage,
+    AirportPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,12 @@ import { TransportsPage } from '../pages/transports/transports';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,HomePage,UserProfilePage, MenuServicesPage, TransportsPage
+    MyApp,
+    HomePage,
+    UserProfilePage, 
+    MenuServicesPage, 
+    TransportsPage,
+    AirportPage
   ],
   providers: [
     StatusBar,
