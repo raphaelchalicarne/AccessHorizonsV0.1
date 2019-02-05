@@ -9,7 +9,10 @@ import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { TransportsPage } from '../pages/transports/transports';
-import {AirportPage} from '../pages/airport/airport';
+import { AirportPage } from '../pages/airport/airport';
+import { AuthService } from '../services/auth.service';
+import { AuthPage } from '../pages/auth/auth';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,7 +20,8 @@ import {AirportPage} from '../pages/airport/airport';
     UserProfilePage,
     MenuServicesPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    AuthPage
   ],
   imports: [
     BrowserModule,
@@ -30,11 +34,13 @@ import {AirportPage} from '../pages/airport/airport';
     UserProfilePage, 
     MenuServicesPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    AuthPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
