@@ -15,11 +15,13 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 })
 export class AirportPage {
   places: any[] = [];
+  longitud= 4.832262;
+  latitud = 45.757744;
   constructor(public navCtrl: NavController, public userService: JaccedeProvider) {
   }
 
   ionViewDidLoad() {
-    this.userService.getPlaces()
+    this.userService.getPlaces(this.longitud, this.latitud)
     .subscribe(
       (data) => { // Success
         this.places = data['items'];
