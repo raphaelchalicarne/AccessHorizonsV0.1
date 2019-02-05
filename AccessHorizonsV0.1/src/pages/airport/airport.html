@@ -15,12 +15,18 @@
 
 <ion-content padding>
   <div>
-  	<p>Page Airport</p>
+  	<p>Places</p>
   </div>
-  <div class="Liste des aeroports">
-  	<!--A completer -->
+  <div class="Liste des places">
+  	<ion-list>
+    <ion-item *ngFor="let place of places">
+      <h2><b>{{place.name | uppercase}}</b></h2>
+      <p>{{place.address.full}}</p>
+      <p>{{place.category.label}}</p>
+    </ion-item>
+  </ion-list>
   </div>
-  <div class="Laisser un avis" text-center>
+  <!--<div class="Laisser un avis" text-center>
   	<button ion-button color="dark" large outline round>Laiser un avis</button>
-  </div>
+  </div>-->
 </ion-content>

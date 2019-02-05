@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 /**
  * Generated class for the AirportPage page.
  *
@@ -14,12 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'airport.html',
 })
 export class AirportPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  places: any[] = [];
+  constructor(public navCtrl: NavController, public userService: JaccedeProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AirportPage');
+    this.userService.getPlaces()
+    .subscribe(
+      (data) => { // Success
+        this.places = data['items'];
+        console.log(data)
+      },
+      (error) =>{
+        console.error(error);
+      })
   }
 
 }
