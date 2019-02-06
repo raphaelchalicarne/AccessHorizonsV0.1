@@ -11,22 +11,28 @@
 </ion-header>
 
 
-<ion-content padding text-center>
+<ion-content>
   <div class="Texte explication">
     
   </div>
 
-  <div class="Barre de recherche">
+  <div class="Barre de recherche" padding text-center>
     <ion-label position="floating"><h4>Écrivez le lieu que vous cherchez et cliquez le bouton RECHERCHER</h4></ion-label>
     <ion-input clearInput="true" placeholder="Ou voulez-vous aller ?" type="text" [(ngModel)]="adresse"></ion-input>
   </div>
 
-  <div class="Bouton pour montrer les résultats">
-    <button ion-button color="dark" large outline round icon-start (click)="montrerRecherche()">Rechercher</button>
+  <div class="Bouton pour montrer les résultats" padding text-center>
+    <button ion-button color="dark" large outline round icon-start (click)="faireRecherche()">Rechercher</button>
   </div>
 
   <div class="Liste avec les résultats de la recherche">
-    
+    <ion-list>
+      <button ion-button color="dark" large outline round block *ngFor="let option of resultat" (click)="goToResultsPage(option.geometry.coordinates[0], option.geometry.coordinates[1], option.properties.name)">
+        <h2>{{option.properties.name}}, </h2>
+        <!--<p>{{option.properties.osm_value}},</p>-->
+        <p>{{option.properties.country}}</p>
+      </button>
+    </ion-list>
   </div>
   	
 </ion-content>

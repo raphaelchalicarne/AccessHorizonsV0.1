@@ -21,14 +21,16 @@ export class AirportPage {
   resultado: any[] = [];
   flag: boolean= false;
 
-  /*ngOnInit() {
-      this.adresse = this.navParams.get('userHandicap');
-      this.longitud = this.navParams.get('');
-      this.latitud = this.navParams.get('');
-  }*/
+  ngOnInit() {
+      this.adresse = this.navParams.get('lieu');
+      this.longitud = this.navParams.get('long');
+      this.latitud = this.navParams.get('lat');
+  }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {
   }
-
+  ionViewDidLoad() {
+    console.log(this.adresse, this.longitud, this.latitud);
+  }
   /*ionViewWillEnter() {
     this.userService.getAutocomplete(this.adresse)
     .subscribe(

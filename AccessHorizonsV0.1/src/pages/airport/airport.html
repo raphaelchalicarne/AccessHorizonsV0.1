@@ -22,14 +22,11 @@
   <div class="Liste des places">
   	<ion-list> 
       <h3>Liste des places proche de {{adresse}}</h3>
-      <button ion-button color="dark" large outline round block *ngFor="let place of places">
+      <button ion-item color="dark" large outline round block *ngFor="let place of places">
           <h2><b>{{place.name}}</b></h2>
         <!--<p>{{place.address.full}}</p>
         <p>{{place.category.label | lowercase}}</p>-->
       </button>
     </ion-list>
   </div>
-  <!--<div class="Laisser un avis" text-center>
-  	<button ion-button color="dark" large outline round>Laiser un avis</button>
-  </div>-->
 </ion-content>

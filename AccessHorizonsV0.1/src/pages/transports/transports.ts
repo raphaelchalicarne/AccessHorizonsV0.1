@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AirportPage } from '../airport/airport';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
-/**
- * Generated class for the TransportsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -18,32 +12,31 @@ export class TransportsPage {
   adresse: string = "";
   longitud: number; 
   latitud:  number;
-  resultado: any[] = [];
+  resultat: any[] = [];
   flag: boolean = false;
-  
+
   constructor(public navCtrl: NavController, public userService: JaccedeProvider, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TransportsPage');
   }
-  montrerRecherche(){
+  faireRecherche(){
     //console.log(this.adresse);
     this.userService.getAutocomplete(this.adresse)
     .subscribe(
       (data) => {
-        this.resultado = data['features']
-        this.longitud = this.resultado[0].geometry.coordinates[0]
-        this.latitud = this.resultado[0].geometry.coordinates[1]
-        console.log(data)
-        console.log(this.longitud, this.latitud);
+        this.resultat = data['features']
+        //this.longitud = this.resultat[0].geometry.coordinates[0]
+        //this.latitud = this.resultat[0].geometry.coordinates[1]
+        //console.log(data)
       },
       (error) =>{
         console.error(error)
       })
   }
 
-  goToResultsPage(){
-    this.navCtrl.push(AirportPage)
+  goToResultsPage(long: number, lat: number, lieu: string){
+    this.navCtrl.push(AirportPage, {latitud :lat, longitud :long, adresse: lieu})
   }
 }
