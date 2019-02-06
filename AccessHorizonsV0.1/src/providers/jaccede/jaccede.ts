@@ -15,13 +15,9 @@ export class JaccedeProvider {
 
   constructor(public http: HttpClient) {
   }
-getPlaces(longitud , latitud){
+  getPlaces(longitud, latitud){
   	//return this.http.get('https://apidev.jaccede.com/v4/places/search?lng=4.832262&lat=45.757744&lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b');
-    //let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&lang=fr&api_key='+this.apiKey+'';
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&lang=fr&api_key='+this.apiKey+'';
-
-    //console.log(this.apiKey)
-    console.log(myUrl)
     return this.http.get(myUrl)
   }
   getCategories(){

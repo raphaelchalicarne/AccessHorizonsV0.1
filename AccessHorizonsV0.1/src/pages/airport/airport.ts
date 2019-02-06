@@ -22,39 +22,24 @@ export class AirportPage {
   flag: boolean= false;
 
   ngOnInit() {
-      this.adresse = this.navParams.get('lieu');
-      this.longitud = this.navParams.get('long');
-      this.latitud = this.navParams.get('lat');
+      this.adresse = this.navParams.get('adresse');
+      this.longitud = this.navParams.get('longitud');
+      this.latitud = this.navParams.get('latitud');
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {
   }
+
   ionViewDidLoad() {
-    console.log(this.adresse, this.longitud, this.latitud);
-  }
-  /*ionViewWillEnter() {
-    this.userService.getAutocomplete(this.adresse)
-    .subscribe(
-    	(data) => {
-    		this.resultado = data['features']
-    		this.longitud = this.resultado[0].geometry.coordinates[0]
-    		this.latitud = this.resultado[0].geometry.coordinates[1]
-    		//console.log(data);
-    	},
-    	(error) =>{
-    		console.error(error)
-    	}),
     this.userService.getPlaces(this.longitud, this.latitud)
     .subscribe(
       (data) => { // Success
-      	console.log(this.longitud);
         this.places = data['items'];
-        console.log(data)
+        //console.log(data)
       },
       (error) =>{
-      	console.log(this.latitud);
         console.error(error);
       })
-  };*/
+  }
   /*
   mostrarPlaces(){
   	this.flag = true;
