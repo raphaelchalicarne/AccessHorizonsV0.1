@@ -17,7 +17,9 @@ export class JaccedeProvider {
   }
 getPlaces(longitud , latitud){
   	//return this.http.get('https://apidev.jaccede.com/v4/places/search?lng=4.832262&lat=45.757744&lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b');
+    //let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&lang=fr&api_key='+this.apiKey+'';
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&lang=fr&api_key='+this.apiKey+'';
+
     //console.log(this.apiKey)
     console.log(myUrl)
     return this.http.get(myUrl)
@@ -29,11 +31,10 @@ getPlaces(longitud , latitud){
   	//return this.http.get('/filters')
   	return this.http.get('https://apidev.jaccede.com/v4/accessibility_filters?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b')
   }
-  getChallenges(){
-  	return this.http.get('https://apidev.jaccede.com/v4/challenges?api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b');
+  getAutocomplete(city){
+  	let limite = 10;
+  	let autoUrl = 'https://photon.komoot.de/api/?q='+city+'&limit='+limite+'';
+  	return this.http.get(autoUrl)
   }
-  //loginUser(){
-    //return 
-  //}
 }
 

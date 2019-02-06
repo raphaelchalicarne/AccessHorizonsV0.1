@@ -13,18 +13,25 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div>
-  	<p>Places</p>
+<ion-content padding text-center>
+  <!--<div>
+  	<p>Places</p> 
+  </div>-->
+
+  <div class="Bouton pour activer la fonction">
+    <button ion-button color="dark" large outline round (click)="mostrarPlaces()" text-center padding>Function</button>
   </div>
+
   <div class="Liste des places">
-  	<ion-list>
-    <ion-item *ngFor="let place of places">
-      <h2><b>{{place.name | uppercase}}</b></h2>
-      <p>{{place.address.full}}</p>
-      <p>{{place.category.label}}</p>
-    </ion-item>
-  </ion-list>
+  	<ion-list *ngIf = "flag"> 
+      <h3>Liste des places proche de {{adresse}}</h3>
+      <button ion-button color="dark" large outline round block *ngFor="let place of places">
+        <h2><b>{{place.name}}</b></h2>
+        <p></p>
+        <!--<p>{{place.address.full}}</p>
+        <p>{{place.category.label | lowercase}}</p>-->
+      </button>
+    </ion-list>
   </div>
   <!--<div class="Laisser un avis" text-center>
   	<button ion-button color="dark" large outline round>Laiser un avis</button>
