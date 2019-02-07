@@ -30,12 +30,10 @@
       <button ion-button color="dark" large outline round block *ngFor="let option of resultat" (click)="goToResultsPage(option.geometry.coordinates[0],option.geometry.coordinates[1], option.properties.name)">
         <h2>{{option.properties.name}}, </h2>
         <!--<p>{{option.properties.osm_value}},</p>-->
-        <p>{{option.properties.country}}</p>
-        
+        <p>{{option.properties.country}}</p>        
       </button>
     </ion-list>
-  </div>
-  	
+  </div> 	
 </ion-content>
 
 <!-- <p>{{option.geometry.coordinates[0]}}</p>-->

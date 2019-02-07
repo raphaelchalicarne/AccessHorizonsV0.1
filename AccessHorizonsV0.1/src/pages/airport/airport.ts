@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
-/**
- * Generated class for the AirportPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -40,18 +34,4 @@ export class AirportPage {
         console.error(error);
       })
   }
-  /*
-  mostrarPlaces(){
-  	this.flag = true;
-  	console.log(this.longitud, this.latitud);
-  	this.userService.getPlaces(this.longitud, this.latitud)
-    .subscribe(
-      (data) => { // Success
-        this.places = data['items'];
-        this.flag = true;
-      },
-      (error) =>{
-        console.error(error);
-      })
-  }*/
 }
