@@ -13,10 +13,10 @@
 	<div class="Website">
 		<p>{{website}}</p>
 	</div>
-	<div class="accessibility" *ngIf="details != null">
+	<div class="accessibility" >
 		<p>{{details[0].children[0].label}}</p>
 	</div>
-	<!--<div>
+	<!-- *ngIf="details != null" <div>
 		<ion-list>
 			<ion-item *ngFor="let detail of details">
 				<p>{{detail.</p>
