@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
+import { PlaceResultPage } from '../place-result/place-result';
+//import {ResultModalPage} from '../result-modal/result-modal';
 
 @IonicPage()
 @Component({
@@ -13,7 +15,6 @@ export class AirportPage {
   latitud:  number;
   adresse: string = '';
   resultado: any[] = [];
-  flag: boolean= false;
 
   ngOnInit() {
       this.adresse = this.navParams.get('adresse');
@@ -26,12 +27,21 @@ export class AirportPage {
   ionViewDidLoad() {
     this.userService.getPlaces(this.longitud, this.latitud)
     .subscribe(
-      (data) => { // Success
+      (data) => { 
         this.places = data['items'];
-        //console.log(data)
+        console.log(data)
       },
       (error) =>{
         console.error(error);
       })
+  }
+  //adresse: string
+  /*showPlace(){
+    let nombre = 
+    let modal = this.modalCtrl.create(ResultModalPage, {data: nombre});
+    modal.present();
+  }*/
+  goToPlace(name: string){
+    this.navCtrl.push(PlaceResultPage, {name:name, });
   }
 }

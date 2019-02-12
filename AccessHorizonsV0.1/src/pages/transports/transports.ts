@@ -13,7 +13,7 @@ export class TransportsPage {
   longitud: number; 
   latitud:  number;
   resultat: any[] = [];
-  flag: boolean = false;
+  //flag: boolean = false;
 
   constructor(public navCtrl: NavController, public userService: JaccedeProvider, public navParams: NavParams) {
   }

@@ -10,7 +10,8 @@ import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { TransportsPage } from '../pages/transports/transports';
 import {AirportPage} from '../pages/airport/airport';
-
+import {ResultModalPage} from '../pages/result-modal/result-modal';
+import {PlaceResultPage} from '../pages/place-result/place-result';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
 import { HttpClientModule } from '@angular/common/http';
  
@@ -21,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     UserProfilePage,
     MenuServicesPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    ResultModalPage,
+    PlaceResultPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     UserProfilePage, 
     MenuServicesPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    ResultModalPage,
+    PlaceResultPage
   ],
   providers: [
     StatusBar,
