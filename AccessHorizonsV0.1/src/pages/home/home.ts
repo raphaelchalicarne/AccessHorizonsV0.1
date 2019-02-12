@@ -14,5 +14,8 @@ export class HomePage {
       this.navCtrl.push(UserProfilePage, {userHandicap : handicapType});
   }
 
-}
+};
+
+
+
 

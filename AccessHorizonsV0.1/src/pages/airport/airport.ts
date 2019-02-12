@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the AirportPage page.
@@ -15,7 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AirportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	aeroport = {
+		latitude: 1,
+		longitude: 2,
+		nom: 'Aeroport test',
+		ville: 'Ville'
+
+	};
+
+  constructor(public navCtrl: NavController, public db: AngularFireDatabase) {
+  	this.db.list('aeroport').push(this.aeroport);
   }
 
   ionViewDidLoad() {
