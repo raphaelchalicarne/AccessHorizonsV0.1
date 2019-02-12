@@ -1,8 +1,20 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { PlaceResultPage } from '../place-result/place-result';
 //import {ResultModalPage} from '../result-modal/result-modal';
+=======
+import { IonicPage, NavController} from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
+
+/**
+ * Generated class for the AirportPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+>>>>>>> origin/Gaëlle
 
 @IonicPage()
 @Component({
@@ -16,12 +28,25 @@ export class AirportPage {
   adresse: string = '';
   resultado: any[] = [];
 
+<<<<<<< HEAD
   ngOnInit() {
       this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');
       this.latitud = this.navParams.get('latitud');
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {
+=======
+	aeroport = {
+		latitude: 1,
+		longitude: 2,
+		nom: 'Aeroport test',
+		ville: 'Ville'
+
+	};
+
+  constructor(public navCtrl: NavController, public db: AngularFireDatabase) {
+  	this.db.list('aeroport').push(this.aeroport);
+>>>>>>> origin/Gaëlle
   }
 
   ionViewDidLoad() {
