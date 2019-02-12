@@ -5,8 +5,22 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding text-center>
 	<div class="">
-		<p>{{adresse}}</p>
+		<h2><b>{{adresse}}</b></h2>
+		<p>{{googleID}}</p>
 	</div>
+	<div class="Website">
+		<p>{{website}}</p>
+	</div>
+	<div class="accessibility" *ngIf="details != null">
+		<p>{{details[0].children[0].label}}</p>
+	</div>
+	<!--<div>
+		<ion-list>
+			<ion-item *ngFor="let detail of details">
+				<p>{{detail.</p>
+			</ion-item>
+		</ion-list>
+	</div>-->
 </ion-content>
