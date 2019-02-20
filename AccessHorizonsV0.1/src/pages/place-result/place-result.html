@@ -5,18 +5,27 @@
 </ion-header>
 
 
-<ion-content padding text-center>
-	<div class="">
+<ion-content>
+	<div class="adresse" text-center>
 		<h2><b>{{adresse}}</b></h2>
-		<p>{{googleID}}</p>
 	</div>
-	<div class="Website">
+
+	<!--<div class="Accessibility" *ngIf="flag == true">
+		<ion-list>
+			<ion-item>
+				<p>{{detail.children[.value}}</p>
+			</ion-item>
+		</ion-list>
+	</div>-->
+	<div *ngIf="flag == true" padding>
+		<p>{{details[0].children[0].label}}</p>
+		<p>{{details[1].children[0].label}}</p>
+	</div>
+	<div class="Website" text-center>
 		<p>{{website}}</p>
 	</div>
-	<div class="accessibility" >
-		<p>{{details[0].children[0].label}}</p>
-	</div>
-	<!-- *ngIf="details != null" <div>
+
+	<!-- ngIf="details != null" <div>
 		<ion-list>
 			<ion-item *ngFor="let detail of details">
 				<p>{{detail.</p>

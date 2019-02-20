@@ -9,16 +9,19 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class JaccedeProvider {
-  //longitud: number = 4.832262;
-  //latitud: number = 45.757744;
   apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
 
   constructor(public http: HttpClient) {
   }
   getPlaces(longitud, latitud){
   	//return this.http.get('https://apidev.jaccede.com/v4/places/search?lng=4.832262&lat=45.757744&lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b');
-    let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&lang=fr&api_key='+this.apiKey+'';
+    let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     return this.http.get(myUrl)
+  }
+  getAutocomplete(city){
+    let limite = '4';
+    let autoUrl = 'https://photon.komoot.de/api/?q='+city+'&limit='+limite+'';
+    return this.http.get(autoUrl)
   }
   getDetails(googleID){
   	return this.http.get('https://apidev.jaccede.com/v4/places/'+googleID+'?api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b');
@@ -26,11 +29,6 @@ export class JaccedeProvider {
   getFilters(){
   	//return this.http.get('/filters')
   	return this.http.get('https://apidev.jaccede.com/v4/accessibility_filters?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b')
-  }
-  getAutocomplete(city){
-  	let limite = '4';
-  	let autoUrl = 'https://photon.komoot.de/api/?q='+city+'&limit='+limite+'';
-  	return this.http.get(autoUrl)
-  }
+  } 
 }
 

@@ -11,8 +11,10 @@ export class PlaceResultPage {
   name: string='';
   adresse: string = '';
   googleID: string = '';
-  details: any[] = [];
+  details: any = [];
   website: string = '';
+  label: string = '';
+  flag: boolean = false;
   //accessibility: any = [];
 
   ngOnInit() {
@@ -30,7 +32,16 @@ export class PlaceResultPage {
   		(data) => {
   			this.details = data['accessibility'];
   			this.website = data['website'];
-  			console.log(data);
+  			if (this.details != null) {
+  				this.flag = true;
+  				this.label = this.details[0].children[0].label;
+  				console.log(this.details);
+  				console.log(this.details[0]);
+  				console.log(this.details[1]);
+  			}
+  			else {
+  				this.label = "Nada";
+  			}
   		},
   		(error) =>{
   			console.log(error);
