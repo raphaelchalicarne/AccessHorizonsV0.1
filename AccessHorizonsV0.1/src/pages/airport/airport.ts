@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController} from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AjoutaeroportPage } from '../ajoutaeroport/ajoutaeroport';
 
 /**
  * Generated class for the AirportPage page.
@@ -16,20 +17,26 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AirportPage {
 
-	aeroport = {
+	/*aeroport = {
 		latitude: 1,
 		longitude: 2,
 		nom: 'Aeroport test',
 		ville: 'Ville'
 
-	};
+	};*/
 
   constructor(public navCtrl: NavController, public db: AngularFireDatabase) {
-  	this.db.list('aeroport').push(this.aeroport);
+  	/*this.db.list('aeroport').push(this.aeroport);*/
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AirportPage');
   }
 
-}
+  onNewAirport(){
+    this.navCtrl.push(AjoutaeroportPage);
+  }
+
+
+  }
+

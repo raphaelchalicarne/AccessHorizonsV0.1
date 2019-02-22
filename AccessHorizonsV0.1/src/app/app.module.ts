@@ -10,6 +10,9 @@ import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { TransportsPage } from '../pages/transports/transports';
 import {AirportPage} from '../pages/airport/airport';
+import { AjoutaeroportPage } from '../pages/ajoutaeroport/ajoutaeroport';
+
+
 import { AngularFireModule } from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { FIREBASE_CONFIG } from './firebase.credentials';
@@ -21,7 +24,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     UserProfilePage,
     MenuServicesPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    AjoutaeroportPage,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     UserProfilePage, 
     MenuServicesPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    AjoutaeroportPage,
   ],
   providers: [
     StatusBar,
