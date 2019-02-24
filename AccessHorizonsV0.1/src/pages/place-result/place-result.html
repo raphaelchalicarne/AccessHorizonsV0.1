@@ -8,6 +8,7 @@
 <ion-content>
 	<div class="details Accessibility" *ngIf="flag == true" padding>
 		<h3><b>Details d'accessibilité</b></h3>
+		
 		<div *ngFor= "let detail of details" class="categorie d'accessibilité">
 			<h4><b>{{detail.label}}</b></h4>
 
@@ -15,7 +16,7 @@
 				<h6>{{element.label}}</h6>
 				<p *ngIf="element.value != null">-- {{element.value}}</p>
 			</div>
-			
+
 		</div>
 	</div>
 

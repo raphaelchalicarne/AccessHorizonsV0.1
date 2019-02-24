@@ -27,6 +27,7 @@ export class AirportPage {
   }
 
   ionViewDidLoad() {
+    console.log(this.filtrage);
     this.userService.getPlaces(this.longitud, this.latitud)
     .subscribe(
       (data) => { 

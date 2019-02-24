@@ -15,6 +15,7 @@ export class PlaceResultPage {
   website: string = '';
   label: string = '';
   flag: boolean = false;
+  comments: any = [];
   //accessibility: any = [];
 
   ngOnInit() {
@@ -27,14 +28,13 @@ export class PlaceResultPage {
   }
   
   ionViewDidLoad() {
-  	this.userService.getDetails(this.googleID)
-  	.subscribe(
+  	this.userService.getDetails(this.googleID).subscribe(
   		(data) => {
   			//console.log('data', data);
   			this.details = data['accessibility'];
   			this.website = data['website'];
-  			if (this.details != null)
-  			{ //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
+  			if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
+  			{ 
   				this.flag = true;
   				this.label = this.details[0].children[0].label;
   				//console.log('details:', this.details);
@@ -45,7 +45,15 @@ export class PlaceResultPage {
   		},
   		(error) =>{
   			console.log(error);
-  		})
+  		})/*,
+    this.userService.getComments(this.googleID).subscribe(
+      (data) => {
+        this.comments = data[];
+      },
+      (error) =>{
+        console.log(error);
+      }
+      )*/
   }
     
-  }
+}

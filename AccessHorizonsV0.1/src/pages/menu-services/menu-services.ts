@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TransportsPage} from '../transports/transports';
-/**
- * Generated class for the MenuServicesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,8 +9,8 @@ import {TransportsPage} from '../transports/transports';
 })
 export class MenuServicesPage {
   transports = ['airport', 'bus_station', 'subway_station', 'train_station', 'travel_agency', 'car_rental', 'gas_station', 'taxi_stand', 'transit_station', 'taxi_service', 'car_repair'];
-  restaurants = [];
-  logement = [];
+  restaurants = ['bar','cafe','internet_cafe','meal_delivery','meal_takeaway','restaurant','fast_food_restaurant','tea_house'];
+  logement = ['hostel','lodging','vacation_appartment','rv_park','gite','hotel','luxury_hotel'];
   activites = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
