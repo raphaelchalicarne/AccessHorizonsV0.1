@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { PlaceResultPage } from '../place-result/place-result';
-//import {ResultModalPage} from '../result-modal/result-modal';
 
 @IonicPage()
 @Component({
@@ -15,11 +14,14 @@ export class AirportPage {
   latitud:  number;
   adresse: string = '';
   resultado: any[] = [];
+  filtrage:any = [];
+  //filtrage:any = ['establishment', 'parking'];
 
   ngOnInit() {
       this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');
       this.latitud = this.navParams.get('latitud');
+      this.filtrage = this.navParams.get('filtrage');
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {
   }
@@ -29,8 +31,17 @@ export class AirportPage {
     .subscribe(
       (data) => { 
         this.places = data['items'];
-        console.log(data)
-      },
+        console.log(this.places);
+        var i;
+        for (i in this.places){
+          console.log(i);
+          if (this.filtrage.includes(this.places[i].category.name)) {
+            this.resultado.push(this.places[i]);
+            }
+          }
+          console.log(this.resultado);
+        },
+        //console.log(data);
       (error) =>{
         console.error(error);
       })

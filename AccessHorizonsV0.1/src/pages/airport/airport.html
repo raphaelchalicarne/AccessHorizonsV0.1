@@ -10,7 +10,7 @@
   	<ion-list> 
       <h3>Liste des places proche de {{adresse}}</h3>
       <ion-searchbar cancelButtonIcon></ion-searchbar>
-      <button ion-button color="dark" large outline round block *ngFor="let place of places" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
+      <button ion-button color="dark" large outline round block *ngFor="let place of resultado" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
           <h2><b>{{place.name}}, </b></h2>
           <p>{{place.category.label | lowercase}}, </p>
           <!--<p>{{place.address.full}},</p>-->

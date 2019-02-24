@@ -9,30 +9,37 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
   templateUrl: 'transports.html',
 })
 export class TransportsPage {
-  adresse: string = "";
+  adresse: string = '';
   longitud: number; 
   latitud:  number;
   resultat: any[] = [];
+  filtrage: any = [];
+
+  ngOnInit() {
+    this.filtrage = this.navParams.get('filtrage');
+  }
 
   constructor(public navCtrl: NavController, public userService: JaccedeProvider, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TransportsPage');
+    console.log(this.filtrage);
   }
   faireRecherche(){
     this.userService.getAutocomplete(this.adresse)
     .subscribe(
       (data) => {
-        this.resultat = data['features']
+        this.resultat = data['features'];
         //console.log(data)
       },
       (error) =>{
-        console.error(error)
+        console.error(error);
       })
   }
 
   goToPlaceList(longitud: number, latitud: number, adresse: string){
-    this.navCtrl.push(AirportPage, {longitud :longitud, latitud: latitud, adresse:adresse});
+    var filtrage = this.filtrage;
+    this.navCtrl.push(AirportPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
   }
 }
