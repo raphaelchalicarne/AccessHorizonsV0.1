@@ -32,10 +32,10 @@ export class PlaceResultPage {
   		(data) => {
   			this.details = data['accessibility'];
   			this.website = data['website'];
-  			if (this.details != null) {
+  			if (this.details != null) { //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs
   				this.flag = true;
   				this.label = this.details[0].children[0].label;
-  				console.log(this.details);
+  				console.log('details:', this.details);
   				console.log(this.details[0]);
   				console.log(this.details[1]);
   			}

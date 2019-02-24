@@ -17,12 +17,14 @@
 			</ion-item>
 		</ion-list>
 	</div>-->
-	<div *ngIf="flag == true" padding>
-		<p>{{details[0].children[0].label}}</p>
-		<p>{{details[1].children[0].label}}</p>
+	<div class="details Accessibility">
+		<div *ngIf="flag == true" padding>
+			<p>{{details[0].children[0].label}}</p>
+			<p>{{details[1].children[0].label}}</p>
+		</div>
 	</div>
 	<div class="Website" text-center>
-		<p>{{website}}</p>
+		<p>Site web: {{website}}</p>
 	</div>
 
 	<!-- ngIf="details != null" <div>

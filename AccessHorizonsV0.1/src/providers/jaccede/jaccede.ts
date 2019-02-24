@@ -24,7 +24,7 @@ export class JaccedeProvider {
     return this.http.get(autoUrl)
   }
   getDetails(googleID){
-  	return this.http.get('https://apidev.jaccede.com/v4/places/'+googleID+'?api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b');
+  	return this.http.get('https://apidev.jaccede.com/v4/places/'+googleID+'?lang=fr&api_key='+this.apiKey+'');
   }
   getFilters(){
   	//return this.http.get('/filters')
