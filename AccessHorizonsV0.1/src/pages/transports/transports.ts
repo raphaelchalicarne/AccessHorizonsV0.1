@@ -32,7 +32,7 @@ export class TransportsPage {
       })
   }
 
-  goToResultsPage(longitud: number, latitud: number, adresse: string){
+  goToPlaceList(longitud: number, latitud: number, adresse: string){
     this.navCtrl.push(AirportPage, {longitud :longitud, latitud: latitud, adresse:adresse});
   }
 }
