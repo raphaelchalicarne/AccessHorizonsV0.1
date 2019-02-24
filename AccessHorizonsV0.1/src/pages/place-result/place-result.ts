@@ -16,14 +16,13 @@ export class PlaceResultPage {
   label: string = '';
   flag: boolean = false;
   comments: any = [];
-  //accessibility: any = [];
 
   ngOnInit() {
     this.name = this.navParams.get('name');
     this.adresse = this.navParams.get('adresse');
     this.googleID = this.navParams.get('googleID');
-
   }
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {
   }
   
