@@ -13,7 +13,7 @@ export class AirportPage {
   longitud: number; 
   latitud:  number;
   adresse: string = '';
-  resultado: any[] = [];
+  resultat: any[] = [];
   filtrage:any = [];
   //filtrage:any = ['establishment', 'parking'];
 
@@ -27,25 +27,26 @@ export class AirportPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.filtrage);
     this.userService.getPlaces(this.longitud, this.latitud)
     .subscribe(
       (data) => { 
         this.places = data['items'];
-        console.log(this.places);
-        var i;
-        for (i in this.places){
-          console.log(i);
-          if (this.filtrage.includes(this.places[i].category.name)) {
-            this.resultado.push(this.places[i]);
+        if (this.filtrage.length == 0) {
+          this.resultat = this.places;
+        }
+        if (this.filtrage.length != 0) {
+          var i;
+          for (i in this.places){
+            if (this.filtrage.includes(this.places[i].category.name)) {
+              this.resultat.push(this.places[i]);
             }
           }
-          console.log(this.resultado);
-        },
-        //console.log(data);
+        }
       (error) =>{
         console.error(error);
-      })
+      }
+    }
+  )
   }
   //adresse: string
   /*showPlace(){

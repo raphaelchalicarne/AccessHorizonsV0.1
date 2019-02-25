@@ -12,6 +12,7 @@ export class MenuServicesPage {
   restaurants = ['bar','cafe','internet_cafe','meal_delivery','meal_takeaway','restaurant','fast_food_restaurant','tea_house'];
   logement = ['hostel','lodging','vacation_appartment','rv_park','gite','hotel','luxury_hotel'];
   activites = [];
+  all = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -36,6 +37,10 @@ export class MenuServicesPage {
       case 4:
         var activites = this.activites;
         this.navCtrl.push(TransportsPage, {filtrage: activites});
+        break;
+      case 5:
+      var all = this.all;
+        this.navCtrl.push(TransportsPage, {filtrage: all});
         break;
     }
     /*    if (selection == 1) {

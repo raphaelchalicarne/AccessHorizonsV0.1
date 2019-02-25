@@ -31,7 +31,6 @@ export class TransportsPage {
     .subscribe(
       (data) => {
         this.resultat = data['features'];
-        //console.log(data)
       },
       (error) =>{
         console.error(error);
