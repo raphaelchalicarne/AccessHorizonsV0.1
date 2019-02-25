@@ -46,15 +46,19 @@ export class AjoutaeroportPage {
 
   saveAirport(){
     this.aeroport = {
+    nom: this.aeroportForm.get('name').value,
+    ville: this.aeroportForm.get('ville').value,
     critere1 : this.aeroportForm.get('critere1').value,
     critere2 : this.aeroportForm.get('critere2').value,
     critere3 : this.aeroportForm.get('critere3').value,
-    nom: this.aeroportForm.get('name').value,
-    ville: this.aeroportForm.get('ville').value,
     }
+
     this.db.list('aeroport').push(this.aeroport);
     console.log('Aeroport sauvegardé3');
     console.log(this.aeroportForm.get('name').value);
+    //console.log(this.db.once('value'));
+
+
 
 
 }
