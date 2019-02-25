@@ -10,17 +10,22 @@
 		<h3><b>Details d'accessibilité</b></h3>
 		
 		<div *ngFor= "let detail of details" class="categorie d'accessibilité">
-			<h4><b>{{detail.label}}</b></h4>
-
+			<h4>
+				<b>{{detail.label}}</b>
+			</h4>
 			<div *ngFor="let element of detail.children" class="Elements individuels de chaque categorie">
-				<h6>{{element.label}}</h6>
-				<p *ngIf="element.value != null"> -- {{element.value}}</p>
+				<h6>
+					{{element.label}}
+				</h6>
+				<p *ngIf="element.value != null"> 
+					-- {{element.value}}
+				</p>
 			</div>
-
 		</div>
 	</div>
 
 	<div class="Website" text-center>
 		<p>Site web: <a href="{{website}}">{{website}}</a></p>
 	</div>
+	
 </ion-content>
