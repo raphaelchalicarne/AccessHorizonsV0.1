@@ -17,9 +17,10 @@ export class AjoutlieuPage {
   lieu = {
     nom:'',
     ville:'',
-    critere1:'',
-    critere2:'',
-    critere3:'',
+    entree:'',
+    exterieur:'',
+    interieur:'',
+    services:'',
    };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public db: AngularFireDatabase) {
@@ -33,9 +34,10 @@ export class AjoutlieuPage {
   	this.lieuForm = this.formBuilder.group({
   		name: ['', Validators.required],
   		ville: [''],
-      critere1:[''],
-      critere2:[''],
-      critere3:[''],
+      entree: [''],
+      exterieur: [''],
+      interieur: [''],
+      services: [''],
   	})
   }
 
@@ -48,9 +50,10 @@ export class AjoutlieuPage {
     this.lieu = {
     nom: this.lieuForm.get('name').value,
     ville: this.lieuForm.get('ville').value,
-    critere1 : this.lieuForm.get('critere1').value,
-    critere2 : this.lieuForm.get('critere2').value,
-    critere3 : this.lieuForm.get('critere3').value,
+    entree : this.lieuForm.get('entree').value,
+    exterieur : this.lieuForm.get('exterieur').value,
+    interieur : this.lieuForm.get('interieur').value,
+    services : this.lieuForm.get('services').value,
     }
 
     this.db.list('lieu').push(this.lieu);
