@@ -12,7 +12,6 @@ import { TransportsPage } from '../pages/transports/transports';
 import { AirportPage } from '../pages/airport/airport';
 import { AuthService } from '../services/auth.service';
 import { AuthPage } from '../pages/auth/auth';
-import { OptionsPage } from '../pages/options/options';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { OptionsPage } from '../pages/options/options';
     TransportsPage,
     AirportPage,
     AuthPage,
-    OptionsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +36,6 @@ import { OptionsPage } from '../pages/options/options';
     TransportsPage,
     AirportPage,
     AuthPage,
-    OptionsPage
   ],
   providers: [
     StatusBar,
