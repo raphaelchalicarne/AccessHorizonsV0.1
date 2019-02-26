@@ -16,6 +16,7 @@ import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 //import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 //import {PlaceResultPage} from '../pages/place-result/place-result';
 import { AuthPage } from '../pages/auth/auth';
+import { AuthService } from '../services/auth.service';
 import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
 
 import { AngularFireModule } from 'angularfire2';
@@ -63,6 +64,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JaccedeProvider
   ]
