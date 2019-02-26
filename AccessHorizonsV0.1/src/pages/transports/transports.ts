@@ -23,7 +23,7 @@ export class TransportsPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.filtrage);
+    //console.log(this.filtrage);
   }
   faireRecherche(){
     this.userService.getAutocomplete(this.adresse)

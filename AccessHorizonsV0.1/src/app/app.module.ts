@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
+import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 import { TransportsPage } from '../pages/transports/transports';
 import {AirportPage} from '../pages/airport/airport';
 import {ResultModalPage} from '../pages/result-modal/result-modal';
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     UserProfilePage,
     MenuServicesPage, 
+    FiltrePersonnelPage,
     TransportsPage,
     AirportPage,
     ResultModalPage,
@@ -36,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     UserProfilePage, 
-    MenuServicesPage, 
+    MenuServicesPage,
+    FiltrePersonnelPage, 
     TransportsPage,
     AirportPage,
     ResultModalPage,

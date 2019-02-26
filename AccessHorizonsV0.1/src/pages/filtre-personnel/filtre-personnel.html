@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>FiltrePersonnel</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<!--<div class="Searchbar">
+		<ion-searchbar (ionInput)="onInput($event)" showCancelButton="true">
+			<ion-list>
+				<ion-item *ngFor="let name of names">
+					<p>{{name}}</p>
+				</ion-item>
+			</ion-list>
+		</ion-searchbar>
+	</div>-->
+	<div>
+		<ion-list>
+				<ion-item *ngFor="let name of names">
+					<p>{{name}}</p>
+				</ion-item>
+			</ion-list>
+	</div>
+
+	<!--<div class="Button de recherche">	
+		<button ion-button color="dark" large outline round block (click)="goToTransportsPage()">Rechercher</button>	
+	</div>-->
+</ion-content>
