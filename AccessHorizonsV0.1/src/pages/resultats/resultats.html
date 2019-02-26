@@ -1,18 +1,26 @@
-<!--
-  Generated template for the ResultatsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar text-center>
     <ion-title>Resultats</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content text-center padding>
+	<div class="Liste des places">
+  	<ion-list> 
+      <h3>
+        Liste des places proche de {{adresse}}
+      </h3>
+      
+      <ion-searchbar cancelButtonIcon></ion-searchbar>
+      <button ion-button color="dark" large outline round block *ngFor="let place of resultat" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
+          <h2>
+            <b>{{place.name}}, </b>
+          </h2>
+          <p>
+            {{place.category.label | lowercase}}, 
+          </p>
+      </button>
+    </ion-list>
+  </div>
 </ion-content>
