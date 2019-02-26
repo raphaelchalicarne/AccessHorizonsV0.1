@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
-import { PlaceResultPage } from '../place-result/place-result';
+//import { PlaceResultPage } from '../place-result/place-result';
 
 @IonicPage()
 @Component({
@@ -47,8 +47,9 @@ export class ResultatsPage {
     }
   )
   }
+  /*
   goToPlace(name: string, adresse: string, googleID: string){
     this.navCtrl.push(PlaceResultPage, {name:name, adresse:adresse, googleID:googleID});
-  }
+  }*/
   
 }

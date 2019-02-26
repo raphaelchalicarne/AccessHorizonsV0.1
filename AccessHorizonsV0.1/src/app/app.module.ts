@@ -8,11 +8,11 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
-import { TransportsPage } from '../pages/transports/transports';
-import { AirportPage} from '../pages/airport/airport';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
 import { HttpClientModule } from '@angular/common/http';
 import { RecherchePage } from '../pages/recherche/recherche';
+import { ResultatsPage} from '../pages/resultats/resultats';
+import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 //import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 //import {PlaceResultPage} from '../pages/place-result/place-result';
 import { AuthPage } from '../pages/auth/auth';
@@ -30,13 +30,13 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     UserProfilePage,
     MenuServicesPage, 
     RecherchePage,
+    ResultatsPage,
+    PlaceResultatPage,
     //FiltrePersonnelPage,
-    TransportsPage,
-    AirportPage,
     AuthPage,
     AjoutlieuPage,
     //,PlaceResultPage
-  ],
+    AuthPage  ],
   imports: [
     BrowserModule,
     HttpClientModule, 
@@ -51,11 +51,13 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     UserProfilePage, 
     MenuServicesPage,
     RecherchePage,
-    //FiltrePersonnelPage, 
-    TransportsPage,
-    AirportPage,
+    ResultatsPage,
+    PlaceResultatPage,
+    //FiltrePersonnelPage,
     AuthPage,
     AjoutlieuPage,
+    AuthPage
+
     //,PlaceResultPage
   ],
   providers: [
