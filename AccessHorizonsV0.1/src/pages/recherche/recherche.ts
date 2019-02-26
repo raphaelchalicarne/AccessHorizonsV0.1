@@ -5,8 +5,8 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 
 @IonicPage()
 @Component({
-  selector: 'page-transports',
-  templateUrl: 'transports.html',
+  selector: 'page-recherche',
+  templateUrl: 'recherche.html',
 })
 export class TransportsPage {
   adresse: string = '';
