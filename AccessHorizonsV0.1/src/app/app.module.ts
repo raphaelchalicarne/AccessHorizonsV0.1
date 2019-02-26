@@ -8,20 +8,29 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
+import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 import { TransportsPage } from '../pages/transports/transports';
 import {AirportPage} from '../pages/airport/airport';
+import {ResultModalPage} from '../pages/result-modal/result-modal';
+import {PlaceResultPage} from '../pages/place-result/place-result';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
+import { HttpClientModule } from '@angular/common/http';
+ 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     UserProfilePage,
     MenuServicesPage, 
+    FiltrePersonnelPage,
     TransportsPage,
-    AirportPage
+    AirportPage,
+    ResultModalPage,
+    PlaceResultPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, 
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,9 +38,12 @@ import { JaccedeProvider } from '../providers/jaccede/jaccede';
     MyApp,
     HomePage,
     UserProfilePage, 
-    MenuServicesPage, 
+    MenuServicesPage,
+    FiltrePersonnelPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    ResultModalPage,
+    PlaceResultPage
   ],
   providers: [
     StatusBar,
