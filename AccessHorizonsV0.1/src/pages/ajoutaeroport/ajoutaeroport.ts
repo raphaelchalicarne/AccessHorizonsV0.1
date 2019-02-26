@@ -17,9 +17,10 @@ export class AjoutaeroportPage {
   aeroport = {
     nom:'',
     ville:'',
-    critere1:'',
-    critere2:'',
-    critere3:'',
+    entree:'',
+    exterieur:'',
+    interieur:'',
+    services:'',
    };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public db: AngularFireDatabase) {
@@ -33,9 +34,10 @@ export class AjoutaeroportPage {
   	this.aeroportForm = this.formBuilder.group({
   		name: ['', Validators.required],
   		ville: [''],
-      critere1:[''],
-      critere2:[''],
-      critere3:[''],
+      entree:[''],
+      exterieur:[''],
+      interieur:[''],
+      services:[''],
   	})
   }
 
@@ -48,15 +50,16 @@ export class AjoutaeroportPage {
     this.aeroport = {
     nom: this.aeroportForm.get('name').value,
     ville: this.aeroportForm.get('ville').value,
-    critere1 : this.aeroportForm.get('critere1').value,
-    critere2 : this.aeroportForm.get('critere2').value,
-    critere3 : this.aeroportForm.get('critere3').value,
+    entree : this.aeroportForm.get('entree').value,
+    exterieur : this.aeroportForm.get('exterieur').value,
+    interieur : this.aeroportForm.get('interieur').value,
+    services : this.aeroportForm.get('services').value,
     }
 
     this.db.list('aeroport').push(this.aeroport);
     console.log('Aeroport sauvegardé4');
     console.log(this.aeroportForm.get('name').value);
-    console.log(this.db.ref().once('value'));
+    //console.log(this.db.ref().once('value'));
 
 }
 }
