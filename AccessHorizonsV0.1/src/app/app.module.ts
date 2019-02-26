@@ -16,6 +16,11 @@ import { RecherchePage } from '../pages/recherche/recherche';
 //import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 //import {PlaceResultPage} from '../pages/place-result/place-result';
 import { AuthPage } from '../pages/auth/auth';
+import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FIREBASE_CONFIG } from './firebase.credentials';
 
  
 @NgModule({
@@ -28,13 +33,16 @@ import { AuthPage } from '../pages/auth/auth';
     //FiltrePersonnelPage,
     TransportsPage,
     AirportPage,
-    AuthPage
+    AuthPage,
+    AjoutlieuPage,
     //,PlaceResultPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule, 
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,7 +54,8 @@ import { AuthPage } from '../pages/auth/auth';
     //FiltrePersonnelPage, 
     TransportsPage,
     AirportPage,
-    AuthPage
+    AuthPage,
+    AjoutlieuPage,
     //,PlaceResultPage
   ],
   providers: [
