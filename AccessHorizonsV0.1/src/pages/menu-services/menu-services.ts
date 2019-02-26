@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {RecherchePage} from '../recherche/recherche';
+import { AjoutlieuPage } from '../ajoutlieu/ajoutlieu';
 //import { FiltrePersonnelPage } from '../filtre-personnel/filtre-personnel';
 import { HttpClient } from '@angular/common/http';
 
@@ -48,5 +49,9 @@ export class MenuServicesPage {
         this.navCtrl.push(RecherchePage, {filtrage: commerces});
         break;
     }
+  }
+
+  goToAjoutlieuPage(){
+    this.navCtrl.push(AjoutlieuPage);
   }
 }
