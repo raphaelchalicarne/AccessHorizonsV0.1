@@ -11,7 +11,7 @@ import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { TransportsPage } from '../pages/transports/transports';
 import { AirportPage } from '../pages/airport/airport';
 import { AuthService } from '../services/auth.service';
-import { AuthPage } from '../pages/auth/auth'; 
+import { AuthPage } from '../pages/auth/auth';
 
 @NgModule({
   declarations: [
