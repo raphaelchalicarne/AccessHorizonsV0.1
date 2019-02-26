@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {TransportsPage} from '../transports/transports';
+import {RecherchePage} from '../recherche/recherche';
 //import { FiltrePersonnelPage } from '../filtre-personnel/filtre-personnel';
 import { HttpClient } from '@angular/common/http';
 
@@ -26,31 +26,31 @@ export class MenuServicesPage {
   }
 
   ionViewDidLoad() {}
-  goToTransportsPage(selection :number){
+  goToRecherchePage(selection :number){
     switch (selection) {
       case 1:
         var transports = this.transports;
-        this.navCtrl.push(TransportsPage, {filtrage: transports});
+        this.navCtrl.push(RecherchePage, {filtrage: transports});
         break;     
       case 2:
         var restaurants = this.restaurants;
-        this.navCtrl.push(TransportsPage, {filtrage: restaurants});
+        this.navCtrl.push(RecherchePage, {filtrage: restaurants});
         break;
       case 3:
         var logement = this.logement;
-        this.navCtrl.push(TransportsPage, {filtrage: logement});
+        this.navCtrl.push(RecherchePage, {filtrage: logement});
         break;
       case 4:
         var activites = this.activites;
-        this.navCtrl.push(TransportsPage, {filtrage: activites});
+        this.navCtrl.push(RecherchePage, {filtrage: activites});
         break;
       case 5:
         var commerces = this.commerces;
-        this.navCtrl.push(TransportsPage, {filtrage: commerces});
+        this.navCtrl.push(RecherchePage, {filtrage: commerces});
         break;
       case 6:
         var all = this.all;
-        this.navCtrl.push(TransportsPage, {filtrage: all});
+        this.navCtrl.push(RecherchePage, {filtrage: all});
         break;
     }
   }

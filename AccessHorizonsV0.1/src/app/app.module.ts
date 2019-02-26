@@ -8,13 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
-import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 import { TransportsPage } from '../pages/transports/transports';
 import {AirportPage} from '../pages/airport/airport';
-import {ResultModalPage} from '../pages/result-modal/result-modal';
-import {PlaceResultPage} from '../pages/place-result/place-result';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
 import { HttpClientModule } from '@angular/common/http';
+import { RecherchePage } from '../pages/recherche/recherche';
+//import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
+//import {PlaceResultPage} from '../pages/place-result/place-result';
+}
  
 @NgModule({
   declarations: [
@@ -22,11 +23,11 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     UserProfilePage,
     MenuServicesPage, 
-    FiltrePersonnelPage,
+    RecherchePage,
+    //FiltrePersonnelPage,
     TransportsPage,
-    AirportPage,
-    ResultModalPage,
-    PlaceResultPage
+    AirportPage
+    //,PlaceResultPage
   ],
   imports: [
     BrowserModule,
@@ -39,11 +40,11 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     UserProfilePage, 
     MenuServicesPage,
-    FiltrePersonnelPage, 
+    RecherchePage,
+    //FiltrePersonnelPage, 
     TransportsPage,
-    AirportPage,
-    ResultModalPage,
-    PlaceResultPage
+    AirportPage
+    //,PlaceResultPage
   ],
   providers: [
     StatusBar,
