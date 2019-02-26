@@ -19,8 +19,7 @@ export class MenuServicesPage {
   all = [];
 
   /*all_categories: any = [];
-  temporary: any = [];
-  filtrage_personnel: any = [];*/
+  temporary: any = [];*/
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
   }
@@ -48,13 +47,6 @@ export class MenuServicesPage {
         var commerces = this.commerces;
         this.navCtrl.push(RecherchePage, {filtrage: commerces});
         break;
-      case 6:
-        var all = this.all;
-        this.navCtrl.push(RecherchePage, {filtrage: all});
-        break;
     }
   }
-  /*goToFiltrePersonnel(){
-    this.navCtrl.push(FiltrePersonnelPage);
-  }*/
 }
