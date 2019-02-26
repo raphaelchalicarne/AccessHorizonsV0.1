@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AirportPage } from '../airport/airport';
+import { ResultatsPage } from '../resultats/resultats';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 
 @IonicPage()
@@ -38,6 +38,6 @@ export class RecherchePage {
 
   goToPlaceList(longitud: number, latitud: number, adresse: string){
     var filtrage = this.filtrage;
-    this.navCtrl.push(AirportPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
+    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
   }
 }
