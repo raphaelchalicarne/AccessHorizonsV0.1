@@ -8,7 +8,7 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
   selector: 'page-recherche',
   templateUrl: 'recherche.html',
 })
-export class TransportsPage {
+export class RecherchePage {
   adresse: string = '';
   longitud: number; 
   latitud:  number;

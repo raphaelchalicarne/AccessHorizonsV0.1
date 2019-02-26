@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecherchePage } from '../pages/recherche/recherche';
 //import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 //import {PlaceResultPage} from '../pages/place-result/place-result';
-}
+
  
 @NgModule({
   declarations: [
