@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TransportsPage} from '../transports/transports';
-import { FiltrePersonnelPage } from '../filtre-personnel/filtre-personnel';
+//import { FiltrePersonnelPage } from '../filtre-personnel/filtre-personnel';
 import { HttpClient } from '@angular/common/http';
 
 @IonicPage()

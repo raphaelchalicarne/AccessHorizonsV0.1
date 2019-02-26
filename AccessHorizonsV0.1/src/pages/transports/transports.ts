@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AirportPage } from '../airport/airport';
-/**
- * Generated class for the TransportsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 
 @IonicPage()
 @Component({
@@ -14,14 +9,35 @@ import { AirportPage } from '../airport/airport';
   templateUrl: 'transports.html',
 })
 export class TransportsPage {
+  adresse: string = '';
+  longitud: number; 
+  latitud:  number;
+  resultat: any[] = [];
+  filtrage: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ngOnInit() {
+    this.filtrage = this.navParams.get('filtrage');
+  }
+
+  constructor(public navCtrl: NavController, public userService: JaccedeProvider, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TransportsPage');
+    //console.log(this.filtrage);
   }
-  goToAirports(){
-  	this.navCtrl.push(AirportPage)
+  faireRecherche(){
+    this.userService.getAutocomplete(this.adresse)
+    .subscribe(
+      (data) => {
+        this.resultat = data['features'];
+      },
+      (error) =>{
+        console.error(error);
+      })
+  }
+
+  goToPlaceList(longitud: number, latitud: number, adresse: string){
+    var filtrage = this.filtrage;
+    this.navCtrl.push(AirportPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
   }
 }

@@ -10,6 +10,7 @@ import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { TransportsPage } from '../pages/transports/transports';
 import {AirportPage} from '../pages/airport/airport';
+import { JaccedeProvider } from '../providers/jaccede/jaccede';
 @NgModule({
   declarations: [
     MyApp,
@@ -35,7 +36,8 @@ import {AirportPage} from '../pages/airport/airport';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    JaccedeProvider
   ]
 })
 export class AppModule {}
