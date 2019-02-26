@@ -17,6 +17,11 @@ import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 //import {PlaceResultPage} from '../pages/place-result/place-result';
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
+import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FIREBASE_CONFIG } from './firebase.credentials';
 
  
 @NgModule({
@@ -29,12 +34,16 @@ import { AuthService } from '../services/auth.service';
     ResultatsPage,
     PlaceResultatPage,
     //FiltrePersonnelPage,
-    AuthPage
-  ],
+    AuthPage,
+    AjoutlieuPage,
+    //,PlaceResultPage
+    AuthPage  ],
   imports: [
     BrowserModule,
     HttpClientModule, 
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,8 +54,11 @@ import { AuthService } from '../services/auth.service';
     RecherchePage,
     ResultatsPage,
     PlaceResultatPage,
-    //FiltrePersonnelPage, 
+    //FiltrePersonnelPage,
+    AuthPage,
+    AjoutlieuPage,
     AuthPage
+
     //,PlaceResultPage
   ],
   providers: [
