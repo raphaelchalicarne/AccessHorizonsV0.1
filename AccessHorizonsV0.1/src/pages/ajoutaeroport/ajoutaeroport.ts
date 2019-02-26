@@ -54,12 +54,9 @@ export class AjoutaeroportPage {
     }
 
     this.db.list('aeroport').push(this.aeroport);
-    console.log('Aeroport sauvegardé3');
+    console.log('Aeroport sauvegardé4');
     console.log(this.aeroportForm.get('name').value);
-    //console.log(this.db.once('value'));
-
-
-
+    console.log(this.db.ref().once('value'));
 
 }
 }
