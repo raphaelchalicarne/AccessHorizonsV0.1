@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'menu-services.html',
 })
 export class MenuServicesPage {
-  transports = ['airport', 'bus_station', 'subway_station', 'train_station', 'travel_agency', 'car_rental', 'gas_station', 'taxi_stand', 'transit_station', 'taxi_service', 'car_repair'];
+  transports = ['airport', 'bus_station', 'subway_station', 'train_station', 'travel_agency', 'car_rental', 'gas_station', 'taxi_stand', 'transit_station', 'taxi_service'];
   restaurants = ['bar','cafe','internet_cafe','meal_delivery','meal_takeaway','restaurant','fast_food_restaurant','tea_house'];
   logement = ['hostel','lodging','vacation_appartment','rv_park','gite','hotel','luxury_hotel'];
   activites = ['establishment','aquarium','bazar','bowling_alley','casino','shopping_mall','shopping_center','cultural_center','fitness_center','recreation_center','movie_theater','circus','night_club','store','sports_complex','beach_resort','stadium','florist','art_gallery',''];

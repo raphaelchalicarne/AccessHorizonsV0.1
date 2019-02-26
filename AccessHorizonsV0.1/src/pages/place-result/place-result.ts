@@ -30,6 +30,7 @@ export class PlaceResultPage {
   	this.userService.getDetails(this.googleID).subscribe(
   		(data) => {
   			this.details = data['accessibility'];
+        console.log(data);
   			this.website = data['website'];
   			if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
   			{ 
