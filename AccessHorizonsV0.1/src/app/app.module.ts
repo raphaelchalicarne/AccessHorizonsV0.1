@@ -16,6 +16,7 @@ import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 //import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 //import {PlaceResultPage} from '../pages/place-result/place-result';
 import { AuthPage } from '../pages/auth/auth';
+import { AuthService } from '../services/auth.service';
 
  
 @NgModule({
@@ -51,6 +52,7 @@ import { AuthPage } from '../pages/auth/auth';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JaccedeProvider
   ]
