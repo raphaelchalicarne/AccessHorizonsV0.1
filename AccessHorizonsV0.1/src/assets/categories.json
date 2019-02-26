@@ -1,0 +1,784 @@
+{
+  "items": [
+    {
+      "id": 9, 
+      "label": "", 
+      "name": "home_improvement_store"
+    }, 
+    {
+      "id": 136, 
+      "label": "Abogado", 
+      "name": "lawyer"
+    }, 
+    {
+      "id": 81, 
+      "label": "Aeropuerto", 
+      "name": "airport"
+    }, 
+    {
+      "id": 107, 
+      "label": "Agencia de servicios de atenci\u00f3n a la tercera edad", 
+      "name": "nursing_agency"
+    }, 
+    {
+      "id": 82, 
+      "label": "Agencia de viajes", 
+      "name": "travel_agency"
+    }, 
+    {
+      "id": 83, 
+      "label": "Agencia inmobiliaria", 
+      "name": "real_estate_agency"
+    }, 
+    {
+      "id": 53, 
+      "label": "Albergue juvenil", 
+      "name": "hostel"
+    }, 
+    {
+      "id": 61, 
+      "label": "Alojamiento", 
+      "name": "lodging"
+    }, 
+    {
+      "id": 124, 
+      "label": "Alquiler de coches", 
+      "name": "car_rental"
+    }, 
+    {
+      "id": 96, 
+      "label": "Aparcamiento", 
+      "name": "parking"
+    }, 
+    {
+      "id": 59, 
+      "label": "Apartamento tur\u00edstico", 
+      "name": "vacation_appartment"
+    }, 
+    {
+      "id": 119, 
+      "label": "Aquarium", 
+      "name": "aquarium"
+    }, 
+    {
+      "id": 144, 
+      "label": "\u00c1rea para autocaravanas", 
+      "name": "rv_park"
+    }, 
+    {
+      "id": 149, 
+      "label": "Asesor\u00eda Fiscal", 
+      "name": "accounting"
+    }, 
+    {
+      "id": 90, 
+      "label": "Asociaci\u00f3n u organizaci\u00f3n", 
+      "name": "association_or_organization"
+    }, 
+    {
+      "id": 40, 
+      "label": "Autoescuela", 
+      "name": "driving_school"
+    }, 
+    {
+      "id": 128, 
+      "label": "Ayuntamiento", 
+      "name": "city_hall"
+    }, 
+    {
+      "id": 85, 
+      "label": "Banco", 
+      "name": "bank"
+    }, 
+    {
+      "id": 101, 
+      "label": "Ba\u00f1os p\u00fablicos", 
+      "name": "public_bathroom"
+    }, 
+    {
+      "id": 103, 
+      "label": "Bar", 
+      "name": "bar"
+    }, 
+    {
+      "id": 5, 
+      "label": "Bazar", 
+      "name": "bazar"
+    }, 
+    {
+      "id": 55, 
+      "label": "Bed & Breakfast", 
+      "name": "bed_and_breakfast"
+    }, 
+    {
+      "id": 62, 
+      "label": "Biblioteca", 
+      "name": "library"
+    }, 
+    {
+      "id": 63, 
+      "label": "Bolera", 
+      "name": "bowling_alley"
+    }, 
+    {
+      "id": 123, 
+      "label": "Cafeter\u00eda", 
+      "name": "cafe"
+    }, 
+    {
+      "id": 54, 
+      "label": "Campamento", 
+      "name": "campground"
+    }, 
+    {
+      "id": 7, 
+      "label": "Carnicer\u00eda", 
+      "name": "butcher_shop"
+    }, 
+    {
+      "id": 57, 
+      "label": "Casa", 
+      "name": "gite"
+    }, 
+    {
+      "id": 64, 
+      "label": "Casino", 
+      "name": "casino"
+    }, 
+    {
+      "id": 126, 
+      "label": "Cementerio", 
+      "name": "cemetery"
+    }, 
+    {
+      "id": 156, 
+      "label": "Centro comercial", 
+      "name": "shopping_mall"
+    }, 
+    {
+      "id": 11, 
+      "label": "Centro comercial", 
+      "name": "shopping_center"
+    }, 
+    {
+      "id": 79, 
+      "label": "Centro cultural", 
+      "name": "cultural_center"
+    }, 
+    {
+      "id": 41, 
+      "label": "Centro de educaci\u00f3n secundaria", 
+      "name": "middle_school"
+    }, 
+    {
+      "id": 42, 
+      "label": "Centro de formaci\u00f3n", 
+      "name": "training_center"
+    }, 
+    {
+      "id": 95, 
+      "label": "Centro de informaci\u00f3n tur\u00edstica", 
+      "name": "tourist_information_center"
+    }, 
+    {
+      "id": 47, 
+      "label": "Centro deportivo", 
+      "name": "fitness_center"
+    }, 
+    {
+      "id": 56, 
+      "label": "Centro de recreo", 
+      "name": "recreation_center"
+    }, 
+    {
+      "id": 28, 
+      "label": "Cerrajero", 
+      "name": "locksmith"
+    }, 
+    {
+      "id": 91, 
+      "label": "Cibercaf\u00e9", 
+      "name": "internet_cafe"
+    }, 
+    {
+      "id": 65, 
+      "label": "Cine", 
+      "name": "movie_theater"
+    }, 
+    {
+      "id": 66, 
+      "label": "Circo", 
+      "name": "circus"
+    }, 
+    {
+      "id": 109, 
+      "label": "Cl\u00ednica de fisioterapia", 
+      "name": "physiotherapy_center"
+    }, 
+    {
+      "id": 67, 
+      "label": "Club nocturno", 
+      "name": "night_club"
+    }, 
+    {
+      "id": 145, 
+      "label": "Colegio", 
+      "name": "school"
+    }, 
+    {
+      "id": 37, 
+      "label": "Comercio", 
+      "name": "store"
+    }, 
+    {
+      "id": 139, 
+      "label": "Comida a domicilio", 
+      "name": "meal_delivery"
+    }, 
+    {
+      "id": 140, 
+      "label": "Comida para llevar", 
+      "name": "meal_takeaway"
+    }, 
+    {
+      "id": 84, 
+      "label": "Compa\u00f1\u00eda de seguros", 
+      "name": "insurance_agency"
+    }, 
+    {
+      "id": 46, 
+      "label": "Complejo deportivo", 
+      "name": "sports_complex"
+    }, 
+    {
+      "id": 74, 
+      "label": "Complejo tur\u00edstico en la playa", 
+      "name": "beach_resort"
+    }, 
+    {
+      "id": 3, 
+      "label": "Concesionario de autos", 
+      "name": "car_dealer"
+    }, 
+    {
+      "id": 110, 
+      "label": "Dentista", 
+      "name": "dentist"
+    }, 
+    {
+      "id": 131, 
+      "label": "Embajada", 
+      "name": "embassy"
+    }, 
+    {
+      "id": 43, 
+      "label": "Escuela primaria", 
+      "name": "elementary_school"
+    }, 
+    {
+      "id": 44, 
+      "label": "Escuela universitaria", 
+      "name": "college"
+    }, 
+    {
+      "id": 122, 
+      "label": "Estaci\u00f3n de Autobuses", 
+      "name": "bus_station"
+    }, 
+    {
+      "id": 132, 
+      "label": "Estaci\u00f3n de Bomberos", 
+      "name": "fire_station"
+    }, 
+    {
+      "id": 148, 
+      "label": "Estaci\u00f3n de metro", 
+      "name": "subway_station"
+    }, 
+    {
+      "id": 92, 
+      "label": "Estaci\u00f3n de tren", 
+      "name": "train_station"
+    }, 
+    {
+      "id": 32, 
+      "label": "Estanco", 
+      "name": "tobacco_shop"
+    }, 
+    {
+      "id": 77, 
+      "label": "Etapa", 
+      "name": "stadium"
+    }, 
+    {
+      "id": 116, 
+      "label": "Farmacia", 
+      "name": "pharmacy"
+    }, 
+    {
+      "id": 154, 
+      "label": "Ferreter\u00eda", 
+      "name": "hardware_store"
+    }, 
+    {
+      "id": 112, 
+      "label": "Fisioterapeuta", 
+      "name": "physiotherapist"
+    }, 
+    {
+      "id": 16, 
+      "label": "Florister\u00eda", 
+      "name": "florist"
+    }, 
+    {
+      "id": 97, 
+      "label": "Fotocopiadora", 
+      "name": "copy_shop"
+    }, 
+    {
+      "id": 27, 
+      "label": "Fruter\u00eda", 
+      "name": "green_grocers"
+    }, 
+    {
+      "id": 133, 
+      "label": "Funeraria", 
+      "name": "funeral_home"
+    }, 
+    {
+      "id": 68, 
+      "label": "Galer\u00eda de arte", 
+      "name": "art_gallery"
+    }, 
+    {
+      "id": 99, 
+      "label": "Gasolinera", 
+      "name": "gas_station"
+    }, 
+    {
+      "id": 153, 
+      "label": "Gimnasio", 
+      "name": "gym"
+    }, 
+    {
+      "id": 88, 
+      "label": "Guarder\u00eda", 
+      "name": "child_care_agency"
+    }, 
+    {
+      "id": 111, 
+      "label": "Hospital", 
+      "name": "hospital"
+    }, 
+    {
+      "id": 58, 
+      "label": "Hotel", 
+      "name": "hotel"
+    }, 
+    {
+      "id": 60, 
+      "label": "Hotel de lujo", 
+      "name": "luxury_hotel"
+    }, 
+    {
+      "id": 127, 
+      "label": "Iglesia", 
+      "name": "church"
+    }, 
+    {
+      "id": 45, 
+      "label": "Instituto", 
+      "name": "high_school"
+    }, 
+    {
+      "id": 6, 
+      "label": "Joyer\u00eda", 
+      "name": "jewelry_store"
+    }, 
+    {
+      "id": 130, 
+      "label": "Juzgado", 
+      "name": "courthouse"
+    }, 
+    {
+      "id": 29, 
+      "label": "Laboratorio de fotograf\u00eda", 
+      "name": "photo_lab"
+    }, 
+    {
+      "id": 113, 
+      "label": "Laboratorio m\u00e9dico", 
+      "name": "medical_lab"
+    }, 
+    {
+      "id": 125, 
+      "label": "Lavado de coches", 
+      "name": "car_wash"
+    }, 
+    {
+      "id": 21, 
+      "label": "Lavander\u00eda", 
+      "name": "laundry"
+    }, 
+    {
+      "id": 22, 
+      "label": "Librer\u00eda", 
+      "name": "book_store"
+    }, 
+    {
+      "id": 137, 
+      "label": "Licorer\u00eda", 
+      "name": "liquor_store"
+    }, 
+    {
+      "id": 26, 
+      "label": "Lonja de pescado", 
+      "name": "seafood_market"
+    }, 
+    {
+      "id": 93, 
+      "label": "Lugar de culto", 
+      "name": "place_of_worship"
+    }, 
+    {
+      "id": 108, 
+      "label": "M\u00e9dico", 
+      "name": "doctor"
+    }, 
+    {
+      "id": 23, 
+      "label": "Mercado", 
+      "name": "market"
+    }, 
+    {
+      "id": 141, 
+      "label": "Mezquita", 
+      "name": "mosque"
+    }, 
+    {
+      "id": 69, 
+      "label": "Monumento", 
+      "name": "monument"
+    }, 
+    {
+      "id": 70, 
+      "label": "Museo", 
+      "name": "museum"
+    }, 
+    {
+      "id": 86, 
+      "label": "Oficina de correos", 
+      "name": "post_office"
+    }, 
+    {
+      "id": 38, 
+      "label": "Oficina de empleo", 
+      "name": "unemployment_office"
+    }, 
+    {
+      "id": 80, 
+      "label": "Oficina de la Administraci\u00f3n", 
+      "name": "government_office"
+    }, 
+    {
+      "id": 39, 
+      "label": "Oficinas de empresa", 
+      "name": "corporate_office"
+    }, 
+    {
+      "id": 138, 
+      "label": "Oficinas gubernamentales", 
+      "name": "local_government_office"
+    }, 
+    {
+      "id": 71, 
+      "label": "\u00d3pera", 
+      "name": "opera_house"
+    }, 
+    {
+      "id": 115, 
+      "label": "\u00d3ptica", 
+      "name": "optician"
+    }, 
+    {
+      "id": 94, 
+      "label": "Organizaci\u00f3n de servicios sociales", 
+      "name": "social_services_organization"
+    }, 
+    {
+      "id": 117, 
+      "label": "Orthopedista", 
+      "name": "orthesist"
+    }, 
+    {
+      "id": 8, 
+      "label": "Panader\u00eda", 
+      "name": "bakery"
+    }, 
+    {
+      "id": 158, 
+      "label": "Parada de taxis", 
+      "name": "taxi_stand"
+    }, 
+    {
+      "id": 102, 
+      "label": "parada de transporte p\u00fablico", 
+      "name": "transit_station"
+    }, 
+    {
+      "id": 72, 
+      "label": "Parque", 
+      "name": "park"
+    }, 
+    {
+      "id": 73, 
+      "label": "Parque de atracciones", 
+      "name": "amusement_park"
+    }, 
+    {
+      "id": 76, 
+      "label": "Parque nacional", 
+      "name": "national_park"
+    }, 
+    {
+      "id": 50, 
+      "label": "Peluquer\u00eda", 
+      "name": "hair_care"
+    }, 
+    {
+      "id": 25, 
+      "label": "Perfumer\u00eda", 
+      "name": "perfume_store"
+    }, 
+    {
+      "id": 48, 
+      "label": "Piscina p\u00fablica", 
+      "name": "public_swimming_pool"
+    }, 
+    {
+      "id": 87, 
+      "label": "Polic\u00eda", 
+      "name": "police"
+    }, 
+    {
+      "id": 17, 
+      "label": "Queser\u00eda", 
+      "name": "cheese_shop"
+    }, 
+    {
+      "id": 104, 
+      "label": "Restaurante", 
+      "name": "restaurant"
+    }, 
+    {
+      "id": 105, 
+      "label": "Restaurante de comida r\u00e1pida", 
+      "name": "fast_food_restaurant"
+    }, 
+    {
+      "id": 49, 
+      "label": "Sal\u00f3n de belleza", 
+      "name": "beauty_salon"
+    }, 
+    {
+      "id": 106, 
+      "label": "Sal\u00f3n de t\u00e9", 
+      "name": "tea_house"
+    }, 
+    {
+      "id": 98, 
+      "label": "Sal\u00f3n para eventos", 
+      "name": "function_room_facility"
+    }, 
+    {
+      "id": 34, 
+      "label": "Servicio de catering", 
+      "name": "catering_service"
+    }, 
+    {
+      "id": 100, 
+      "label": "Servicio de taxi", 
+      "name": "taxi_service"
+    }, 
+    {
+      "id": 157, 
+      "label": "Sinagoga", 
+      "name": "synagogue"
+    }, 
+    {
+      "id": 52, 
+      "label": "Spa", 
+      "name": "spa"
+    }, 
+    {
+      "id": 31, 
+      "label": "Supermercado", 
+      "name": "supermarket"
+    }, 
+    {
+      "id": 150, 
+      "label": "Taller", 
+      "name": "car_repair"
+    }, 
+    {
+      "id": 75, 
+      "label": "Teatro de artes esc\u00e9nicas", 
+      "name": "performing_arts_theater"
+    }, 
+    {
+      "id": 155, 
+      "label": "Templo hind\u00fa", 
+      "name": "hindu_temple"
+    }, 
+    {
+      "id": 135, 
+      "label": "Tienda de alimentaci\u00f3n/ Supermercado", 
+      "name": "grocery_or_supermarket"
+    }, 
+    {
+      "id": 14, 
+      "label": "Tienda de art\u00edculos para el hogar", 
+      "name": "home_goods_store"
+    }, 
+    {
+      "id": 120, 
+      "label": "Tienda de bicicletas", 
+      "name": "bicycle_store"
+    }, 
+    {
+      "id": 12, 
+      "label": "Tienda de botas", 
+      "name": "boot_store"
+    }, 
+    {
+      "id": 33, 
+      "label": "Tienda de celulares", 
+      "name": "cell_phone_store"
+    }, 
+    {
+      "id": 13, 
+      "label": "Tienda de chocolate", 
+      "name": "chocolate_shop"
+    }, 
+    {
+      "id": 30, 
+      "label": "Tienda de deportes", 
+      "name": "sporting_goods_store"
+    }, 
+    {
+      "id": 19, 
+      "label": "Tienda de electrodom\u00e9sticos", 
+      "name": "appliance_store"
+    }, 
+    {
+      "id": 151, 
+      "label": "Tienda de electr\u00f3nica", 
+      "name": "electronics_store"
+    }, 
+    {
+      "id": 4, 
+      "label": "Tienda de equipaje", 
+      "name": "luggage_store"
+    }, 
+    {
+      "id": 20, 
+      "label": "Tienda de juguetes", 
+      "name": "toy_store"
+    }, 
+    {
+      "id": 134, 
+      "label": "Tienda de Muebles", 
+      "name": "furniture_store"
+    }, 
+    {
+      "id": 2, 
+      "label": "Tienda de muebles antiguos", 
+      "name": "antique_furniture_store"
+    }, 
+    {
+      "id": 24, 
+      "label": "Tienda de m\u00fasica", 
+      "name": "music_store"
+    }, 
+    {
+      "id": 1, 
+      "label": "Tienda de productos para mascotas", 
+      "name": "pet_store"
+    }, 
+    {
+      "id": 35, 
+      "label": "Tienda de ropa", 
+      "name": "clothing_store"
+    }, 
+    {
+      "id": 114, 
+      "label": "Tienda de sillas de ruedas", 
+      "name": "wheelchair_store"
+    }, 
+    {
+      "id": 51, 
+      "label": "Tienda de tatuajes", 
+      "name": "tattoo_shop"
+    }, 
+    {
+      "id": 15, 
+      "label": "Tienda de ultramarinos", 
+      "name": "grocery_store"
+    }, 
+    {
+      "id": 10, 
+      "label": "Tienda de vinos", 
+      "name": "wine_store"
+    }, 
+    {
+      "id": 18, 
+      "label": "Tienda por departamento", 
+      "name": "department_store"
+    }, 
+    {
+      "id": 147, 
+      "label": "Trasteros y guardamuebles", 
+      "name": "storage"
+    }, 
+    {
+      "id": 89, 
+      "label": "Ubicaci\u00f3n de cajero autom\u00e1tico", 
+      "name": "atm"
+    }, 
+    {
+      "id": 129, 
+      "label": "Ultramarinos", 
+      "name": "convenience_store"
+    }, 
+    {
+      "id": 159, 
+      "label": "Universidad", 
+      "name": "university"
+    }, 
+    {
+      "id": 118, 
+      "label": "Veterinario", 
+      "name": "veterinary_care"
+    }, 
+    {
+      "id": 142, 
+      "label": "Videoclub", 
+      "name": "movie_rental"
+    }, 
+    {
+      "id": 36, 
+      "label": "Videoclub", 
+      "name": "movie_rental_store"
+    }, 
+    {
+      "id": 146, 
+      "label": "Zapater\u00eda", 
+      "name": "shoe_store"
+    }, 
+    {
+      "id": 78, 
+      "label": "Zool\u00f3gico", 
+      "name": "zoo"
+    }
+  ]
+}

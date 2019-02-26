@@ -23,7 +23,6 @@ export class TransportsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TransportsPage');
     console.log(this.filtrage);
   }
   faireRecherche(){

@@ -48,12 +48,6 @@ export class AirportPage {
     }
   )
   }
-  //adresse: string
-  /*showPlace(){
-    let nombre = 
-    let modal = this.modalCtrl.create(ResultModalPage, {data: nombre});
-    modal.present();
-  }*/
   goToPlace(name: string, adresse: string, googleID: string){
     this.navCtrl.push(PlaceResultPage, {name:name, adresse:adresse, googleID:googleID});
   }
