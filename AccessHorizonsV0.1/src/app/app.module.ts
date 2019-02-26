@@ -9,12 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { TransportsPage } from '../pages/transports/transports';
-import {AirportPage} from '../pages/airport/airport';
+import { AirportPage} from '../pages/airport/airport';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
 import { HttpClientModule } from '@angular/common/http';
 import { RecherchePage } from '../pages/recherche/recherche';
 //import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
 //import {PlaceResultPage} from '../pages/place-result/place-result';
+import { AuthPage } from '../pages/auth/auth';
 
  
 @NgModule({
@@ -26,7 +27,8 @@ import { RecherchePage } from '../pages/recherche/recherche';
     RecherchePage,
     //FiltrePersonnelPage,
     TransportsPage,
-    AirportPage
+    AirportPage,
+    AuthPage
     //,PlaceResultPage
   ],
   imports: [
@@ -43,7 +45,8 @@ import { RecherchePage } from '../pages/recherche/recherche';
     RecherchePage,
     //FiltrePersonnelPage, 
     TransportsPage,
-    AirportPage
+    AirportPage,
+    AuthPage
     //,PlaceResultPage
   ],
   providers: [
