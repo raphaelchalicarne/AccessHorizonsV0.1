@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { UserProfilePage } from '../user-profile/user-profile';
 
 @Component({
@@ -8,10 +8,15 @@ import { UserProfilePage } from '../user-profile/user-profile';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController,
+              private menuCtrl: MenuController) {}
   
   goToUserProfilePage(handicapType : string) {
       this.navCtrl.push(UserProfilePage, {userHandicap : handicapType});
+  }
+    
+  onToggleMenu() {
+      this.menuCtrl.open();
   }
 
 }

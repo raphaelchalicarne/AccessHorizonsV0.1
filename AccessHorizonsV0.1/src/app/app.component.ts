@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { MenuController, NavController, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import * as firebase from 'firebase';
+import * as firebase from 'firebase'; 
 
 import { HomePage } from '../pages/home/home';
+import { AuthPage } from '../pages/auth/auth';
 //import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 @Component({
@@ -13,16 +14,17 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp {
   rootPage:any = HomePage;
+  authPage:any = AuthPage;
+  @ViewChild('content') content: NavController;
 
   constructor(platform: Platform,
               statusBar: StatusBar,
-              splashScreen: SplashScreen) {
+              splashScreen: SplashScreen,
+              private menuCtrl: MenuController) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      let config = {
+      let config = { 
         apiKey: "AIzaSyDnD8ksYh0fAI-tOlrIXdcXjO0w20ws1Gk",
         authDomain: "access-horizons-862e8.firebaseapp.com",
         databaseURL: "https://access-horizons-862e8.firebaseio.com",
@@ -31,7 +33,28 @@ export class MyApp {
         messagingSenderId: "310689614362"
       };
       firebase.initializeApp(config);
+      firebase.auth().onAuthStateChanged(
+      (user) => {
+          if (user) {
+              this.isAuth = true;
+              this.content.setRoot(HomePage);
+          } else {
+              this.isAuth = false;
+              this.content.setRoot(AuthPage, {mode: 'connect'});
+          }
+      }
+      );
     });
+  }
+
+  onNavigate(page: any, data?: {}) {
+    this.content.setRoot(page, data ? data : null);
+    this.menuCtrl.close();
+  }
+    
+  onDisconnect() {
+      firebase.auth().signOut();
+      this.menuCtrl.close();
   }
 }
 

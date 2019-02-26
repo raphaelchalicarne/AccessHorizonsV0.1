@@ -42,7 +42,7 @@ export class AuthPage implements OnInit {
   onSubmitForm() {
       const email = this.authForm.get('email').value;
       const password = this.authForm.get('password').value;
-      if (this.mode == 'new') {
+      if (this.mode === 'new') {
           this.authService.signUpUser(email,password).then(
           () => {
               this.navCtrl.setRoot(HomePage);
