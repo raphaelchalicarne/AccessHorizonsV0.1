@@ -3,18 +3,18 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule } from '@angular/common/http';
+
+import { JaccedeProvider } from '../providers/jaccede/jaccede';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
-import { JaccedeProvider } from '../providers/jaccede/jaccede';
-import { HttpClientModule } from '@angular/common/http';
 import { RecherchePage } from '../pages/recherche/recherche';
 import { ResultatsPage} from '../pages/resultats/resultats';
 import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
-//import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
-//import {PlaceResultPage} from '../pages/place-result/place-result';
+
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
 import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
@@ -33,10 +33,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     RecherchePage,
     ResultatsPage,
     PlaceResultatPage,
-    //FiltrePersonnelPage,
     AuthPage,
     AjoutlieuPage,
-    //,PlaceResultPage
     AuthPage  ],
   imports: [
     BrowserModule,
@@ -54,12 +52,9 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     RecherchePage,
     ResultatsPage,
     PlaceResultatPage,
-    //FiltrePersonnelPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage
-
-    //,PlaceResultPage
   ],
   providers: [
     StatusBar,

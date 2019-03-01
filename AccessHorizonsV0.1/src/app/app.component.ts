@@ -20,7 +20,7 @@ export class MyApp {
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
-              private menuCtrl: MenuController) {
+              private menuCtrl: MenuController) { 
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
