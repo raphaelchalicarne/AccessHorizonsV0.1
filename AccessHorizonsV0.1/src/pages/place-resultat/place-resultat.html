@@ -5,23 +5,16 @@
 </ion-header>
 
 
-<ion-content>
-	<div class="details Accessibility" *ngIf="flag == true" padding>
-		<h3><b>Details d'accessibilité</b></h3>
-		
-		<div *ngFor= "let detail of details" class="categorie d'accessibilité">
-			<h4>
-				<b>{{detail.label}}</b>
-			</h4>
-			<div *ngFor="let element of detail.children" class="Elements individuels de chaque categorie">
-				<h6>
-					{{element.label}}
-				</h6>
-				<p *ngIf="element.value != null"> 
-					-- {{element.value}}
-				</p>
-			</div>
-		</div>
+<ion-content text-center>
+	<div class="valorations">
+		<h4>Les valorations des utilisateurs</h4>
+	</div>
+	<div class="Details Accessibilité">
+		<button ion-button round (click)="openModal()" >Details Accessibilité</button>
+	</div>
+
+	<div class="Laisser un avis">
+		<button ion-button round (click)="laisserAvis()">Laisser un avis</button>
 	</div>
 
 	<div class="Website" text-center>

@@ -14,6 +14,8 @@ import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { RecherchePage } from '../pages/recherche/recherche';
 import { ResultatsPage} from '../pages/resultats/resultats';
 import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
+import { DetailsAccessPage } from '../pages/details-access/details-access'
+import { LaisserAvisPage } from '../pages/laisser-avis/laisser-avis';
 
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
@@ -33,6 +35,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     RecherchePage,
     ResultatsPage,
     PlaceResultatPage,
+    DetailsAccessPage,
+    LaisserAvisPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage  ],
@@ -52,6 +56,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     RecherchePage,
     ResultatsPage,
     PlaceResultatPage,
+    DetailsAccessPage,
+    LaisserAvisPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
+import { DetailsAccessPage } from '../details-access/details-access';
+import { LaisserAvisPage } from '../laisser-avis/laisser-avis';
 
 @IonicPage()
 @Component({
@@ -8,7 +10,7 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
   templateUrl: 'place-resultat.html',
 })
 export class PlaceResultatPage {
-name: string='';
+  name: string='';
   adresse: string = '';
   googleID: string = '';
   details: any = [];
@@ -23,14 +25,14 @@ name: string='';
     this.googleID = this.navParams.get('googleID');
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider, public modalCtrl: ModalController) {
   }
   
   ionViewDidLoad() {
   	this.userService.getDetails(this.googleID).subscribe(
   		(data) => {
   			this.details = data['accessibility'];
-        console.log(data);
+        //console.log(data);
   			this.website = data['website'];
   			if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
   			{ 
@@ -44,5 +46,18 @@ name: string='';
   		(error) =>{
   			console.log(error);
   		})
-  }   
+  }
+  openModal(){
+     let details = this.details;
+     let modal = this.modalCtrl.create(DetailsAccessPage, {details : details});
+     modal.present();
+
+     modal.onDidDismiss((data) => {
+       console.log(data);
+     })
+  }
+  laisserAvis(){
+    let modal = this.modalCtrl.create(LaisserAvisPage);
+    modal.present();
+  }
 }

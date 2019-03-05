@@ -3,19 +3,21 @@ import { MenuController, NavController, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';      
 
-import * as firebase from 'firebase'; 
+import * as firebase from 'firebase';  
 
 import { HomePage } from '../pages/home/home';
-import { AuthPage } from '../pages/auth/auth';
+import { AuthPage } from '../pages/auth/auth'; 
 //import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = HomePage; 
   authPage:any = AuthPage;
-  @ViewChild('content') content: NavController;  
+  isAuth: boolean;
+  
+  @ViewChild('content') content: NavController;   
 
   constructor(platform: Platform,
               statusBar: StatusBar,

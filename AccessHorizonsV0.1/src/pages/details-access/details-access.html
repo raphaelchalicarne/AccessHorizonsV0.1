@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons left>	
+  		<button ion-button icon-left (click)="closeModal()"><ion-icon name="arrow-back"></ion-icon></button>
+  	</ion-buttons>
+    <ion-title>DetailsAccess</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding text-center>
+	<div class="details Accessibility" *ngIf="flag == true" padding>
+		<h3><b>Details d'accessibilité</b></h3>
+		
+		<div *ngFor= "let detail of details" class="categorie d'accessibilité">
+			<h4>
+				<b>{{detail.label}}</b>
+			</h4>
+			<div *ngFor="let element of detail.children" class="Elements individuels de chaque categorie">
+				<h6>
+					{{element.label}}
+				</h6>
+				<p *ngIf="element.value != null"> 
+					-- {{element.value}}
+				</p>
+			</div>
+		</div>
+	</div>
+
+</ion-content>
