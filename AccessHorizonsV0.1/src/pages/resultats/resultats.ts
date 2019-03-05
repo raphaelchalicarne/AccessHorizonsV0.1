@@ -30,6 +30,7 @@ export class ResultatsPage {
     .subscribe(
       (data) => { 
         this.places = data['items'];
+        console.log(data);
         if (this.filtrage.length == 0) {
           this.resultat = this.places;
         }
