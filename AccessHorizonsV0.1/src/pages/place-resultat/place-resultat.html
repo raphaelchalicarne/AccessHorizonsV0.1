@@ -7,9 +7,14 @@
 
 <ion-content text-center>
 
-	<div class="Note globale">
+	<!--<div>
 		<ion-icon name="star">Les valorations des utilisateurs</ion-icon>
-	</div>
+	</div>-->
+  	<div>
+    	<ion-icon *ngFor="let i of stars_full" name="star"></ion-icon>
+    	<ion-icon *ngIf="flag2 == true" name="star-half"></ion-icon>
+    	<ion-icon *ngFor="let i of stars_empty" name="star-outline"></ion-icon>
+  	</div>
 
 	<div></div>
 

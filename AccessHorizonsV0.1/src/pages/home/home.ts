@@ -7,10 +7,11 @@ import { UserProfilePage } from '../user-profile/user-profile';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
   constructor(public navCtrl: NavController,
               private menuCtrl: MenuController) {}
   
+  ionViewDidLoad() {
+  }
   goToUserProfilePage(handicapType : string) {
       this.navCtrl.push(UserProfilePage, {userHandicap : handicapType});
   }
@@ -18,6 +19,5 @@ export class HomePage {
   onToggleMenu() {
       this.menuCtrl.open();
   }
-
 }
 

@@ -19,7 +19,11 @@ export class PlaceResultatPage {
   flag: boolean = false;
   comments: any = [];
   
-  note_globale: number = 2.5;
+  note: number = 2.3;
+  stars_full: any[] = [];
+  stars_empty: any[] = [];
+  stars_half: any[] = [];
+  flag2: boolean;
 
   ngOnInit() {
     this.name = this.navParams.get('name');
@@ -31,10 +35,14 @@ export class PlaceResultatPage {
   }
   
   ionViewDidLoad() {
+    if ((Number.isInteger(this.note)) == false) {
+      this.flag2 = true;
+    }
+    this.traitementNote(this.note);
+
   	this.userService.getDetails(this.googleID).subscribe(
   		(data) => {
   			this.details = data['accessibility'];
-        //console.log(data);
   			this.website = data['website'];
   			if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
   			{ 
@@ -47,8 +55,9 @@ export class PlaceResultatPage {
   		},
   		(error) =>{
   			console.log(error);
-  		})
+  	})
   }
+
   openModal(){
      let details = this.details;
      let modal = this.modalCtrl.create(DetailsAccessPage, {details : details});
@@ -61,5 +70,14 @@ export class PlaceResultatPage {
   laisserAvis(){
     let modal = this.modalCtrl.create(LaisserAvisPage);
     modal.present();
+  }
+  traitementNote(note){
+    console.log(Math.floor(note));
+    for (var i = 0; i < Math.floor(note); ++i) {
+      this.stars_full.push(i);
+    }
+    for (var a = 0; a < 5-Math.ceil(note); ++a) {
+      this.stars_empty.push(a);
+    }
   }
 }
