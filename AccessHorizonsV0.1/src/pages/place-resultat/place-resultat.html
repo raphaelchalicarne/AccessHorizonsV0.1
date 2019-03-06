@@ -6,19 +6,23 @@
 
 
 <ion-content text-center>
-	<div class="valorations">
-		<h4>Les valorations des utilisateurs</h4>
+
+	<div class="Note globale">
+		<ion-icon name="star">Les valorations des utilisateurs</ion-icon>
 	</div>
+
+	<div></div>
+
 	<div class="Details Accessibilité">
-		<button ion-button round (click)="openModal()" >Details Accessibilité</button>
+		<button ion-button color="dark" large outline round block (click)="openModal()" >Details Accessibilité</button>
 	</div>
 
 	<div class="Laisser un avis">
-		<button ion-button round (click)="laisserAvis()">Laisser un avis</button>
+		<button ion-button color="dark" large outline round block (click)="laisserAvis()">Laisser un avis</button>
 	</div>
 
 	<div class="Website" text-center>
-		<p>Site web: <a href="{{website}}">{{website}}</a></p>
+		<h5>Site web: <a href="{{website}}">{{website}}</a></h5>
 	</div>
 	
 </ion-content>

@@ -18,6 +18,8 @@ export class PlaceResultatPage {
   label: string = '';
   flag: boolean = false;
   comments: any = [];
+  
+  note_globale: number = 2.5;
 
   ngOnInit() {
     this.name = this.navParams.get('name');

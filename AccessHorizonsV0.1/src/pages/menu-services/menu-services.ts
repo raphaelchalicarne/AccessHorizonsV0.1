@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {RecherchePage} from '../recherche/recherche';
 import { AjoutlieuPage } from '../ajoutlieu/ajoutlieu';
-//import { FiltrePersonnelPage } from '../filtre-personnel/filtre-personnel';
 import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
