@@ -10,11 +10,18 @@
 
 <ion-content padding>
 
-	<div>
+	<div class="Note globale">
 		
 	</div>
 
-	<div class="Boutton pour sauvegarder les changements et envoyer l'avis">
-		<button ion-button>Envoyer l'avis</button>
+	<div>
+		
+	</div>
+	
+	<div class="Boutton pour sauvegarder les changements et envoyer l'avis" text-center>
+		<h4>Envoyer !</h4>
+		<button ion-button (click)="updateFirebase()">
+			<ion-icon name="checkmark-circle"></ion-icon>
+		</button>
 	</div>
 </ion-content>

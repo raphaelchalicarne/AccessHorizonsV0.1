@@ -14,9 +14,15 @@ export class LaisserAvisPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaisserAvisPage');
   }
-  closeModal(){
+  closeModal(){ //fermer la fenetre SANS ENVOYER AUCUNE INFO
   	let message = "Modal closed";
   	this.viewCtrl.dismiss({data : message});
   }
+  /*lors qu'on retourne à la page principale de resultats, les infos
+  introduites par l'utilisateur sont envoyés à la base de donnés*/
 
+  updateFirebase(){
+    //ICI code pour envoyer donnés à la base de donnés
+    this.viewCtrl.dismiss();
+  }
 }

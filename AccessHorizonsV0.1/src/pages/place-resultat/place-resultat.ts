@@ -36,7 +36,7 @@ export class PlaceResultatPage {
   
   ionViewDidLoad() {
     if ((Number.isInteger(this.note)) == false) {
-      this.flag2 = true;
+      this.flag2 = true; //note est decimale, montrer une moitie d'une etoile
     }
     this.traitementNote(this.note);
 
@@ -64,7 +64,6 @@ export class PlaceResultatPage {
      modal.present();
 
      modal.onDidDismiss((data) => {
-       console.log(data);
      })
   }
   laisserAvis(){
@@ -72,7 +71,6 @@ export class PlaceResultatPage {
     modal.present();
   }
   traitementNote(note){
-    console.log(Math.floor(note));
     for (var i = 0; i < Math.floor(note); ++i) {
       this.stars_full.push(i);
     }
