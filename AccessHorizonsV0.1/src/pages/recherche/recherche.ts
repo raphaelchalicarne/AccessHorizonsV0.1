@@ -10,8 +10,8 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 })
 export class RecherchePage {
   adresse: string = '';
-  longitud: number; 
-  latitud:  number;
+  //longitud: number; 
+  //latitud:  number;
   resultat: any[] = [];
   filtrage: any = [];
 
@@ -23,7 +23,6 @@ export class RecherchePage {
   }
 
   ionViewDidLoad() {
-    //console.log(this.filtrage);
   }
   faireRecherche(){
     this.userService.getAutocomplete(this.adresse)
@@ -36,7 +35,7 @@ export class RecherchePage {
       })
   }
 
-  goToPlaceList(longitud: number, latitud: number, adresse: string){
+  goToPlaceList(longitud: number, latitud: number, adresse: string){ //Passer à la page de liste de places 
     var filtrage = this.filtrage;
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
   }

@@ -9,14 +9,14 @@ import { PlaceResultatPage } from '../place-resultat/place-resultat';
   templateUrl: 'resultats.html',
 })
 export class ResultatsPage {
-  places: any[] = [];
+  places: any[] = []; //Les résultats de la requête à J'accede
   longitud: number; 
   latitud:  number;
   adresse: string = '';
-  resultat: any[] = [];
-  filtrage:any = [];
+  resultat: any[] = []; //Les résultats qui vont être montrés 
+  filtrage:any = []; //Le filtrage demandé par l'utilisateur
 
-  ngOnInit() {
+  ngOnInit() { //On obtient les valeurs de la page anterieure
       this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');
       this.latitud = this.navParams.get('latitud');
@@ -26,15 +26,14 @@ export class ResultatsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {
   }
   ionViewDidLoad() {
-    this.userService.getPlaces(this.longitud, this.latitud)
+    this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
       (data) => { 
         this.places = data['items'];
-        //console.log(data);
-        if (this.filtrage.length == 0) {
+        if (this.filtrage.length == 0) { //S'il y a pas de filtrage, montrer TOUS les resultats
           this.resultat = this.places;
         }
-        if (this.filtrage.length != 0) {
+        if (this.filtrage.length != 0) { // Réaliser le filtrage pour montrer les résultats qui coincident
           var i;
           for (i in this.places){
             if (this.filtrage.includes(this.places[i].category.name)) {
@@ -48,7 +47,7 @@ export class ResultatsPage {
     }
   )
   }
-  goToPlace(name: string, adresse: string, googleID: string){
+  goToPlace(name: string, adresse: string, googleID: string){ //Passer à la page de résultats d'une place individuelle
     this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID});
   }
   
