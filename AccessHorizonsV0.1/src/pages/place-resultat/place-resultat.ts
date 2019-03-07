@@ -19,7 +19,7 @@ export class PlaceResultatPage {
   flag: boolean = false;
   comments: any = [];
   
-  note: number = 2.3;
+  note_globale: number = 2.3;
   stars_full: any[] = [];
   stars_empty: any[] = [];
   stars_half: any[] = [];
@@ -35,10 +35,10 @@ export class PlaceResultatPage {
   }
   
   ionViewDidLoad() {
-    if ((Number.isInteger(this.note)) == false) {
-      this.flag2 = true; //note est decimale, montrer une moitie d'une etoile
+    if ((Number.isInteger(this.note_globale)) == false) {
+      this.flag2 = true; //si note est decimale, montrer une moitie d'une etoile
     }
-    this.traitementNote(this.note);
+    this.traitementNote(this.note_globale);
 
   	this.userService.getDetails(this.googleID).subscribe(
   		(data) => {
@@ -66,10 +66,18 @@ export class PlaceResultatPage {
      modal.onDidDismiss((data) => {
      })
   }
-  laisserAvis(){
-    let modal = this.modalCtrl.create(LaisserAvisPage);
+
+  laisserAvisModal(){
+    let note = this.note_globale;
+    let modal = this.modalCtrl.create(LaisserAvisPage, {note_globale : note});
     modal.present();
   }
+  voirCommentaires(){
+    console.log('Commentaires');
+    //let modal = this.modalCtrl.create();
+    //modal.present();
+  }
+
   traitementNote(note){
     for (var i = 0; i < Math.floor(note); ++i) {
       this.stars_full.push(i);

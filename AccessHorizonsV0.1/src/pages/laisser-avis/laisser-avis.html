@@ -11,13 +11,16 @@
 	<div class="Note globale" text-center padding>
 			<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="isOutline[element-1]" (click)="recalculerNote(element)">{{element}}</button>
 	</div>
-	<div class="pruebas">
+	<!--<div class="pruebas">
 		<p *ngFor="let element of isOutline">{{element}}</p>
+	</div>-->
+	<div class="Evaluation des autres critères">
+		
 	</div>
 	
 	<div class="Boutton pour sauvegarder les changements et envoyer l'avis" text-center>
 		<h4>Envoyer !</h4>
-		<button ion-button (click)="updateFirebase()">
+		<button ion-button large round color="dark" (click)="updateFirebase()">
 			<ion-icon name="checkmark-circle"></ion-icon>
 		</button>
 	</div>

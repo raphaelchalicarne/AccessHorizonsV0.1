@@ -8,12 +8,13 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class LaisserAvisPage {
   buttons = [1,2,3,4,5];
-  note_globale: number = 2;
+  note_initiale: number = 2;
   note_finale: number;
   nombre: number = 1;
   isOutline:any[] = [true,true,true,true,true];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    //this.note_initiale = navParams.get('note_globale');
   }
 
   ionViewDidLoad() {
@@ -32,13 +33,14 @@ export class LaisserAvisPage {
         this.isOutline[i-1] = false;
       }
     }
-    console.log(this.note_globale);
-    this.note_finale = (this.nombre/(this.nombre+1))*this.note_globale + element/(this.nombre+1);
-    console.log(this.note_finale);
+    //console.log(this.note_initiale);
+    this.note_finale = (this.nombre/(this.nombre+1))*this.note_initiale + element/(this.nombre+1);
+    //console.log(this.note_finale);
   }
   
-  /*lors qu'on retourne à la page principale de resultats, les infos
-  introduites par l'utilisateur sont envoyés à la base de donnés*/
+  /*lors qu'on retourne à la page principale de resultats en appuyant sur le 
+  bouton d'Envoyer, les infos introduites par l'utilisateur 
+  sont envoyés à la base de donnés*/
   updateFirebase(){
     //ICI code pour envoyer donnés à la base de donnés
     this.viewCtrl.dismiss();
