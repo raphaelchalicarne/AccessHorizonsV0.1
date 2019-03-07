@@ -5,17 +5,14 @@
   	</ion-buttons>
     <ion-title>Laisser un avis</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
-
-	<div class="Note globale">
-		
+	<div class="Note globale" text-center padding>
+			<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="isOutline[element-1]" (click)="recalculerNote(element)">{{element}}</button>
 	</div>
-
-	<div>
-		
+	<div class="pruebas">
+		<p *ngFor="let element of isOutline">{{element}}</p>
 	</div>
 	
 	<div class="Boutton pour sauvegarder les changements et envoyer l'avis" text-center>
