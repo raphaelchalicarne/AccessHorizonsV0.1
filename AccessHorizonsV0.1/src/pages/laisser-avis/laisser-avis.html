@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
   	<ion-buttons left>	
-  		<button ion-button icon-left (click)="closeModal()"><ion-icon name="arrow-back"></ion-icon></button>
+  		<button ion-button icon-left (click)="closeModal()"><ion-icon large name="arrow-back"></ion-icon></button>
   	</ion-buttons>
     <ion-title>Laisser un avis</ion-title>
   </ion-navbar>
@@ -14,14 +14,14 @@
 	<!--<div class="pruebas">
 		<p *ngFor="let element of isOutline">{{element}}</p>
 	</div>-->
-	<div class="Evaluation des autres critères">
+	<div class="Note des autres critères">
 		
 	</div>
 	
 	<div class="Boutton pour sauvegarder les changements et envoyer l'avis" text-center>
-		<h4>Envoyer !</h4>
+		<!--<h4>Envoyer !</h4>-->
 		<button ion-button large round color="dark" (click)="updateFirebase()">
-			<ion-icon name="checkmark-circle"></ion-icon>
+			<!--<ion-icon name="checkmark-circle"></ion-icon>-->Envoyer !
 		</button>
 	</div>
 </ion-content>

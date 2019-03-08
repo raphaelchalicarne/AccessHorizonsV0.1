@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { DetailsAccessPage } from '../details-access/details-access';
-import { LaisserAvisPage } from '../laisser-avis/laisser-avis';
+import { LaisserAvisPage } from '../laisser-avis/laisser-avis'; 
+import { CommentairesPage } from '../commentaires/commentaires';
 
 @IonicPage()
 @Component({
@@ -36,7 +37,7 @@ export class PlaceResultatPage {
   
   ionViewDidLoad() {
     if ((Number.isInteger(this.note_globale)) == false) {
-      this.flag2 = true; //si note est decimale, montrer une moitie d'une etoile
+      this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
     }
     this.traitementNote(this.note_globale);
 
@@ -73,8 +74,8 @@ export class PlaceResultatPage {
     modal.present();
   }
   voirCommentaires(){
-    console.log('Commentaires');
-    //let modal = this.modalCtrl.create();
+    let modal = this.modalCtrl.create(CommentairesPage);
+    modal.present();
     //modal.present();
   }
 

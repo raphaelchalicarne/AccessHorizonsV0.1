@@ -12,7 +12,7 @@ export class JaccedeProvider {
     return this.http.get(myUrl)
   }
   getAutocomplete(city){
-    let limite = '2';
+    let limite = '5';
     let autoUrl = 'https://photon.komoot.de/api/?q='+city+'&limit='+limite+'';
     return this.http.get(autoUrl)
   }
