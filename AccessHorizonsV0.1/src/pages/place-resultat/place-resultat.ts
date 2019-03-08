@@ -18,7 +18,6 @@ export class PlaceResultatPage {
   website: string = '';
   label: string = '';
   flag: boolean = false;
-  comments: any = [];
   
   note_globale: number = 2.3;
   stars_full: any[] = [];
@@ -74,9 +73,9 @@ export class PlaceResultatPage {
     modal.present();
   }
   voirCommentaires(){
-    let modal = this.modalCtrl.create(CommentairesPage);
+    let googleID = this.googleID;
+    let modal = this.modalCtrl.create(CommentairesPage, {googleID : googleID});
     modal.present();
-    //modal.present();
   }
 
   traitementNote(note){

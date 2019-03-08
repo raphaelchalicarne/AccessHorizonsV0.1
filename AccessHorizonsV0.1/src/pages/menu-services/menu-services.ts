@@ -40,8 +40,8 @@ export class MenuServicesPage {
         this.navCtrl.push(RecherchePage, {filtrage: logement});
         break;
       case 4:
-        var activites = this.activites;
-        this.navCtrl.push(RecherchePage, {filtrage: activites});
+        var loisirs = this.loisirs;
+        this.navCtrl.push(RecherchePage, {filtrage: loisirs});
         break;
       case 5:
         var commerces = this.commerces;
