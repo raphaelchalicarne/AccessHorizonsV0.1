@@ -35,6 +35,7 @@ export class LaisserAvisPage {
     }
     //console.log(this.note_initiale);
     this.note_finale = (this.nombre/(this.nombre+1))*this.note_initiale + element/(this.nombre+1);
+    this.note_finale = Math.round(this.note_finale*10)/10;
     //console.log(this.note_finale);
   }
   

@@ -9,7 +9,8 @@
 
 <ion-content padding>
 	<div class="Note globale" text-center padding>
-			<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="isOutline[element-1]" (click)="recalculerNote(element)">{{element}}</button>
+		<h2>Note globale</h2>
+		<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="isOutline[element-1]" (click)="recalculerNote(element)">{{element}}</button>
 	</div>
 	<!--<div class="pruebas">
 		<p *ngFor="let element of isOutline">{{element}}</p>
