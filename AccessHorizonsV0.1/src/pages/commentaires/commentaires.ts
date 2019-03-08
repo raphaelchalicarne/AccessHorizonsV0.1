@@ -10,6 +10,7 @@ import { JaccedeProvider} from '../../providers/jaccede/jaccede';
 export class CommentairesPage {
   googleID: string = '';
   commentaires: any = [];
+  flag: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider, public viewCtrl: ViewController) {
     this.googleID = navParams.get('googleID');
@@ -18,8 +19,11 @@ export class CommentairesPage {
   ionViewDidLoad() {
     this.userService.getComments(this.googleID).subscribe(
       (data) => {
-        this.commentaires = data['items'];
-        console.log('data', this.commentaires);
+        if (data != null){ //S'il n'y a pas de commentaires
+          this.flag = true;
+          this.commentaires = data['items'];
+        }
+        console.log('data', data);
       },
       (error) =>{
         console.log(error);

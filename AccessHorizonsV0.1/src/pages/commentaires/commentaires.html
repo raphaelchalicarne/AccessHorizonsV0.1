@@ -12,7 +12,13 @@
 
 <ion-content padding>
 	<div *ngFor="let comment of commentaires" text-center>
-		<p>{{comment.body}}</p><p>{{comment.created | date : 'mediumDate'}}</p>
-		<p>-----------------------------------------------------</p>
+		<div *ngIf="flag == true">
+			<p>{{comment.body}}</p><p>{{comment.created | date : 'mediumDate'}}</p>
+			<p>-----------------------------------------------------</p>
+		</div>
+	</div>
+	<div class="No commentaires" *ngIf="flag == false" text-center>
+		<h4>Aucun commentaire disponible</h4><!--<h4> Voulez-vous ajouter un commentaire ?</h4>
+		<button ion-button large color="dark" outline round>Ajouter un commentaire</button>-->
 	</div>
 </ion-content>

@@ -17,9 +17,11 @@ export class DetailsAccessPage {
   details: any = [];
   label: string = '';
   flag: boolean = false;
+  nom: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   	this.details = navParams.get('details');
+    this.nom = navParams.get('nom');
   }
 
   ionViewDidLoad() {

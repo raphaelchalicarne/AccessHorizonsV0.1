@@ -3,7 +3,7 @@
   	<ion-buttons left>	
   		<button ion-button icon-left (click)="closeModal()"><ion-icon name="arrow-back"></ion-icon></button>
   	</ion-buttons>
-    <ion-title>Details d'Accessibilité</ion-title>
+    <ion-title text-center>Details d'accessibilité de {{nom}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,6 +25,10 @@
 				</p>
 			</div>
 		</div>
+	</div>
+	<div class="Pas de details" *ngIf="flag == false" padding text-center>
+		<h5>Aucun détail d'accessibilité disponible</h5><h5>Voulez vous ajouter des détails d'accessibilité ?</h5>
+		<button ion-button round large color="dark" outline>Ajouter détails d'accessibilité</button>
 	</div>
 
 </ion-content>
