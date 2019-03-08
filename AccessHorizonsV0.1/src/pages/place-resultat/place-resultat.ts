@@ -58,9 +58,10 @@ export class PlaceResultatPage {
   	})
   }
 
-  openModal(){
+  DetailsAccessModal(){
      let details = this.details;
-     let modal = this.modalCtrl.create(DetailsAccessPage, {details : details});
+     let nom = this.name;
+     let modal = this.modalCtrl.create(DetailsAccessPage, {details : details, nom : nom});
      modal.present();
 
      modal.onDidDismiss((data) => {
