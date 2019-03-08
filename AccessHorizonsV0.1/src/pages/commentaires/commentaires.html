@@ -11,7 +11,8 @@
 
 
 <ion-content padding>
-	<div>
-		
+	<div *ngFor="let comment of commentaires" text-center>
+		<p>{{comment.body}}</p><p>{{comment.created | date : 'mediumDate'}}</p>
+		<p>-----------------------------------------------------</p>
 	</div>
 </ion-content>
