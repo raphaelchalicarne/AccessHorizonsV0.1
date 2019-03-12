@@ -15,6 +15,7 @@ import { AuthPage } from '../pages/auth/auth';
 export class MyApp {
   rootPage:any = HomePage;
   authPage:any = AuthPage;
+  isAuth: boolean;
   @ViewChild('content') content: NavController;
 
   constructor(platform: Platform,

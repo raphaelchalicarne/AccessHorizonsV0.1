@@ -6,3 +6,4 @@ export const FIREBASE_CONFIG = {
     storageBucket: "ionic-jsa-note.appspot.com",
     messagingSenderId: "xxxxxx"
 }
+
