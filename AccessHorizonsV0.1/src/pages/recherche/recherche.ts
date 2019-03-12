@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { ResultatsPage } from '../resultats/resultats';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 
@@ -10,7 +10,7 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 })
 export class RecherchePage {
   adresse: string = '';
-  //longitud: number; 
+  //longitud: number;
   //latitud:  number;
   resultat: any[] = [];
   filtrage: any = [];
@@ -19,7 +19,10 @@ export class RecherchePage {
     this.filtrage = this.navParams.get('filtrage');
   }
 
-  constructor(public navCtrl: NavController, public userService: JaccedeProvider, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public userService: JaccedeProvider,
+              public navParams: NavParams,
+              private menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -36,8 +39,12 @@ export class RecherchePage {
       })
   }
 
-  goToPlaceList(longitud: number, latitud: number, adresse: string){ //Passer à la page de liste de places 
+  goToPlaceList(longitud: number, latitud: number, adresse: string){ //Passer à la page de liste de places
     var filtrage = this.filtrage;
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
+  }
+
+  onToggleMenu() {
+      this.menuCtrl.open();
   }
 }

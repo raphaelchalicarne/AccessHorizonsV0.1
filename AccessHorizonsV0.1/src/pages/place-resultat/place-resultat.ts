@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, MenuController} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { DetailsAccessPage } from '../details-access/details-access';
-import { LaisserAvisPage } from '../laisser-avis/laisser-avis'; 
+import { LaisserAvisPage } from '../laisser-avis/laisser-avis';
 import { CommentairesPage } from '../commentaires/commentaires';
 
 @IonicPage()
@@ -18,7 +18,7 @@ export class PlaceResultatPage {
   website: string = '';
   label: string = '';
   flag: boolean = false;
-  
+
   note_globale: number = 2.3;
   stars_full: any[] = [];
   stars_empty: any[] = [];
@@ -31,9 +31,13 @@ export class PlaceResultatPage {
     this.googleID = this.navParams.get('googleID');
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public userService: JaccedeProvider,
+              public modalCtrl: ModalController,
+              private menuCtrl: MenuController) {
   }
-  
+
   ionViewDidLoad() {
     if ((Number.isInteger(this.note_globale)) == false) {
       this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
@@ -45,7 +49,7 @@ export class PlaceResultatPage {
   			this.details = data['accessibility'];
   			this.website = data['website'];
   			if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
-  			{ 
+  			{
   				this.flag = true;
   				this.label = this.details[0].children[0].label;
   			}
@@ -86,5 +90,9 @@ export class PlaceResultatPage {
     for (var a = 0; a < 5-Math.ceil(note); ++a) {
       this.stars_empty.push(a);
     }
+  }
+
+  onToggleMenu() {
+      this.menuCtrl.open();
   }
 }

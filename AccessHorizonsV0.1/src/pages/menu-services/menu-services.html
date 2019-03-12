@@ -1,6 +1,11 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
     <ion-title text-center>Menu Services</ion-title>
   </ion-navbar>
 
@@ -8,7 +13,7 @@
 
 
 <ion-content padding>
-  
+
   <div class="Liste de services">
     <button ion-button color="dark" large outline round block (click)="goToRecherchePage(1)">Transports</button>
     <button ion-button color="dark" large outline round block (click)="goToRecherchePage(2)">Restaurants</button>
@@ -20,5 +25,5 @@
   <div class="Ajouter un lieu">
     <button ion-button color="secondary" large outline block (click)=goToAjoutlieuPage()>Ajouter un lieu</button>
   </div>
-  
+
 </ion-content>
