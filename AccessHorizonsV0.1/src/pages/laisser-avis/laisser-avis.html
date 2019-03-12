@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons left>	
+  		<button ion-button icon-left (click)="closeModal()"><ion-icon large name="arrow-back"></ion-icon></button>
+  	</ion-buttons>
+    <ion-title>Laisser un avis</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="Note globale" text-center padding>
+		<h2>Note globale</h2>
+		<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="isOutline[element-1]" (click)="recalculerNote(element)">{{element}}</button>
+	</div>
+
+	<div class="Note des autres critères">
+		<h3>Autres critères (à completer)</h3>
+	</div>
+	
+	<div class="Boutton pour sauvegarder les changements et envoyer l'avis" text-center>
+		<!--<h4>Envoyer !</h4>-->
+		<button ion-button large round color="dark" outline (click)="updateFirebase()">
+			<!--<ion-icon name="checkmark-circle"></ion-icon>-->Envoyer !
+		</button>
+	</div>
+</ion-content>

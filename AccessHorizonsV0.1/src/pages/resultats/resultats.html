@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>Resultats</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content text-center padding>
+	<div class="Titre">
+      <h3>
+        Liste des places proche de {{adresse}}
+      </h3>
+  </div>
+
+  <div class="Barre de recherche">
+    <ion-searchbar cancelButtonIcon></ion-searchbar>
+  </div>  
+
+  <div class="Liste avec les resultats">    
+    <ion-list>
+      <button ion-button color="dark" large outline round block *ngFor="let place of resultat" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
+          <h2>
+            <b>{{place.name}}, </b>
+          </h2>
+          <p>
+            {{place.category.label}}, 
+          </p>
+      </button>
+    </ion-list>
+  </div>
+
+</ion-content>

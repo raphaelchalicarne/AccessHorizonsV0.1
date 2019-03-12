@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ajouter un lieu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="lieuForm">
+    <ion-list>
+      <ion-item-divider>Informations générales</ion-item-divider>
+      <ion-item>
+        <ion-label>Nom</ion-label>
+        <ion-input placeholder="Aéroport" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ville</ion-label>
+        <ion-input placeholder="Ville" formControlName="ville"></ion-input>
+      </ion-item>
+      <ion-item-divider>Informations accessibilité</ion-item-divider>
+      <ion-item>
+      	<ion-label>Entrée</ion-label>
+      	<ion-input placeholder="Informations entrée" formControlName="entree"></ion-input>
+      </ion-item>
+      <ion-item>
+      	<ion-label>Extérieur</ion-label>
+      	<ion-input placeholder="Informations extérieur" formControlName="exterieur"></ion-input>
+      </ion-item>
+      <ion-item>
+      	<ion-label>Intérieur</ion-label>
+      	<ion-input placeholder="Informations intérieur" formControlName="interieur"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Services et équipements</ion-label>
+        <ion-input placeholder="Informations services et équipements" formControlName="services"></ion-input>
+      </ion-item>
+          </ion-list>
+  </form>
+
+  <div>
+  <button ion-button round (click)="saveLieu()"> Enregistrer </button>
+  </div>
+
+</ion-content>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDnD8ksYh0fAI-tOlrIXdcXjO0w20ws1Gk",
+    authDomain: "access-horizons-862e8.firebaseapp.com",
+    databaseURL: "https://access-horizons-862e8.firebaseio.com",
+    projectId: "access-horizons-862e8",
+    storageBucket: "access-horizons-862e8.appspot.com",
+    messagingSenderId: "310689614362"
+  };
+  firebase.initializeApp(config);
+</script>

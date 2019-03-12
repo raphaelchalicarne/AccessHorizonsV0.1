@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	<!--<div>
+		<ion-icon name="star">Les valorations des utilisateurs</ion-icon>
+	</div>-->
+  	<div class="Note globale" text-center>
+    	<ion-icon *ngFor="let i of stars_full" name="star"></ion-icon>
+    	<ion-icon *ngIf="flag2 == true" name="star-half"></ion-icon>
+    	<ion-icon *ngFor="let i of stars_empty" name="star-outline"></ion-icon>
+    	<h1>Note globale: <b>{{note_globale}}/5</b></h1>
+  	</div>
+
+	<div class="Commentaires" text-right>
+		<button ion-button color="dark" outline round large (click)="voirCommentaires()">Voir les commentaires</button>
+	</div>
+
+	<div class="Details Accessibilité" text-center>
+		<button ion-button color="dark" large outline round block (click)="DetailsAccessModal()" >Details Accessibilité</button>
+	</div>
+
+	<div class="Laisser un avis" text-center>
+		<button ion-button color="dark" large outline round block (click)="laisserAvisModal()">Laisser un avis</button>
+	</div>
+
+	<div class="Website" text-center>
+		<h3> </h3>
+		<h5>Site web: <a href="{{website}}">{{website}}</a></h5>
+	</div>
+	
+</ion-content>
