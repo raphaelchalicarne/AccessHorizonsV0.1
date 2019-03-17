@@ -33,10 +33,10 @@
       </div>
       <B>Nombre de marches</B>
       <div>
-        <input type="radio" value="1"><label for="1">1</label>
-        <input type="radio" value="2"><label for="2">2</label>
-        <input type="radio" value="3"><label for="3">3</label>
-        <input type="radio" value="3"><label for="3">plus de 3</label>     
+        <input type="radio" name="nb" value="1"><label for="1">1</label>
+        <input type="radio" name="nb" value="2"><label for="2">2</label>
+        <input type="radio" name="nb" value="3"><label for="3">3</label>
+        <input type="radio" name="nb" value="3"><label for="3">plus de 3</label>     
       </div>
       <div>
         <input type="checkbox" id="maincourante" value="maincourante"><label for="maincourante">Main courante</label>
@@ -66,7 +66,34 @@
         <input type="checkbox" id="marquagevitre" value="marquagevitre"><label for="marquagevitre">Marquages sur porte vitrée</label>
       </div>
 
-      <B>Ouverture porte</B>
+<!-- <ion-list>
+  <ion-radio-group>
+    <ion-list-header>
+      <ion-label>Entrée</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Plain pied</ion-label>
+      <ion-radio slot="start" value="plainpied"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-radio-group>
+    <ion-item>
+      <ion-label>Griff</ion-label>
+      <ion-radio slot="start" value="griff"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Buford</ion-label>
+      <ion-radio slot="start" value="buford"></ion-radio>
+    </ion-item>
+  </ion-radio-group> -->
+
+<!-- 
+</ion-list>    -->  
+
+<!--       <B>Ouverture porte</B>
       <div>
         <input type="radio" name="ouverture" id="automatique" value="automatique"><label for="automatique">Automatique ou absence de porte</label>
         <input type="radio" name="ouverture" id="manuelle" value="manuelle"><label for="manuelle">Manuelle</label>
@@ -82,7 +109,7 @@
         <input type="radio" name="largeur" id="largeurplus" value="largeurplus"><label for="largeurplus">plus de 90cm</label>
         <input type="radio" name="largeur" id="largeurmoins" value="largeurmoins"><label for="largeurmoins">moins de 90cm</label>
       </div>              
-
+ -->
       <!-- <ion-item>
       	<ion-label>Extérieur</ion-label>
       	<ion-input placeholder="Informations extérieur" formControlName="exterieur"></ion-input>

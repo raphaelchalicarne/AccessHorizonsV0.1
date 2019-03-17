@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -37,13 +37,14 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     AuthPage,
     AjoutlieuPage,
     //,PlaceResultPage
-    AuthPage  ],
+    AuthPage ],
   imports: [
     BrowserModule,
     HttpClientModule, 
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -67,6 +68,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JaccedeProvider
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
