@@ -17,6 +17,7 @@ import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 import { DetailsAccessPage } from '../pages/details-access/details-access'
 import { LaisserAvisPage } from '../pages/laisser-avis/laisser-avis';
 import { CommentairesPage} from '../pages/commentaires/commentaires';
+import { ParametresPage } from '../pages/parametres/parametres';
 
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
@@ -41,7 +42,9 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     CommentairesPage,
     AuthPage,
     AjoutlieuPage,
-    AuthPage  ],
+    AuthPage,
+    ParametresPage
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -63,7 +66,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     CommentairesPage,
     AuthPage,
     AjoutlieuPage,
-    AuthPage
+    AuthPage,
+    ParametresPage
   ],
   providers: [
     StatusBar,
