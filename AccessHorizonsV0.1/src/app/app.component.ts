@@ -7,6 +7,7 @@ import * as firebase from 'firebase';
 
 import { HomePage } from '../pages/home/home';
 import { AuthPage } from '../pages/auth/auth';
+import { ParametresPage } from '../pages/parametres/parametres';
 //import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 @Component({
@@ -15,6 +16,7 @@ import { AuthPage } from '../pages/auth/auth';
 export class MyApp {
   rootPage:any = HomePage;
   authPage:any = AuthPage;
+  paramPage:any = ParametresPage;
   isAuth: boolean;
 
   @ViewChild('content') content: NavController;
@@ -58,4 +60,5 @@ export class MyApp {
       firebase.auth().signOut();
       this.menuCtrl.close();
   }
+
 }
