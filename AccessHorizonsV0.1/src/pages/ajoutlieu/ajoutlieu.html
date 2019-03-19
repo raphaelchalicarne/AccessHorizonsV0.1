@@ -19,10 +19,14 @@
         <ion-label>Ville</ion-label>
         <ion-input placeholder="Ville" formControlName="ville"></ion-input>
       </ion-item>
-      <ion-item-divider>Informations entrée</ion-item-divider>
+<!--       <ion-item-divider>Informations entrée</ion-item-divider> -->
 
-      <div>
-        <input type="radio" name="pied" id="plainpied" value="plainpied"><label for="plain pied">Plain pied</label>
+  <div>
+  <button ion-button round (click)="gotoEntreePage()"> Entrée </button>
+  </div>
+
+     <!--  <div>
+        <option><input type="radio" name="pied" id="plainpied" value="plainpied"><label for="plain pied">Plain pied</label></option>
         <input type="radio" name="pied" id="pasplainpied" value="pasplainpied"><label for="pas plain pied">Pas de plain pied</label>
       </div>
       <div>
@@ -65,51 +69,8 @@
       <div>
         <input type="checkbox" id="marquagevitre" value="marquagevitre"><label for="marquagevitre">Marquages sur porte vitrée</label>
       </div>
-
-<!-- <ion-list>
-  <ion-radio-group>
-    <ion-list-header>
-      <ion-label>Entrée</ion-label>
-    </ion-list-header>
-
-    <ion-item>
-      <ion-label>Plain pied</ion-label>
-      <ion-radio slot="start" value="plainpied"></ion-radio>
-    </ion-item>
-  </ion-radio-group>
-
-  <ion-radio-group>
-    <ion-item>
-      <ion-label>Griff</ion-label>
-      <ion-radio slot="start" value="griff"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Buford</ion-label>
-      <ion-radio slot="start" value="buford"></ion-radio>
-    </ion-item>
-  </ion-radio-group> -->
-
-<!-- 
-</ion-list>    -->  
-
-<!--       <B>Ouverture porte</B>
-      <div>
-        <input type="radio" name="ouverture" id="automatique" value="automatique"><label for="automatique">Automatique ou absence de porte</label>
-        <input type="radio" name="ouverture" id="manuelle" value="manuelle"><label for="manuelle">Manuelle</label>
-      </div>
-      <div>
-        <input type="checkbox" id="poignee" value="poignee"><label for="poignee">Poignée ergonomique</label>
-      </div>
-      <div>
-        <input type="checkbox" id="maintienouvert" value="maintienouvert"><label for="maintienouvert">Porte facile à maintenir ouverte</label>
-      </div>  
-      <B>Largeur du passage de la porte d'entrée (cm)</B> 
-      <div>
-        <input type="radio" name="largeur" id="largeurplus" value="largeurplus"><label for="largeurplus">plus de 90cm</label>
-        <input type="radio" name="largeur" id="largeurmoins" value="largeurmoins"><label for="largeurmoins">moins de 90cm</label>
-      </div>              
  -->
+
       <!-- <ion-item>
       	<ion-label>Extérieur</ion-label>
       	<ion-input placeholder="Informations extérieur" formControlName="exterieur"></ion-input>

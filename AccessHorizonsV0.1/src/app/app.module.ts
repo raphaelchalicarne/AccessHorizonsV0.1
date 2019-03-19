@@ -18,6 +18,7 @@ import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
 import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
+import { EntreePage } from '../pages/entree/entree';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -37,7 +38,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     AuthPage,
     AjoutlieuPage,
     //,PlaceResultPage
-    AuthPage ],
+    AuthPage,
+    EntreePage ],
   imports: [
     BrowserModule,
     HttpClientModule, 
@@ -58,7 +60,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     //FiltrePersonnelPage,
     AuthPage,
     AjoutlieuPage,
-    AuthPage
+    AuthPage,
+    EntreePage
 
     //,PlaceResultPage
   ],
