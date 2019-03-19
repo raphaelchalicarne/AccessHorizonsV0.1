@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, NavParams, ViewController } from 'ionic-angular'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AjoutlieuPage } from '..ajoutlieu/ajoutlieu';
+import { AjoutlieuPage } from '../ajoutlieu/ajoutlieu';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -62,8 +62,6 @@ export class EntreePage {
     largeurporte: this.entreeForm.get('largeurporte').value,
     }
   }
-
-
 
 
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EntreePage } from '../entree/entree';
+import { InterieurPage } from '../interieur/interieur';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -18,7 +19,8 @@ export class AjoutlieuPage {
 
 
 	lieuForm: FormGroup;
-  entreeFrom: FormGroup;
+  entreeForm: FormGroup;
+  interieurForm: FormGroup;
   entree = {
       plainpied: '',
       ressault: '',
@@ -39,11 +41,23 @@ export class AjoutlieuPage {
       largeurporte:'',
       }
 
+  interieur = {
+    alleeslarges:'',
+    eclairage:'',
+    espacecalme:'',
+    fauteuilroulant:'',
+    plusieursniveaux:'',
+    ascenseur:'',
+    marche:'',
+    escaliermeca:'',
+    }
+
   lieu = {
     name:'',
     ville:'',
     entree:'',
-  };
+    interieur:'',
+    }
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private formBuilder: FormBuilder, public db: AngularFireDatabase) {
   }
@@ -73,10 +87,22 @@ export class AjoutlieuPage {
       largeurporte:[''],
   	})
 
+    this.interieurForm = this.formBuilder.group({
+      alleeslarges:[''],
+      eclairage:[''],
+      espacecalme:[''],
+      fauteuilroulant:[''],
+      plusieursniveaux:[''],
+      ascenseur:[''],
+      marche:[''],
+      escaliermeca:[''],
+      })
+
     this.lieuForm = this.formBuilder.group({
       name:[''],
       ville:[''],
       entree: [''],
+      interieur: [''],
     })
   }
 
@@ -110,23 +136,30 @@ export class AjoutlieuPage {
     largeurporte: this.entreeForm.get('largeurporte').value,
     }
 
+    this.interieur = {
+    alleeslarges: this.interieurForm.get('alleeslarges').value,
+    eclairage: this.interieurForm.get('eclairage').value,
+    espacecalme : this.interieurForm.get('espacecalme').value,
+    fauteuiltotal: this.interieurForm.get('fauteuiltotal').value,
+    plusieursniveaux: this.interieurForm.get('plusieursniveaux').value,
+    ascenseur: this.interieurForm.get('ascenseur').value,
+    marche: this.interieurForm.get('marche').value,
+    escaliermeca: this.interieurForm.get('escaliermeca').value,
+    }
+
     this.lieu = {
       nom: this.lieuForm.get('name').value,
       ville: this.lieuForm.get('ville').value,
       entree: this.entree,
+      interieur: this.interieur,
     }
 
     this.db.list('lieu').push(this.lieu);
     console.log('Lieu sauvegardé1');
-    console.log(this.lieuForm.get('name').value);
-    if (this.lieuForm.get('name').value == 'bla'){
-      console.log(this.lieuForm.get('value'));
     }
     //console.log(this.lieuForm.value);
     //console.log(this.db.list('lieu').get('value'));
-    //console.log(this.EntreePage.age);
 
-  }
 
   gotoEntreePage(){
     let lieuForm = this.lieuForm;
@@ -134,7 +167,11 @@ export class AjoutlieuPage {
     this.navCtrl.push(EntreePage, {lieuForm:lieuForm, entreeForm:entreeForm});
   }
 
-
+  gotoInterieurPage(){
+    let lieuForm = this.lieuForm;
+    let interieurForm = this.interieurForm;
+    this.navCtrl.push(InterieurPage, {lieuForm:lieuForm, interieurForm:interieurForm});
+  }
 
 
 
