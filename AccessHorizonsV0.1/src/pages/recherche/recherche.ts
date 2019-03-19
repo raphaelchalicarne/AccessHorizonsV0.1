@@ -29,7 +29,7 @@ export class RecherchePage {
     .subscribe(
       (data) => {
         this.resultat = data['features'];
-        console.log('data', data);
+        //console.log('data', data);
       },
       (error) =>{
         console.error(error);
