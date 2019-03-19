@@ -20,10 +20,14 @@ export class PlaceResultatPage {
   flag: boolean = false;
   
   note_globale: number = 2.3;
+  flag_note: boolean = false;
   stars_full: any[] = [];
   stars_empty: any[] = [];
   stars_half: any[] = [];
   flag2: boolean;
+
+  note_access_mobilite: number = 2.4;  //A MODIFIER
+  note_accueil: number = 2.4; //A MODIFIER
 
   ngOnInit() {
     this.name = this.navParams.get('name');
@@ -35,27 +39,30 @@ export class PlaceResultatPage {
   }
   
   ionViewDidLoad() {
-    if ((Number.isInteger(this.note_globale)) == false) {
-      this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
-    }
-    this.traitementNote(this.note_globale);
-
-  	this.userService.getDetails(this.googleID).subscribe(
-  		(data) => {
-  			this.details = data['accessibility'];
-  			this.website = data['website'];
-  			if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
-  			{ 
-  				this.flag = true;
-  				this.label = this.details[0].children[0].label;
-  			}
-  			else {
-  				this.label = 'Rien';
-  			}
-  		},
-  		(error) =>{
-  			console.log(error);
-  	})
+    this.userService.getDetails(this.googleID).subscribe(
+      (data) => {
+        this.details = data['accessibility'];
+        this.note_globale = data['rating']; //Note de J'accede
+        if (this.note_globale != null){ //si la note n'est pas null, montrer note
+          this.flag_note = true;
+          if ((Number.isInteger(this.note_globale)) == false) {
+          this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
+          }
+          this.traitementNote(this.note_globale); //traiter les icons (étoiles à montrer)
+        }
+        this.website = data['website'];
+        if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
+        { 
+          this.flag = true;
+          this.label = this.details[0].children[0].label;
+        }
+        else {
+          this.label = 'Rien';
+        }
+      },
+      (error) =>{
+        console.log(error);
+    })
   }
 
   DetailsAccessModal(){
@@ -63,7 +70,6 @@ export class PlaceResultatPage {
      let nom = this.name;
      let modal = this.modalCtrl.create(DetailsAccessPage, {details : details, nom : nom});
      modal.present();
-
      modal.onDidDismiss((data) => {
      })
   }
@@ -73,13 +79,14 @@ export class PlaceResultatPage {
     let modal = this.modalCtrl.create(LaisserAvisPage, {note_globale : note});
     modal.present();
   }
+
   voirCommentaires(){
     let googleID = this.googleID;
     let modal = this.modalCtrl.create(CommentairesPage, {googleID : googleID});
     modal.present();
   }
 
-  traitementNote(note){
+  traitementNote(note){ //Modifier la note globale reçue pour la pouvoir utiliser 
     for (var i = 0; i < Math.floor(note); ++i) {
       this.stars_full.push(i);
     }
