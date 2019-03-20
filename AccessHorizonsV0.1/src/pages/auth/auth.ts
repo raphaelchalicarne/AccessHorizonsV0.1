@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import * as firebase from 'firebase';
 
-import { HomePage } from '../home/home';
+import { ParametresPage } from '../parametres/parametres';
 import { MenuServicesPage } from '../menu-services/menu-services';
 
 @Component({
@@ -46,7 +46,7 @@ export class AuthPage implements OnInit {
       if (this.mode === 'new') {
           this.authService.signUpUser(email,password).then(
           () => {
-              this.navCtrl.setRoot(HomePage);
+              this.navCtrl.setRoot(ParametresPage);
           },
           (error) => {
               this.errorMessage = error;

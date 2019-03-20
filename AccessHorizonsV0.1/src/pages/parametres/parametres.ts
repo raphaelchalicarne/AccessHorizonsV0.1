@@ -28,4 +28,15 @@ export class ParametresPage {
     this.menuCtrl.close();
   }
 
+  typeHandicap: 'moteur'; //On considère qu'un utilisateur est handicapé moteur par défaut
+  typeAutonomie: 'autonome'; //On considère qu'un utilisateur est autonome par défaut
+
+  saveHandicap(param) {
+    this.typeHandicap = param;
+  }
+
+  saveAutonomie(param) {
+    this.typeAutonomie = param;
+  }
+
 }

@@ -6,13 +6,31 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Paramètres</ion-title>
+    <ion-title text-center>Paramètres</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <div class="Type de handicap" padding text-center>
+    <ion-label position="floating">
+      <h1>Quel type de handicap présentez vous?</h1>
+    </ion-label>
+    <button ion-button color="dark" large outline round block (click)="saveHandicap('moteur')">Moteur</button>
+    <button ion-button color="dark" large outline round block icon-start (click)="saveHandicap('visuel')"><ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>  Visuel</button>
+  </div>
+
+  <div class="Liste options" padding text-center>
+    <ion-label position="floating">
+      <h1>De quel niveau d'autonomie disposez-vous?</h1>
+    </ion-label>
+      <button ion-button color="dark" large outline  round block (click)="saveAutonomie('autonome')">Je suis autonome </button>
+      <button *ngIf="typeHandicap === 'visuel' " ion-button color="dark" large outline round block (click)="saveAutonomie('chien')">J'ai un chien guide</button>
+      <button ion-button color="dark" large outline  round block (click)="saveAutonomie('assistance')">J'ai besoin d'une assistance</button>
+  </div>
+
   <button ion-button full (click)="goToMenu()">
     Valider
   </button>
