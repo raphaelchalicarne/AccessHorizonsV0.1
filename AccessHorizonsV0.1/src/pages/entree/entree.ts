@@ -28,7 +28,7 @@ export class EntreePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Entrée');
-    console.log(this.lieuForm.value);
+    console.log(this.entreeForm.value);
   }
 
   dismissModal(){

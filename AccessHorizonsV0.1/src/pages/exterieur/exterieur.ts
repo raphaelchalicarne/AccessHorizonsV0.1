@@ -26,7 +26,7 @@ export class ExterieurPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Exterieur1');
+    console.log('ionViewDidLoad Exterieur');
     console.log(this.exterieurForm.value);
   }
 
@@ -36,25 +36,30 @@ export class ExterieurPage {
     console.log(document.getElementById('aproximite').checked);
     console.log(this.exterieurForm.get('aproximite').value);
 
-    this.exterieurForm.controls['aproximite'].setValue(document.getElementById('aproximite').checked),
-    this.exterieurForm.controls['grande'].setValue(document.getElementById('grande').checked),
-    this.exterieurForm.controls['danslenceinte'].setValue(document.getElementById('danslenceinte').checked),
+    this.exterieurForm.controls['aproximite'].setValue(document.getElementById('aproximite').checked);
+    this.exterieurForm.controls['grande'].setValue(document.getElementById('grande').checked);
+    this.exterieurForm.controls['danslenceinte'].setValue(document.getElementById('danslenceinte').checked);
+    this.exterieurForm.controls['abaisses'].setValue(document.getElementById('abaisses').checked);
+    this.exterieurForm.controls['paves'].setValue(document.getElementById('paves').checked);
+    this.exterieurForm.controls['etroits'].setValue(document.getElementById('etroits').checked);
+    this.exterieurForm.controls['devers'].setValue(document.getElementById('devers').checked);
+    this.exterieurForm.controls['pente'].setValue(document.getElementById('pente').checked);
 
-    console.log(this.exterieurFrom.value);
-    this.exterieur = {
+
+    //this.exterieurForm.controls['aproximite'].setValue(document.getElementById('aproximite').checked),
+    //this.exterieurForm.controls['grande'].setValue(document.getElementById('grande').checked),
+    //this.exterieurForm.controls['danslenceinte'].setValue(document.getElementById('danslenceinte').checked),
+
+    /*this.exterieur = {
       aproximite:this.exterieurForm.get('aproximite').value,
       grande:this.exterieurForm.get('grande').value,
       danslenceinte: this.exterieurForm.get('danslenceinte').value,
-      /*abaisses: this.exterieurForm.get('abaisses').value,
+      abaisses: this.exterieurForm.get('abaisses').value,
       paves: this.exterieurForm.get('paves').value,
       etroits: this.exterieurForm.get('etroits').value,
       devers: this.exterieurForm.get('devers').value,
-      pente: this.exterieurForm.get('pente').value,*/
-    }
-  
-
-
-
+      pente: this.exterieurForm.get('pente').value,
+    }*/
   }
   }
 

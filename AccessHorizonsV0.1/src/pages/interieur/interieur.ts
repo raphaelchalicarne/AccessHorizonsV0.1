@@ -36,16 +36,18 @@ export class InterieurPage {
   }
 
   saveInterieur(){
+    console.log(this.interieurForm.value);
 
-    this.interieurForm.controls['alleeslarges'].setValue(document.getElementById('alleeslarges').checked),
-    this.interieurForm.controls['eclairage'].setValue(document.getElementById('eclairage').checked),
-    this.interieurForm.controls['espacecalme'].setValue(document.getElementById('espacecalme').checked),
-    this.interieurForm.controls['fauteuiltotal'].setValue(document.getElementById('fauteuiltotal').checked),
+    this.interieurForm.controls['alleeslarges'].setValue(document.getElementById('alleeslarges').checked);
+    this.interieurForm.controls['eclairage'].setValue(document.getElementById('eclairage'));
+    this.interieurForm.controls['espacecalme'].setValue(document.getElementById('espacecalme'));
+    this.interieurForm.controls['fauteuiltotal'].setValue(document.getElementById('fauteuiltotal'));
     this.interieurForm.controls['plusieursniveaux'].setValue(document.getElementById('plusieursniveaux').checked),
     this.interieurForm.controls['ascenseur'].setValue(document.getElementById('ascenseur').checked),
     this.interieurForm.controls['marche'].setValue(document.getElementById('marche').checked),
-    this.interieurForm.controls['escaliermeca'].setValue(document.getElementById('escaliermeca').checked),   
+    this.interieurForm.controls['escaliermeca'].setValue(document.getElementById('escaliermeca').checked), 
 
+    console.log(this.interieurForm.get('alleeslarges').value)
 
     this.interieur = {
     alleeslarges: this.interieurForm.get('alleeslarges').value,

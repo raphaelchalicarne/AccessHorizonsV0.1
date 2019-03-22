@@ -48,7 +48,7 @@ export class AjoutlieuPage {
     alleeslarges:'',
     eclairage:'',
     espacecalme:'',
-    fauteuilroulant:'',
+    fauteuiltotal:'',
     plusieursniveaux:'',
     ascenseur:'',
     marche:'',
@@ -105,7 +105,7 @@ export class AjoutlieuPage {
       alleeslarges:[''],
       eclairage:[''],
       espacecalme:[''],
-      fauteuilroulant:[''],
+      fauteuiltotal:[''],
       plusieursniveaux:[''],
       ascenseur:[''],
       marche:[''],
@@ -127,7 +127,7 @@ export class AjoutlieuPage {
       name:[''],
       ville:[''],
       entree: [''],
-      //interieur: [''],
+      interieur: [''],
       exterieur: [''],
     });
   }
