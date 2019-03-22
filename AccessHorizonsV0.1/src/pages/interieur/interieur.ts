@@ -27,7 +27,7 @@ export class InterieurPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Entrée');
+    console.log('ionViewDidLoad Intérieur1');
     console.log(this.interieurForm.value);
   }
 
@@ -44,7 +44,7 @@ export class InterieurPage {
     this.interieurForm.controls['plusieursniveaux'].setValue(document.getElementById('plusieursniveaux').checked),
     this.interieurForm.controls['ascenseur'].setValue(document.getElementById('ascenseur').checked),
     this.interieurForm.controls['marche'].setValue(document.getElementById('marche').checked),
-    this.interieurForm.controls['escaliermeca'].setValue(document.getElementById('escaliermeca').checked),     
+    this.interieurForm.controls['escaliermeca'].setValue(document.getElementById('escaliermeca').checked),   
 
 
     this.interieur = {

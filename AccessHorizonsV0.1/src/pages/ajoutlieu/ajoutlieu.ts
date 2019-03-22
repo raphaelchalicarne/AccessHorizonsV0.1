@@ -3,6 +3,7 @@ import { NavController, ModalController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EntreePage } from '../entree/entree';
 import { InterieurPage } from '../interieur/interieur';
+import { ExterieurPage } from '../exterieur/exterieur';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -21,6 +22,8 @@ export class AjoutlieuPage {
 	lieuForm: FormGroup;
   entreeForm: FormGroup;
   interieurForm: FormGroup;
+  exterieurForm: FormGroup;
+
   entree = {
       plainpied: '',
       ressault: '',
@@ -51,6 +54,17 @@ export class AjoutlieuPage {
     marche:'',
     escaliermeca:'',
     }
+
+  exterieur = {
+    aproximite:'',
+    grande:'',
+    danslenceinte:'',
+    abaisses:'',
+    paves:'',
+    etroits:'',
+    devers:'',
+    pente:'',
+  }
 
   lieu = {
     name:'',
@@ -85,7 +99,7 @@ export class AjoutlieuPage {
       poigneeergo:[''],
       portemaintienouvert:[''],
       largeurporte:[''],
-  	})
+  	});
 
     this.interieurForm = this.formBuilder.group({
       alleeslarges:[''],
@@ -96,25 +110,35 @@ export class AjoutlieuPage {
       ascenseur:[''],
       marche:[''],
       escaliermeca:[''],
-      })
+      });
+
+    this.exterieurForm = this.formBuilder.group({
+      aproximite:[''],
+      grande:[''],
+      danslenceinte:[''],
+      abaisses:[''],
+      paves:[''],
+      etroits:[''],
+      devers:[''],
+      pente:[''],
+    });
 
     this.lieuForm = this.formBuilder.group({
       name:[''],
       ville:[''],
       entree: [''],
-      interieur: [''],
-    })
+      //interieur: [''],
+      exterieur: [''],
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AjoutlieuPage1');
+    console.log(this.interieurForm.value);
   }
 
 
   saveLieu(){
-    //this.lieuForm.controls['plainpied'].setValue(document.getElementById('plainpied').checked),
-    //this.lieuForm.controls['ressault'].setValue(document.getElementById('ressault').checked),
-    //this.lieuForm.controls['marches'].setValue(document.getElementById('marches').checked),
 
     this.entree = {
     plainpied: this.entreeForm.get('plainpied').value,
@@ -147,18 +171,29 @@ export class AjoutlieuPage {
     escaliermeca: this.interieurForm.get('escaliermeca').value,
     }
 
+    this.exterieur = {
+    aproximite:this.exterieurForm.get('aproximite').value,
+    grande:this.exterieurForm.get('grande').value,
+    danslenceinte: this.exterieurForm.get('danslenceinte').value,
+    abaisses: this.exterieurForm.get('abaisses').value,
+    paves: this.exterieurForm.get('paves').value,
+    etroits: this.exterieurForm.get('etroits').value,
+    devers: this.exterieurForm.get('devers').value,
+    pente: this.exterieurForm.get('pente').value,
+
+    }
+
     this.lieu = {
       nom: this.lieuForm.get('name').value,
       ville: this.lieuForm.get('ville').value,
       entree: this.entree,
       interieur: this.interieur,
+      exterieur: this.exterieur,
     }
 
     this.db.list('lieu').push(this.lieu);
     console.log('Lieu sauvegardé1');
     }
-    //console.log(this.lieuForm.value);
-    //console.log(this.db.list('lieu').get('value'));
 
 
   gotoEntreePage(){
@@ -174,7 +209,10 @@ export class AjoutlieuPage {
   }
 
 
-
+  gotoExterieurPage(){
+    let exterieurForm = this.exterieurForm;
+    this.navCtrl.push(ExterieurPage, {exterieurForm:exterieurForm});
+  }
 
 
 
