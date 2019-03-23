@@ -18,7 +18,11 @@ const Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{
       maxZoom: 19, //zoom possible de faire
       attribution: 'Map data &copy; ',
       id: 'mapbox.streets'});
-const OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
+const OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
+  minZoom: 3,
+  maxZoom: 16,
+});
 
 @IonicPage()
 @Component({
