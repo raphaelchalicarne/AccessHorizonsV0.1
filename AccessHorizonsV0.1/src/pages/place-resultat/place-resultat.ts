@@ -4,6 +4,7 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { DetailsAccessPage } from '../details-access/details-access';
 import { LaisserAvisPage } from '../laisser-avis/laisser-avis'; 
 import { CommentairesPage } from '../commentaires/commentaires';
+import { MapModalPage } from '../map-modal/map-modal';
 
 @IonicPage()
 @Component({
@@ -32,6 +33,7 @@ export class PlaceResultatPage {
   ngOnInit() {
     this.name = this.navParams.get('name');
     this.adresse = this.navParams.get('adresse');
+    console.log('adresse', this.adresse);
     this.googleID = this.navParams.get('googleID');
   }
 
@@ -84,8 +86,12 @@ export class PlaceResultatPage {
     let googleID = this.googleID;
     let modal = this.modalCtrl.create(CommentairesPage, {googleID : googleID});
     modal.present();
-  }
+  };
 
+  mapModal(){
+    let modal = this.modalCtrl.create(MapModalPage);
+    modal.present();
+  };
   traitementNote(note){ //Modifier la note globale reçue pour la pouvoir utiliser 
     for (var i = 0; i < Math.floor(note); ++i) {
       this.stars_full.push(i);
@@ -93,5 +99,5 @@ export class PlaceResultatPage {
     for (var a = 0; a < 5-Math.ceil(note); ++a) {
       this.stars_empty.push(a);
     }
-  }
+  };
 }
