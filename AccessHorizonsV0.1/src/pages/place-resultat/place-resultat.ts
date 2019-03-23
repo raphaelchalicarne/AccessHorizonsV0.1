@@ -51,7 +51,7 @@ export class PlaceResultatPage {
         this.details = data['accessibility'];
         this.latitud = data['latitude'];
         this.longitud = data['longitude'];
-        this.note_globale = data['rating']; //Note de J'accede
+        this.note_globale = data['rating']; //Note (rating) de J'accede
         if (this.note_globale != null){ //si la note n'est pas null, montrer note
           this.flag_note = true;
           if ((Number.isInteger(this.note_globale)) == false) {
@@ -79,7 +79,7 @@ export class PlaceResultatPage {
      let nom = this.name;
      let modal = this.modalCtrl.create(DetailsAccessPage, {details : details, nom : nom});
      modal.present();
-     //modal.onDidDismiss((data) => {
+     modal.onDidDismiss((data) => {
      })
   }
 
@@ -89,19 +89,19 @@ export class PlaceResultatPage {
     modal.present();
   }
 
-  voirCommentaires(){
+  voirCommentaires(){ //Voir les commentaires de j'accede
     let googleID = this.googleID;
     let modal = this.modalCtrl.create(CommentairesPage, {googleID : googleID});
     modal.present();
   };
 
-  mapModal(){
+  mapModal(){ //Montrer la ubication du site
     let latitud = parseFloat(this.latitud);
     let longitud = parseFloat(this.longitud);
     let modal = this.modalCtrl.create(MapModalPage, {latitud: latitud, longitud: longitud});
     modal.present();
   };
-  traitementNote(note){ //Modifier la note globale reçue pour la pouvoir utiliser 
+  traitementNote(note){ //Modifier la note globale reçue pour la pouvoir montrer comme étoiles
     for (var i = 0; i < Math.floor(note); ++i) {
       this.stars_full.push(i);
     }
