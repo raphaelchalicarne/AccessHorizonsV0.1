@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, MenuController} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
+
 import { DetailsAccessPage } from '../details-access/details-access';
 import { LaisserAvisPage } from '../laisser-avis/laisser-avis';
 import { CommentairesPage } from '../commentaires/commentaires';
