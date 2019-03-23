@@ -23,17 +23,16 @@ enableProdMode();
   templateUrl: 'map-modal.html',
 })
 export class MapModalPage {
-  //@ViewChild('carte') mapContainer: ElementRef;
+  @ViewChild('carte') mapContainer: ElementRef;
   longitud: number;
   latitud: number;
-  //center = [45.7669575731, 4.834583];
   center: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   	this.latitud = navParams.get('latitud');
   	this.longitud = navParams.get('longitud');
   	this.center = [this.latitud, this.longitud];
-  	console.log('center', this.center);
+  	//console.log('center', this.center);
   }
 
   ionViewDidLoad() {
@@ -48,14 +47,15 @@ export class MapModalPage {
   		center: this.center,
   		zoom: 16,
   	});
+    //Tile (carte) de Open Street Map
   	var OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
   		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
   		minZoom: 15,
   		maxZoom: 19,
-	});
+	  });
   	OpenStreetMap.addTo(map);
 
   	var marker = leaflet.marker(this.center).addTo(map);
-  	marker.bindPopup("<h3>C'est ici !</h3>");
+  	marker.bindPopup("<h3 text-center>C'est ici !</h3>");
   };
 }
