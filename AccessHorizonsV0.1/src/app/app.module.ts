@@ -18,6 +18,8 @@ import { DetailsAccessPage } from '../pages/details-access/details-access'
 import { LaisserAvisPage } from '../pages/laisser-avis/laisser-avis';
 import { CommentairesPage} from '../pages/commentaires/commentaires';
 import { ParametresPage } from '../pages/parametres/parametres';
+import { MapModalPage } from '../pages/map-modal/map-modal'
+
 
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
@@ -40,6 +42,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     DetailsAccessPage,
     LaisserAvisPage,
     CommentairesPage,
+    MapModalPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage,
@@ -64,6 +67,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     DetailsAccessPage,
     LaisserAvisPage,
     CommentairesPage,
+    MapModalPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage,

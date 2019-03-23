@@ -13,17 +13,9 @@ const Stamen = leaflet.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/wate
   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   subdomains: 'abcd',
   minZoom: 3,
-  maxZoom: 16,
+  maxZoom: 17,
   ext: 'jpg'});
-const Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
-      maxZoom: 19, //zoom possible de faire
-      attribution: 'Map data &copy; ',
-      id: 'mapbox.streets'});
-const OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
-  minZoom: 3,
-  maxZoom: 16,
-});
+
 
 @IonicPage()
 @Component({
@@ -107,11 +99,15 @@ export class RecherchePage {
       center: this.center,
       zoom: 6
     });
-
-    //Tile (carte) de Mapbox, besoin de API key
-    //Mapbox.addTo(mapa);
-    //Stamen.addTo(mapa);
-
+    /*var Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
+      maxZoom: 19, //zoom possible de faire
+      attribution: 'Map data &copy; ',
+      id: 'mapbox.streets'});*/
+    var OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
+      minZoom: 3,
+      maxZoom: 18,
+    });
     //Tile (carte) de Open S Map (gratuite)
     OpenStreetMap.addTo(map);
 
