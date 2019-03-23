@@ -11,11 +11,6 @@ enableProdMode();
   minZoom: 3,
   maxZoom: 16,
   ext: 'jpg'});*/
-/*const OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
-  minZoom: 15,
-  maxZoom: 19,
-});*/
 
 @IonicPage()
 @Component({

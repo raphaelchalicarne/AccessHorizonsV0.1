@@ -21,20 +21,20 @@ export class PlaceResultatPage {
   flag: boolean = false;
   longitud: any;
   latitud: any;
-  note_globale: number = 2.3;
+
   flag_note: boolean = false;
   stars_full: any[] = [];
   stars_empty: any[] = [];
   stars_half: any[] = [];
   flag2: boolean;
 
+  note_globale: number;
   note_access_mobilite: number = 2.4;  //A MODIFIER
   note_accueil: number = 2.4; //A MODIFIER
 
   ngOnInit() {
     this.name = this.navParams.get('name');
     this.adresse = this.navParams.get('adresse');
-    console.log('adresse', this.adresse);
     this.googleID = this.navParams.get('googleID');
   }
 
@@ -79,7 +79,7 @@ export class PlaceResultatPage {
      let nom = this.name;
      let modal = this.modalCtrl.create(DetailsAccessPage, {details : details, nom : nom});
      modal.present();
-     modal.onDidDismiss((data) => {
+     //modal.onDidDismiss((data) => {
      })
   }
 

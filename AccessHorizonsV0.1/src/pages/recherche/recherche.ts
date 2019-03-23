@@ -50,7 +50,6 @@ export class RecherchePage {
   }
   
   loadmap(){
-    //document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
     var map = leaflet.map('map',{
       center: this.center,
       zoom: 6
@@ -106,10 +105,7 @@ export class RecherchePage {
     let longitud = this.adresse.latlng.lng;
     let latitud = this.adresse.latlng.lat;
     var filtrage = this.filtrage;
-    console.log('coordinates', adresse.latlng);
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
-  }
-  ionViewCanLeave(){
   }
 }
 
