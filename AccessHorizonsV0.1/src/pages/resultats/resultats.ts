@@ -9,14 +9,15 @@ import { PlaceResultatPage } from '../place-resultat/place-resultat';
   templateUrl: 'resultats.html',
 })
 export class ResultatsPage {
-  places: any[] = []; //Les résultats de la requête à J'accede
-  longitud: number;
-  latitud:  number;
+  places: any[] = []; //Les résultats bruts de la requête à J'accede
   adresse: string = '';
   resultat: any[] = []; //Les résultats qui vont être montrés
+
+  longitud: number;
+  latitud:  number;
   filtrage:any = []; //Le filtrage demandé par l'utilisateur
 
-  ngOnInit() { //On obtient les valeurs de la page anterieure
+  ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
       //this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');     
       this.latitud = this.navParams.get('latitud');     
