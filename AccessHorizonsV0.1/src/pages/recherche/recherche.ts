@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-//import { ResultatsPage } from '../resultats/resultats';
+import { ResultatsPage } from '../resultats/resultats';
 //import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import leaflet from 'leaflet';
 
@@ -51,15 +51,16 @@ export class RecherchePage {
   message: string = 'Casa';
   lat: number = 45.75334;
   long: number = 4.842;
+  latitud: number;
   longitud: number;
-  object: any[] = [];
   marker: any;
-  adresse: any;
+  adresse: any[] = [];
   filtrage: any[] = [];
 
-  /*ngOnInit() {
+  ngOnInit() {
     this.filtrage = this.navParams.get('filtrage');
-  }*/
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams){}
 
   ionViewDidLoad(){
@@ -77,5 +78,35 @@ export class RecherchePage {
       attribution: 'Map data &copy; ',
       id: 'mapbox.streets'
     }).addTo(mapa);
+    
+    function onMapClick(e){
+      //console.log('Coord', e.latlng);
+      var adresse = e.latlng;
+      if (this.marker != undefined){
+        mapa.removeLayer(this.marker);
+      }
+      this.latitud = e.latlng.lat;     
+      //console.log('aqui',this.adresse);
+      this.marker = new leaflet.marker(e.latlng).addTo(mapa);
+      this.marker.bindPopup("<h3>Hello</h3>"+e.latlng);
+      this.adresse = this.marker.getLatLng();
+      console.log(this.adresse);
+    }
+    this.adresse = this.marker.getLatLng();
+    mapa.on('click', onMapClick);
+    }
+  
+
+  goToPlaceList(){
+    //console.log(this.marker);
+    var filtrage = this.filtrage;
+    var adresse = this.adresse;
+    //console.log('adresse',adresse);
+    //let longitud = this.adresse.long;
+    //let latitud = this.adresse.lat;
+    //console.log('lat', this.latitud);
+    //console.log('long',longitud);
+    //console.log(filtrage);
+    //this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
   }
 }

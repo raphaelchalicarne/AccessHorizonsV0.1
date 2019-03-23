@@ -34,8 +34,9 @@
   <!--<div id="recherche">
     <ion-input text-center clearInput="true" placeholder="Latitude" type="text" [(ngModel)]="longitud"></ion-input>
   </div>-->
-  <div id="mapa" style="width:100%; height:90%;"></div>
-  <!--<div text-center>
-    <button ion-button large outline color="dark" round>Boton</button>  
-  </div>-->
+  <div id="mapa" style="width:100%; height:89%;"></div>
+  <div text-center>
+    <button ion-button large outline color="dark" round text-center (click)="goToPlaceList()">Boton</button>  
+    <h3>{{adresse}}</h3>
+  </div>
 </ion-content>
