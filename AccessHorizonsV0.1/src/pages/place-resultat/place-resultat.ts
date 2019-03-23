@@ -19,6 +19,8 @@ export class PlaceResultatPage {
   website: string = '';
   label: string = '';
   flag: boolean = false;
+  longitud: any;
+  latitud: any;
   
   note_globale: number = 2.3;
   flag_note: boolean = false;
@@ -44,6 +46,8 @@ export class PlaceResultatPage {
     this.userService.getDetails(this.googleID).subscribe(
       (data) => {
         this.details = data['accessibility'];
+        this.latitud = data['latitude'];
+        this.longitud = data['longitude'];
         this.note_globale = data['rating']; //Note de J'accede
         if (this.note_globale != null){ //si la note n'est pas null, montrer note
           this.flag_note = true;
@@ -89,7 +93,9 @@ export class PlaceResultatPage {
   };
 
   mapModal(){
-    let modal = this.modalCtrl.create(MapModalPage);
+    let latitud = parseFloat(this.latitud);
+    let longitud = parseFloat(this.longitud);
+    let modal = this.modalCtrl.create(MapModalPage, {latitud: latitud, longitud: longitud});
     modal.present();
   };
   traitementNote(note){ //Modifier la note globale reçue pour la pouvoir utiliser 
