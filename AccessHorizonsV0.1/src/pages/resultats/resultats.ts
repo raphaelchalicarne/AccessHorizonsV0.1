@@ -17,9 +17,11 @@ export class ResultatsPage {
   filtrage:any = []; //Le filtrage demandé par l'utilisateur
 
   ngOnInit() { //On obtient les valeurs de la page anterieure
-      this.adresse = this.navParams.get('adresse');
-      this.longitud = this.navParams.get('longitud');
+      //this.adresse = this.navParams.get('adresse');
+      this.longitud = this.navParams.get('longitud');     
       this.latitud = this.navParams.get('latitud');
+      console.log(this.longitud);
+      console.log(this.latitud);      
       this.filtrage = this.navParams.get('filtrage');
   }
 

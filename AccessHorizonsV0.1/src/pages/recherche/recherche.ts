@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ResultatsPage } from '../resultats/resultats';
 //import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import leaflet from 'leaflet';
@@ -7,7 +7,20 @@ import leaflet from 'leaflet';
 import { enableProdMode } from '@angular/core';
 enableProdMode();
 
-//@IonicPage()
+//Tiles disponibles
+const Stamen = leaflet.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  subdomains: 'abcd',
+  minZoom: 1,
+  maxZoom: 16,
+  ext: 'jpg'});
+const Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
+      maxZoom: 19, //zoom possible de faire
+      attribution: 'Map data &copy; ',
+      id: 'mapbox.streets'});
+const OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
+
+@IonicPage()
 @Component({
   selector: 'page-recherche',
   templateUrl: 'recherche.html',
@@ -46,16 +59,16 @@ export class RecherchePage {
 }*/
 
 export class RecherchePage {
-  @ViewChild("mapa") mapContainer: ElementRef;
-  center: any = [45.75, 4.83];
+  @ViewChild('map') mapContainer: ElementRef;
+  center: any = [46.96525, 2.7885984];
   message: string = 'Casa';
-  lat: number = 45.75334;
-  long: number = 4.842;
+  map: any;
   latitud: number;
   longitud: number;
   marker: any;
-  adresse: any[] = [];
+  adresse: any;
   filtrage: any[] = [];
+  flag: boolean = false;
 
   ngOnInit() {
     this.filtrage = this.navParams.get('filtrage');
@@ -63,50 +76,69 @@ export class RecherchePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams){}
 
+  ionViewDidEnter(){
+    console.log('entrar');
+  }
   ionViewDidLoad(){
     this.loadmap();
-    console.log('Load');
+
   }
-  loadmap(){
-    var mapa;
-    mapa = leaflet.map("mapa",{
-      center: this.center,
-      zoom: 13
-    });
-    leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
-      maxZoom: 19, //zoom possible de faire
-      attribution: 'Map data &copy; ',
-      id: 'mapbox.streets'
-    }).addTo(mapa);
-    
-    function onMapClick(e){
-      //console.log('Coord', e.latlng);
-      var adresse = e.latlng;
-      if (this.marker != undefined){
-        mapa.removeLayer(this.marker);
-      }
-      this.latitud = e.latlng.lat;     
-      //console.log('aqui',this.adresse);
-      this.marker = new leaflet.marker(e.latlng).addTo(mapa);
-      this.marker.bindPopup("<h3>Hello</h3>"+e.latlng);
-      this.adresse = this.marker.getLatLng();
-      console.log(this.adresse);
-    }
-    this.adresse = this.marker.getLatLng();
-    mapa.on('click', onMapClick);
-    }
   
+  loadmap(){
+    //document.getElementById('map').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
+    var map = leaflet.map('map',{
+      center: this.center,
+      zoom: 6
+    });
+
+    //Tile (carte) de Mapbox, besoin de API key
+    //Mapbox.addTo(mapa);
+    //Stamen.addTo(mapa);
+
+    //Tile (carte) de Open S Map (gratuite)
+    OpenStreetMap.addTo(map);
+
+    map.clicked = 0;
+    function onMapClick(e){
+      map.clicked = map.clicked + 1;
+      setTimeout(function(){
+        if(map.clicked == 1){
+          if (this.marker != undefined){
+            map.removeLayer(this.marker); //Eliminer le marker deja crée
+          }
+          this.marker = new leaflet.marker(e.latlng).addTo(map);
+          this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
+          map.clicked = 0;
+        }
+      }, 200);
+    
+  }; //fin de onMapClick()
+  
+  this.adresse = map.addEventListener("click", function(e){
+    map.panTo(e.latlng);
+    this.latlng = e.latlng;
+  });
+
+  map.addEventListener("dblclick", function(e){
+
+  });
+  map.on("click", onMapClick);
+  map.on("dblclick", function(e){
+    map.clicked = 0;
+  });
+}; //fin de la function loadMap()
 
   goToPlaceList(){
-    //console.log(this.marker);
+    let adresse = this.adresse;
+    let longitud = this.adresse.latlng.lng;
+    let latitud = this.adresse.latlng.lat;
     var filtrage = this.filtrage;
-    var adresse = this.adresse;
-    //console.log('adresse',adresse);
-    //let longitud = this.adresse.long;
-    //let latitud = this.adresse.lat;
-    //console.log('lat', this.latitud);
-    //console.log('long',longitud);
-    //console.log(filtrage);
-    //this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
+    console.log('coordinates', adresse.latlng);
+    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
+  }
+  ionViewCanLeave(){
+    //document.getElementById('map').outerHTML = '<div id="map" style="width:100%; height:89%;"></div>';
+    //document.getElementById('map').outerHTML = "";
+    console.log('salir');
   }
 }
