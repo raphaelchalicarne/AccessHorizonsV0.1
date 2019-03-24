@@ -43,9 +43,9 @@ export class MapModalPage {
   		zoom: 16,
   	});
     //Tile (carte) de Open Street Map
-  	var OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+  	var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
   		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
-  		minZoom: 15,
+  		minZoom: 10,
   		maxZoom: 19,
 	  });
   	OpenStreetMap.addTo(map);

@@ -39,7 +39,7 @@ export class RecherchePage {
     this.filtrage = this.navParams.get('filtrage');
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams){}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private menuCtrl: MenuController){}
 
   ionViewDidEnter(){
     console.log('entrar');
@@ -62,7 +62,7 @@ export class RecherchePage {
     Mapbox.addTo(map);
       */
 
-    var OpenStreetMap = leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+    var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
       minZoom: 3,
       maxZoom: 18,
@@ -106,6 +106,9 @@ export class RecherchePage {
     let latitud = this.adresse.latlng.lat;
     var filtrage = this.filtrage;
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
+  }
+  onToggleMenu() {
+      this.menuCtrl.open();
   }
 }
 

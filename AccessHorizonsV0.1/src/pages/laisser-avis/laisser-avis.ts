@@ -21,8 +21,7 @@ export class LaisserAvisPage {
     console.log('ionViewDidLoad LaisserAvisPage');
   }
   closeModal(){ //fermer la fenetre SANS ENVOYER AUCUNE INFO
-  	let message = "Modal closed";
-  	this.viewCtrl.dismiss({data : message});
+  	this.viewCtrl.dismiss();
   }
   recalculerNote(element: number){
     for (var i =1; i < 6; ++i){

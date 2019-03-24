@@ -52,6 +52,7 @@ export class PlaceResultatPage {
         this.details = data['accessibility'];
         this.latitud = data['latitude'];
         this.longitud = data['longitude'];
+        console.log(data);
         this.note_globale = data['rating']; //Note (rating) de J'accede
         if (this.note_globale != null){ //si la note n'est pas null, montrer note
           this.flag_note = true;
