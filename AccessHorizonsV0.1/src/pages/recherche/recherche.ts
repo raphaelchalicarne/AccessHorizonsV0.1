@@ -106,7 +106,6 @@ export class RecherchePage {
       //console.log(data)
       if (data.flag == true) {
         //console.log(this.map);
-        this.loadmap();
         this.marker = new leaflet.marker([data.latitud,data.longitud]).addTo(this.map);
         this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
         //console.log('marker',this.newMarker);
