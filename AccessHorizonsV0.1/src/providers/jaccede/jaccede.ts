@@ -11,9 +11,9 @@ export class JaccedeProvider {
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     return this.http.get(myUrl)
   }
-  getAutocomplete(city){
+  getAutocomplete(place){
     let limite = '5';
-    let autoUrl = 'https://photon.komoot.de/api/?q='+city+'&limit='+limite+'';
+    let autoUrl = 'https://photon.komoot.de/api/?q='+place+'&limit='+limite+'';
     return this.http.get(autoUrl)
   }
   getDetails(googleID){
@@ -23,13 +23,10 @@ export class JaccedeProvider {
     let myUrl = 'https://apidev.jaccede.com/v4/places/'+googleID+'/comments?api_key='+this.apiKey+'';
     return this.http.get(myUrl)  
   }
-
-
-
-  /*getFilters(){
-  	//return this.http.get('/filters')
-  	return this.http.get('https://apidev.jaccede.com/v4/accessibility_filters?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b')
-  } */
-  
+  getName(place){
+    let limite = '4';
+    let url = 'https://nominatim.openstreetmap.org/search/?q='+place+'&format=json&limit='+limite+'';
+    return this.http.get(url);
+  }
 }
 
