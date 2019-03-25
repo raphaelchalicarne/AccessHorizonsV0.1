@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import {RecherchePage} from '../recherche/recherche';
 import { AjoutlieuPage } from '../ajoutlieu/ajoutlieu';
 import { HttpClient } from '@angular/common/http';
@@ -21,7 +21,10 @@ export class MenuServicesPage {
   /*all_categories: any = [];
   temporary: any = [];*/
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public http: HttpClient,
+              private menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {}
@@ -30,7 +33,7 @@ export class MenuServicesPage {
       case 1:
         var transports = this.transports;
         this.navCtrl.push(RecherchePage, {filtrage: transports});
-        break;     
+        break;
       case 2:
         var restaurants = this.restaurants;
         this.navCtrl.push(RecherchePage, {filtrage: restaurants});
@@ -52,5 +55,9 @@ export class MenuServicesPage {
 
   goToAjoutlieuPage(){
     this.navCtrl.push(AjoutlieuPage);
+  }
+
+  onToggleMenu() {
+      this.menuCtrl.open();
   }
 }

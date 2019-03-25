@@ -1,5 +1,10 @@
 <ion-header>
   <ion-navbar text-center>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
     <ion-title>{{name}}</ion-title>
   </ion-navbar>
 </ion-header>
@@ -59,5 +64,5 @@
 		<h3> </h3>
 		<h5>Site web: <a href="{{website}}">{{website}}</a></h5>
 	</div>
-	
+
 </ion-content>

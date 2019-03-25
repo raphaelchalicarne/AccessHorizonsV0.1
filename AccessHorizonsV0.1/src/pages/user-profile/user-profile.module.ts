@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule} from 'ionic-angular';
 import { UserProfilePage } from './user-profile';
 import {MenuServicesPage} from '../menu-services/menu-services';
 
@@ -12,4 +12,5 @@ import {MenuServicesPage} from '../menu-services/menu-services';
     IonicPageModule.forChild(UserProfilePage),
   ],
 })
+
 export class UserProfilePageModule {}
