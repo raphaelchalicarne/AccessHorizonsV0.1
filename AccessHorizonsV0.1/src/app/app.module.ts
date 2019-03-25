@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { RecherchePage } from '../pages/recherche/recherche';
+import {RechercheManuellePage} from '../pages/recherche-manuelle/recherche-manuelle';
 import { ResultatsPage} from '../pages/resultats/resultats';
 import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 import { DetailsAccessPage } from '../pages/details-access/details-access'
@@ -40,6 +41,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     UserProfilePage,
     MenuServicesPage,
     RecherchePage,
+    RechercheManuellePage,
     ResultatsPage,
     PlaceResultatPage,
     DetailsAccessPage,
@@ -67,6 +69,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     UserProfilePage,
     MenuServicesPage,
     RecherchePage,
+    RechercheManuellePage,
     ResultatsPage,
     PlaceResultatPage,
     DetailsAccessPage,
