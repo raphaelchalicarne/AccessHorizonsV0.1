@@ -3,7 +3,6 @@ import { IonicPage, NavController, ModalController, NavParams, MenuController} f
 
 import { ResultatsPage } from '../resultats/resultats';
 import { RechercheManuellePage} from '../recherche-manuelle/recherche-manuelle';
-//import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import leaflet from 'leaflet';
 
 import { enableProdMode } from '@angular/core';
@@ -23,12 +22,13 @@ export class RecherchePage {
   map: any;
   latitud: number;
   longitud: number;
+  clicked: number;
   marker: any;
   newMarker: any;
   adresse: any;
   filtrage: any[] = [];
   flag: boolean = false;
-
+  id: number;
   ngOnInit() {
     this.filtrage = this.navParams.get('filtrage');
   }
@@ -39,7 +39,6 @@ export class RecherchePage {
   }
   ionViewDidLoad(){
     this.loadmap();
-    //console.log(this.map)
   }
   
   loadmap(){
@@ -47,14 +46,14 @@ export class RecherchePage {
       center: this.center,
       zoom: 6
     });
-    console.log(map);
+ 
     //Tile (carte) de Mapbox --> API gratuite jusqu'à 50000 requetes
     /*var Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
       maxZoom: 19, //zoom possible de faire
       attribution: 'Map data &copy; ',
       id: 'mapbox.streets'});
-    Mapbox.addTo(map);
-      */
+    Mapbox.addTo(map);*/
+      
 
     var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
@@ -70,18 +69,19 @@ export class RecherchePage {
       setTimeout(function(){
         if(map.clicked == 1){
           if (this.marker != undefined){
-            map.removeLayer(this.marker); //Eliminer le marker deja crée
+            map.removeLayer(this.marker);
           }
           this.marker = new leaflet.marker(e.latlng).addTo(map);
           this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
-          console.log('inside marker', this.marker);
+          this.id = this.marker._leaflet_id;
           map.clicked = 0;
         }
       }, 200);
     
   }; //fin de onMapClick()
-  console.log('markeer', this.marker);
+  this.map = map;
   this.adresse = map.addEventListener("click", function(e){ //Centrer
+    console.log('this map', this.map);
     map.panTo(e.latlng);
     this.latlng = e.latlng;
   });
@@ -93,26 +93,28 @@ export class RecherchePage {
   map.on("dblclick", function(e){
     map.clicked = 0;
   });
-  this.map = map;
-}; //fin de la function loadMap()
+  
+}; //fin de la function loadMap()*/
   goToRechercheManuelle(){
-    console.log(this.marker);
-    if (this.marker != undefined){
-      this.map.removeLayer(this.marker);
-    }
+    let modal = this.modalCtrl.create(RechercheManuellePage);
+    modal.present();
+  }
+  /*goToRechercheManuelle(){
     let modal = this.modalCtrl.create(RechercheManuellePage);
     modal.present();
     modal.onDidDismiss((data) => {
       //console.log(data)
-      if (data.flag == true) {
-        //console.log(this.map);
-        this.marker = new leaflet.marker([data.latitud,data.longitud]).addTo(this.map);
-        this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
-        //console.log('marker',this.newMarker);
+      if (data.flag == true) { //Ha habido un cambio
+        if (this.newMarker != undefined){
+            console.log('borrar');
+            this.map.removeLayer(this.newMarker); //Eliminer le marker repeté
+        }
+        this.map.panTo([data.latitud,data.longitud]);
+        this.newMarker = new leaflet.marker([data.latitud,data.longitud]).addTo(this.map);
+        this.newMarker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
       }
     })
-  }
-
+  }*/
   goToPlaceList(){
     let adresse = this.adresse;
     let longitud = this.adresse.latlng.lng;
@@ -124,6 +126,60 @@ export class RecherchePage {
       this.menuCtrl.open();
   }
 }
+/*loadmap2(){
+    this.map = leaflet.map('map',{
+      center: this.center,
+      zoom: 6
+    });
+ 
+    //Tile (carte) de Mapbox --> API gratuite jusqu'à 50000 requetes
+    /*var Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
+      maxZoom: 19, //zoom possible de faire
+      attribution: 'Map data &copy; ',
+      id: 'mapbox.streets'});
+    Mapbox.addTo(map);
+     
+
+    var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
+      minZoom: 3,
+      maxZoom: 18,
+    });
+    //Tile (carte) de Open Street Map (gratuite)
+    OpenStreetMap.addTo(this.map);
+
+    this.map.clicked = 0;
+    function onMapClick(e){
+      this.map.clicked = this.map.clicked + 1;
+      setTimeout(function(){
+        if(this.map.clicked == 1){
+          if (this.marker != undefined){
+            this.map.removeLayer(this.marker);
+          }
+          this.marker = new leaflet.marker(e.latlng).addTo(this.map);
+          this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
+          this.id = this.marker._leaflet_id;
+          this.map.clicked = 0;
+        }
+      }, 200);
+    
+  }; //fin de onMapClick()
+  var map = this.map;
+  this.adresse = this.map.addEventListener("click", function(e){ //Centrer
+    console.log('this map', this.map);
+    map.panTo(e.latlng);
+    this.latlng = e.latlng;
+  });
+
+  this.map.addEventListener("dblclick", function(e){
+
+  });
+  this.map.on("click", onMapClick);
+  this.map.on("dblclick", function(e){
+    this.map.clicked = 0;
+  });
+  
+}; //fin de la function loadMap()*/
 
 /* //VERSION ANCIENNE 
 export class RecherchePage {
