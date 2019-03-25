@@ -14,7 +14,7 @@ import * as firebase from 'firebase';
 })
 
 export class ExterieurPage {
-	exterieurForm: any[]=[];
+	exterieurForm: any;
 
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {

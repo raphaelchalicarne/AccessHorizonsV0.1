@@ -134,7 +134,7 @@ export class AjoutlieuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AjoutlieuPage1');
-    console.log(this.interieurForm.value);
+    console.log(this.interieurForm.value); 
   }
 
 

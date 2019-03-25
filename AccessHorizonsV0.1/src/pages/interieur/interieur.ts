@@ -14,9 +14,9 @@ import * as firebase from 'firebase';
 })
 
 export class InterieurPage {
-	lieuForm: any[]=[];
-	interieurForm: any[]=[];
-
+	lieuForm: any;
+	interieurForm: any;
+  interieur: any;
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
