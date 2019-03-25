@@ -21,11 +21,15 @@
   </div>
 
   <div class="Liste avec les résultats de la recherche dans Open Source Map">
-    <ion-list>
-      <button ion-button color="dark" large outline round block *ngFor="let option of resultat" (click)="returnInfo(option.geometry.coordinates[0],option.geometry.coordinates[1])">
-        <h2>{{option.properties.name}}, </h2>
-        <p>{{option.properties.country}}</p>
+    <div  text-center>
+      <button ion-button color="dark" large outline round block *ngFor="let option of resultat" (click)="goToPlaceList(option.geometry.coordinates[0],option.geometry.coordinates[1])">
+        <div>
+          <h2>{{option.properties.name}}</h2>
+        </div>
+        <!--<div>
+          <p>{{option.properties.country}}</p>
+        </div>-->        
       </button>
-    </ion-list>
+    </div>
   </div>
 </ion-content>

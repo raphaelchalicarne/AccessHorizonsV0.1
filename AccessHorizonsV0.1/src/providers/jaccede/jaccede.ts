@@ -23,10 +23,10 @@ export class JaccedeProvider {
     let myUrl = 'https://apidev.jaccede.com/v4/places/'+googleID+'/comments?api_key='+this.apiKey+'';
     return this.http.get(myUrl)  
   }
-  /*getName(place){
+  getName(place){
     let limite = '4';
     let url = 'https://nominatim.openstreetmap.org/search/?q='+place+'&format=json&limit='+limite+'';
     return this.http.get(url);
-  }*/
+  }
 }
 

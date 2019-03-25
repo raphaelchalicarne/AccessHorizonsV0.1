@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
+import { ResultatsPage } from '../resultats/resultats';
 
 @IonicPage()
 @Component({
@@ -9,12 +10,14 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 })
 export class RechercheManuellePage {
   adresse: string = '';
-
   resultat: any[] = [];
+  filtrage: any;
+
   constructor(public navCtrl: NavController, 
   			  public userService: JaccedeProvider, 
   			  public navParams: NavParams,
   			  public viewCtrl: ViewController) {
+    this.filtrage = navParams.get('filtrage');
   }
 
   ionViewDidLoad() {
@@ -31,14 +34,31 @@ export class RechercheManuellePage {
   			console.log(error);
   		})
   }
-  returnInfo(longitud: number, latitud: number){
-  	//console.log('long',longitud);
-  	//console.log('lat',latitud);
-  	let flag = true;
-  	this.viewCtrl.dismiss({longitud: longitud, latitud:latitud, flag: flag})
-  }
+ 
   closeModal(){
   	let flag = false;
-  	this.viewCtrl.dismiss({flag: flag});
+  	this.viewCtrl.dismiss();
   }
+  goToPlaceList(longitud: number, latitud: number){
+    var filtrage = this.filtrage;
+    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
+
+  }
+    /*faireRecherche2(){
+    this.userService.getName(this.adresse)
+    .subscribe(
+      (data) =>{
+        console.log(data);
+      },
+      (error) =>{
+        console.log(error);
+     })
+  }
+   /*returnInfo(longitud: number, latitud: number){
+    //console.log('long',longitud);
+    //console.log('lat',latitud);
+    let flag = true;
+    this.viewCtrl.dismiss({longitud: longitud, latitud:latitud, flag: flag})
+  }*/
+  */
 }
