@@ -1,0 +1,78 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Informations entrées</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <div>
+        <input type="radio" name="pied" id="plainpied" value="plainpied" checked><label for="plain pied">Plain pied</label>
+        <input type="radio" name="pied" id="pasplainpied" value="pasplainpied"><label for="pas plain pied">Pas de plain pied</label>
+      </div>
+      <div>
+        <input type="checkbox" id="ressault" value="ressault"><label for="ressault">Ressault</label>
+      </div>
+      <div>
+        <input type="checkbox" id="marches" value="marches"><label for="marches">Marche(s)/escaliers</label>
+      </div>
+      <B>Nombre de marches</B>
+      <div>
+        <input type="radio" name="nb" value="1"><label for="1">1</label>
+        <input type="radio" name="nb" value="2"><label for="2">2</label>
+        <input type="radio" name="nb" value="3"><label for="3">3</label>
+        <input type="radio" name="nb" value="3"><label for="3">plus de 3</label>     
+      </div>
+      <div>
+        <input type="checkbox" id="maincourante" value="maincourante"><label for="maincourante">Main courante</label>
+      </div>
+      <div>
+        <input type="checkbox" id="nez" value="nez"><label for="nez">Nez de marches contrastés et antidérapants</label>
+      </div>
+      <div>
+        <input type="checkbox" id="bande" value="bande"><label for="bande">Bande d'éveil à la vigilance</label>
+      </div>
+      <div>
+        <input type="checkbox" id="plan" value="plan"><label for="plan">Plan incliné</label>
+      </div>
+      <div>
+        <input type="checkbox" id="enseigne" value="enseigne"><label for="enseigne">Enseigne visible et lisible</label>
+      </div>
+      <div>
+        <input type="checkbox" id="entreeprincipale" value="entreeprincpale"><label for="entreeprincipale">L'entrée évaluée est l'entrée principale</label>
+      </div>
+      <div>
+        <input type="checkbox" id="visiteur" value="visiteur"><label for="visiteur">Visiteur visible depuis l'intérieur</label>
+      </div>
+      <div>
+        <input type="checkbox" id="bouton" value="bouton"><label for="bouton">Interphone/Bouton d'appel</label>
+      </div>
+      <div>
+        <input type="checkbox" id="marquagevitre" value="marquagevitre"><label for="marquagevitre">Marquages sur porte vitrée</label>
+      </div>
+
+      <B>Ouverture porte</B>
+      <div>
+        <input type="radio" name="ouverture" id="porteautomatique" value="porteautomatique"><label for="porteautomatique">Automatique ou absence de porte</label>
+        <input type="radio" name="ouverture" id="manuelle" value="manuelle"><label for="manuelle">Manuelle</label>
+      </div>
+      <div>
+        <input type="checkbox" id="poigneeergo" value="poigneeergo"><label for="poigneeergo">Poignée ergonomique</label>
+      </div>
+      <div>
+        <input type="checkbox" id="portemaintienouvert" value="portemaintienouvert"><label for="portemaintienouvert">Porte facile à maintenir ouverte</label>
+      </div>  
+      <B>Largeur du passage de la porte d'entrée (cm)</B> 
+      <div>
+        <input type="radio" name="largeur" id="largeurplus" value="largeurplus"><label for="largeurplus">plus de 90cm</label>
+        <input type="radio" name="largeur" id="largeurmoins" value="largeurmoins"><label for="largeurmoins">moins de 90cm</label>
+      </div>              
+
+  </ion-list>
+
+  <div>
+  <button ion-button round (click)="saveEntree()"> Sauvegarder Entrée </button>
+  </div>
+
+</ion-content>

@@ -19,24 +19,21 @@
         <ion-label>Ville</ion-label>
         <ion-input placeholder="Ville" formControlName="ville"></ion-input>
       </ion-item>
-      <ion-item-divider>Informations accessibilité</ion-item-divider>
-      <ion-item>
-      	<ion-label>Entrée</ion-label>
-      	<ion-input placeholder="Informations entrée" formControlName="entree"></ion-input>
-      </ion-item>
-      <ion-item>
-      	<ion-label>Extérieur</ion-label>
-      	<ion-input placeholder="Informations extérieur" formControlName="exterieur"></ion-input>
-      </ion-item>
-      <ion-item>
-      	<ion-label>Intérieur</ion-label>
-      	<ion-input placeholder="Informations intérieur" formControlName="interieur"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Services et équipements</ion-label>
-        <ion-input placeholder="Informations services et équipements" formControlName="services"></ion-input>
-      </ion-item>
-          </ion-list>
+<!--       <ion-item-divider>Informations entrée</ion-item-divider> -->
+
+  <div>
+  <button ion-button round (click)="gotoEntreePage()"> Entrée </button>
+  </div>
+
+  <div>
+  <button ion-button round (click)="gotoInterieurPage()"> Intérieur </button>
+  </div>
+
+    <div>
+  <button ion-button round (click)="gotoExterieurPage()"> Extérieur </button>
+  </div>
+
+      </ion-list>
   </form>
 
   <div>
@@ -44,6 +41,7 @@
   </div>
 
 </ion-content>
+
 
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 <script>

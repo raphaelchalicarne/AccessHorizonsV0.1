@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Informations extérieur</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <B>Place de stationnement handicapé</B>
+      <div>
+        <input type="checkbox" id="aproximite" value="aproximite"><label for="aproximite">A proximité de l'établissement </label>
+      </div>
+      <div>
+        <input type="checkbox" id="grande" value="grande"><label for="grande">Plus grande que les autres places </label>
+      </div>
+      <div>
+        <input type="checkbox" id="danslenceinte" value=danslenceinte><label for="danslenceinte">Dans l'enceinte de l'établissement</label>
+      </div>
+
+      <B>Trottoirs</B>
+      <div>
+        <input type="checkbox" id="abaisses" value="abaisses"><label for="abaisses">Abaissés à proximité</label>
+      </div>
+      <div>
+        <input type="checkbox" id="paves" value="paves"><label for="paves">Pavés</label>
+      </div>  
+      <div>
+        <input type="checkbox" id="etroits" value="etroits"><label for="etroits">Très étroits</label>
+      </div>  
+      <div>
+        <input type="checkbox" id="devers" value="devers"><label for="devers">Dévers important</label>
+      </div>   
+      <div>
+        <input type="checkbox" id="pente" value="pente"><label for="pente">Rue en pente</label>
+      </div>      
+
+  </ion-list>
+
+  <div>
+  <button ion-button round (click)="saveExterieur()"> Sauvegarder Exterieur </button>
+  </div>
+
+</ion-content>
