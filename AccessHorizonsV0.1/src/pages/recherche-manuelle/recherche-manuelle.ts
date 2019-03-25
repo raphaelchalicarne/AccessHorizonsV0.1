@@ -44,6 +44,8 @@ export class RechercheManuellePage {
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
 
   }
+}
+
     /*faireRecherche2(){
     this.userService.getName(this.adresse)
     .subscribe(
@@ -60,5 +62,3 @@ export class RechercheManuellePage {
     let flag = true;
     this.viewCtrl.dismiss({longitud: longitud, latitud:latitud, flag: flag})
   }*/
-  */
-}
