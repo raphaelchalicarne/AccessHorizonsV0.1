@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons left>	
+  		<button ion-button icon-left (click)="closeModal()"><ion-icon name="arrow-back"></ion-icon></button>
+  	</ion-buttons>
+    <ion-title text-center>Où voulez-vous aller ?</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<div class="Barre de recherche" padding text-center>
+	    <ion-label position="floating">
+	      <h4>Écrivez le lieu que vous cherchez et cliquez le bouton RECHERCHER</h4>
+	    </ion-label>
+	    <ion-input text-center clearInput="true" placeholder="Ou voulez-vous aller ?" type="text" [(ngModel)]="adresse"></ion-input>
+  </div>
+
+  <div class="Bouton pour montrer les résultats" padding text-center>
+    <button ion-button color="dark" large outline round icon-start (click)="faireRecherche()">Rechercher</button>
+  </div>
+
+  <div class="Liste avec les résultats de la recherche dans Open Source Map">
+    <ion-list>
+      <button ion-button color="dark" large outline round block *ngFor="let option of resultat" (click)="returnInfo(option.geometry.coordinates[0],option.geometry.coordinates[1])">
+        <h2>{{option.properties.name}}, </h2>
+        <p>{{option.properties.country}}</p>
+      </button>
+    </ion-list>
+  </div>
+</ion-content>

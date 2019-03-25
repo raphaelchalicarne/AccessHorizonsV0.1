@@ -1,21 +1,14 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
+import { IonicPage, NavController, ModalController, NavParams, MenuController} from 'ionic-angular';
 
 import { ResultatsPage } from '../resultats/resultats';
+import { RechercheManuellePage} from '../recherche-manuelle/recherche-manuelle';
 //import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import leaflet from 'leaflet';
 
 import { enableProdMode } from '@angular/core';
 enableProdMode();
 
-//Tiles disponibles
-/*const Stamen = leaflet.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  subdomains: 'abcd',
-  minZoom: 3,
-  maxZoom: 17,
-  ext: 'jpg'});
-*/
 
 @IonicPage()
 @Component({
@@ -31,6 +24,7 @@ export class RecherchePage {
   latitud: number;
   longitud: number;
   marker: any;
+  newMarker: any;
   adresse: any;
   filtrage: any[] = [];
   flag: boolean = false;
@@ -39,14 +33,13 @@ export class RecherchePage {
     this.filtrage = this.navParams.get('filtrage');
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private menuCtrl: MenuController){}
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private menuCtrl: MenuController){}
 
   ionViewDidEnter(){
-    console.log('entrar');
   }
   ionViewDidLoad(){
     this.loadmap();
-
+    //console.log(this.map)
   }
   
   loadmap(){
@@ -54,6 +47,7 @@ export class RecherchePage {
       center: this.center,
       zoom: 6
     });
+    console.log(map);
     //Tile (carte) de Mapbox --> API gratuite jusqu'à 50000 requetes
     /*var Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
       maxZoom: 19, //zoom possible de faire
@@ -80,13 +74,14 @@ export class RecherchePage {
           }
           this.marker = new leaflet.marker(e.latlng).addTo(map);
           this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
+          console.log('inside marker', this.marker);
           map.clicked = 0;
         }
       }, 200);
     
   }; //fin de onMapClick()
-  
-  this.adresse = map.addEventListener("click", function(e){
+  console.log('markeer', this.marker);
+  this.adresse = map.addEventListener("click", function(e){ //Centrer
     map.panTo(e.latlng);
     this.latlng = e.latlng;
   });
@@ -98,7 +93,26 @@ export class RecherchePage {
   map.on("dblclick", function(e){
     map.clicked = 0;
   });
+  this.map = map;
 }; //fin de la function loadMap()
+  goToRechercheManuelle(){
+    console.log(this.marker);
+    if (this.marker != undefined){
+      this.map.removeLayer(this.marker);
+    }
+    let modal = this.modalCtrl.create(RechercheManuellePage);
+    modal.present();
+    modal.onDidDismiss((data) => {
+      //console.log(data)
+      if (data.flag == true) {
+        //console.log(this.map);
+        this.loadmap();
+        this.marker = new leaflet.marker([data.latitud,data.longitud]).addTo(this.map);
+        this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
+        //console.log('marker',this.newMarker);
+      }
+    })
+  }
 
   goToPlaceList(){
     let adresse = this.adresse;
