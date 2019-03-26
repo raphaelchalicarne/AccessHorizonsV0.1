@@ -44,7 +44,7 @@ export class RechercheManuellePage {
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
 
   }
-}
+ }
 
     /*faireRecherche2(){
     this.userService.getName(this.adresse)
