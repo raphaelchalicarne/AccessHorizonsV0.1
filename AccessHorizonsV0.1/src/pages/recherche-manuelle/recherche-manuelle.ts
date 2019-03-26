@@ -18,6 +18,7 @@ export class RechercheManuellePage {
   			  public navParams: NavParams,
   			  public viewCtrl: ViewController) {
     this.filtrage = navParams.get('filtrage');
+    console.log(this.filtrage);
   }
 
   ionViewDidLoad() {
@@ -41,6 +42,7 @@ export class RechercheManuellePage {
   }
   goToPlaceList(longitud: number, latitud: number){
     var filtrage = this.filtrage;
+    console.log(filtrage)
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
 
   }

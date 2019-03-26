@@ -29,22 +29,43 @@
   		<h1></h1>
   		<h1></h1>
   	</div>
-  	<div class="Separateur" text-center>
+  	<!--<div class="Separateur" text-center>
   		<h3>--------------------------------------</h3>
-  	</div>
+  	</div>-->
   	<div class="Critères d'Accessibilité" text-center>
-  		<div class="Accès et mobilité">
+  		<div class="Accès et mobilité" *ngIf="selection == 1">
   			<h3>Accès et mobilité:</h3>
   			<h1><b>{{note_access_mobilite}}/5</b></h1>	
   			<!--<button ion-button round large outline color="dark"><h3>?</h3></button>-->		
   		</div>
 
-  		<div class="Accueil et accompagnement">
+  		<div class="Accueil et accompagnement" *ngIf="selection == 1">
   			<h3>Accueil et accompagnement:</h3>
   			<h1><b>{{note_accueil}}/5</b></h1>
   			<!--<button ion-button round large outline color="dark"><h3>?</h3></button>-->
   		</div>
+
+      <div class="Transmission d'informations" *ngIf="selection == 1">
+        <h3>Transmission des informations</h3>
+        <h1><b>{{note_infos}}/5</b></h1>
+      </div>
+
+      <div class="Ambiance et état" *ngIf="selection == 2 || selection == 3 || selection == 4">
+        <h3>Etat et ambiance</h3>
+        <h1><b>{{note_etat}}/5</b></h1>
+      </div>
+
+      <div class="Services proposés" *ngIf="selection == 1 || selection == 2 || selection == 3 || selection == 4 || selection == 5">
+        <h3></h3>
+        <h1><b>{{note_services}}/5</b></h1>
+      </div>
+
+      <div class="Personnel" *ngIf="selection == 1">
+        <h3>Personnel</h3>
+        <h1><b>{{note_personnel}}/5</b></h1>
+      </div>
   	</div>
+
   <div class="Map" text-center>
     <button ion-button color="dark" outline round large (click)="mapModal()">Montrer carte</button>
   </div>

@@ -17,11 +17,16 @@ export class ResultatsPage {
   latitud:  number;
   filtrage:any = []; //Le filtrage demandé par l'utilisateur
 
+  selection: number;
+
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
       //this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');     
       this.latitud = this.navParams.get('latitud');     
       this.filtrage = this.navParams.get('filtrage');
+      this.selection = this.navParams.get('selection');
+
+      console.log(this.filtrage);
   }
 
   constructor(public navCtrl: NavController,
@@ -52,7 +57,8 @@ export class ResultatsPage {
   )
   }
   goToPlace(name: string, adresse: string, googleID: string){ //Passer à la page de résultats d'une place individuelle
-    this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID});
+    var selection = this.selection;
+    this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID, selection: selection});
   }
 
   onToggleMenu() {

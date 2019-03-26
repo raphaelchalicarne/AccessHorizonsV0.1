@@ -29,14 +29,22 @@ export class PlaceResultatPage {
   stars_half: any[] = [];
   flag2: boolean;
 
+  selection: number;
+
   note_globale: number;
   note_access_mobilite: number = 2.4;  //A MODIFIER
   note_accueil: number = 2.4; //A MODIFIER
+  note_infos: number = 3;
+  note_etat: number = 3;
+  note_services:number = 3;
+  note_personnel: number = 3;
 
   ngOnInit() {
     this.name = this.navParams.get('name');
     this.adresse = this.navParams.get('adresse');
     this.googleID = this.navParams.get('googleID');
+    this.selection = this.navParams.get('selection');
+    console.log(this.selection );
   }
 
   constructor(public navCtrl: NavController,
@@ -45,14 +53,14 @@ export class PlaceResultatPage {
               public modalCtrl: ModalController,
               private menuCtrl: MenuController) {
   }
-
+ 
   ionViewDidLoad() {
     this.userService.getDetails(this.googleID).subscribe(
       (data) => {
         this.details = data['accessibility'];
         this.latitud = data['latitude'];
         this.longitud = data['longitude'];
-        console.log(data);
+        //console.log(data);
         this.note_globale = data['rating']; //Note (rating) de J'accede
         if (this.note_globale != null){ //si la note n'est pas null, montrer note
           this.flag_note = true;
