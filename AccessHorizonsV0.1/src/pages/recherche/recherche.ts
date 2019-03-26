@@ -29,6 +29,7 @@ export class RecherchePage {
   filtrage: any[] = [];
   flag: boolean = false;
   id: number;
+  count: number = 0;
 
   selection: number;
 
@@ -41,17 +42,29 @@ export class RecherchePage {
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private menuCtrl: MenuController){}
 
   ionViewDidEnter(){
+    /*console.log('entre');
+    this.count = this.count + 1
+    if (this.count > 1) {
+      console.log(map);
+      map.remove();
+      console.log(map);
+      //map.remove();
+    }*/
+     this.loadmap();
   }
   ionViewDidLoad(){
-    this.loadmap();
+    //console.log(map);
   }
   
   loadmap(){
-    var map = leaflet.map('map',{
-      center: this.center,
-      zoom: 6
-    });
- 
+    if (map == undefined){
+      var map = leaflet.map('map',{
+        center: this.center,
+        zoom: 6
+      });
+    }
+
+     //console.log(map);
     //Tile (carte) de Mapbox --> API gratuite jusqu'à 50000 requetes
     /*var Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
       maxZoom: 19, //zoom possible de faire
@@ -89,7 +102,6 @@ export class RecherchePage {
     map.panTo(e.latlng);
     this.latlng = e.latlng;
   });
-
   map.addEventListener("dblclick", function(e){
 
   });
@@ -97,6 +109,7 @@ export class RecherchePage {
   map.on("dblclick", function(e){
     map.clicked = 0;
   });
+  //map.remove();
   
 }; //fin de la function loadMap()*/
   goToRechercheManuelle(){
