@@ -28,6 +28,7 @@ import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
 import { EntreePage } from '../pages/entree/entree';
 import { InterieurPage } from '../pages/interieur/interieur';
 import { ExterieurPage } from '../pages/exterieur/exterieur';
+import { EquipementPage } from '../pages/equipement/equipement';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -53,7 +54,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     ParametresPage,
     EntreePage,
     InterieurPage,
-    ExterieurPage ],
+    ExterieurPage,
+    EquipementPage ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -82,7 +84,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     ParametresPage,
     EntreePage,
     InterieurPage,
-    ExterieurPage
+    ExterieurPage,
+    EquipementPage
   ],
   providers: [
     StatusBar,

@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EntreePage } from '../entree/entree';
 import { InterieurPage } from '../interieur/interieur';
 import { ExterieurPage } from '../exterieur/exterieur';
+import { EquipementPage } from '../equipement/equipement';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -23,6 +24,7 @@ export class AjoutlieuPage {
   entreeForm: FormGroup;
   interieurForm: FormGroup;
   exterieurForm: FormGroup;
+  equipementForm: FormGroup;
 
   entree = {
       plainpied: '',
@@ -66,11 +68,25 @@ export class AjoutlieuPage {
     pente:'',
   }
 
+  equipement = {
+    toilettes:'',
+    plainpiedamenage:'',
+    marche:'',
+    automate:'',
+    bouclemagn:'',
+    personnelsigne:'',
+    personnelaccueil:'',
+    titrage:'',
+    hauteurcaisse:'',
+    materieldispo:'',
+  }
+
   lieu = {
     name:'',
     ville:'',
     entree:'',
     interieur:'',
+    equipement:'',
     }
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private formBuilder: FormBuilder, public db: AngularFireDatabase) {
@@ -123,6 +139,19 @@ export class AjoutlieuPage {
       pente:[''],
     });
 
+    this.equipementForm = this.formBuilder.group({
+      toilettes:[''],
+      plainpiedamenage:[''],
+      marche:[''],
+      automate:[''],
+      bouclemagn:[''],
+      personnelsigne:[''],
+      personnelaccueil:[''],
+      titrage:[''],
+      hauteurcaisse:[''],
+      materieldispo:[''],
+    })
+
     this.lieuForm = this.formBuilder.group({
       name:[''],
       ville:[''],
@@ -141,23 +170,23 @@ export class AjoutlieuPage {
   saveLieu(){
 
     this.entree = {
-    plainpied: this.entreeForm.get('plainpied').value,
-    ressault : this.entreeForm.get('ressault').value,
-    marches : this.entreeForm.get('marches').value,
-    nbremarches : this.entreeForm.get('nbremarches').value,
-    maincourante: this.entreeForm.get('maincourante').value,
-    nez: this.entreeForm.get('nez').value,
-    bande: this.entreeForm.get('bande').value,
-    planincline: this.entreeForm.get('planincline').value,
-    enseignelisible: this.entreeForm.get('enseignelisible').value,
-    entreeprincipale: this.entreeForm.get('entreeprincipale').value,
-    visiteurvisible: this.entreeForm.get('visiteurvisible').value,
-    interphone: this.entreeForm.get('interphone').value,
-    marquageportevitree: this.entreeForm.get('marquageportevitree').value,
-    porteautomatique:this.entreeForm.get('porteautomatique').value,
-    poigneeergo: this.entreeForm.get('poigneeergo').value,
-    portemaintienouvert: this.entreeForm.get('portemaintienouvert').value,
-    largeurporte: this.entreeForm.get('largeurporte').value,
+      plainpied: this.entreeForm.get('plainpied').value,
+      ressault : this.entreeForm.get('ressault').value,
+      marches : this.entreeForm.get('marches').value,
+      nbremarches : this.entreeForm.get('nbremarches').value,
+      maincourante: this.entreeForm.get('maincourante').value,
+      nez: this.entreeForm.get('nez').value,
+      bande: this.entreeForm.get('bande').value,
+      planincline: this.entreeForm.get('planincline').value,
+      enseignelisible: this.entreeForm.get('enseignelisible').value,
+      entreeprincipale: this.entreeForm.get('entreeprincipale').value,
+      visiteurvisible: this.entreeForm.get('visiteurvisible').value,
+      interphone: this.entreeForm.get('interphone').value,
+      marquageportevitree: this.entreeForm.get('marquageportevitree').value,
+      porteautomatique:this.entreeForm.get('porteautomatique').value,
+      poigneeergo: this.entreeForm.get('poigneeergo').value,
+      portemaintienouvert: this.entreeForm.get('portemaintienouvert').value,
+      largeurporte: this.entreeForm.get('largeurporte').value,
     }
 
     this.interieur = {
@@ -172,15 +201,28 @@ export class AjoutlieuPage {
     }
 
     this.exterieur = {
-    aproximite:this.exterieurForm.get('aproximite').value,
-    grande:this.exterieurForm.get('grande').value,
-    danslenceinte: this.exterieurForm.get('danslenceinte').value,
-    abaisses: this.exterieurForm.get('abaisses').value,
-    paves: this.exterieurForm.get('paves').value,
-    etroits: this.exterieurForm.get('etroits').value,
-    devers: this.exterieurForm.get('devers').value,
-    pente: this.exterieurForm.get('pente').value,
+      aproximite:this.exterieurForm.get('aproximite').value,
+      grande:this.exterieurForm.get('grande').value,
+      danslenceinte: this.exterieurForm.get('danslenceinte').value,
+      abaisses: this.exterieurForm.get('abaisses').value,
+      paves: this.exterieurForm.get('paves').value,
+      etroits: this.exterieurForm.get('etroits').value,
+      devers: this.exterieurForm.get('devers').value,
+      pente: this.exterieurForm.get('pente').value,
 
+    }
+
+    this.equipement = {
+      toilettes:this.equipementForm.get('toilettes').value,
+      plainpiedamenage:this.equipementForm.get('plainpiedamenage').value,
+      marche: this.equipementForm.get('marche').value,
+      automate: this.equipementForm.get('automate').value,
+      bouclemagn: this.equipementForm.get('bouclemagn').value,
+      personnelsigne: this.equipementForm.get('personnelsigne').value,
+      personnelaccueil: this.equipementForm.get('personnelaccueil').value,
+      titrage: this.equipementForm.get('titrage').value,
+      hauteurcaisse:this.equipementForm.get('hauteurcaisse').value,
+      materieldispo:this.equipementForm.get('materieldispo').value,
     }
 
     this.lieu = {
@@ -189,10 +231,11 @@ export class AjoutlieuPage {
       entree: this.entree,
       interieur: this.interieur,
       exterieur: this.exterieur,
+      equipement: this.equipement,
     }
 
     this.db.list('lieu').push(this.lieu);
-    console.log('Lieu sauvegardé1');
+    console.log('Lieu sauvegardé2');
     }
 
 
@@ -214,6 +257,9 @@ export class AjoutlieuPage {
     this.navCtrl.push(ExterieurPage, {exterieurForm:exterieurForm});
   }
 
-
+  gotoEquipementPage(){
+    let equipementForm = this.equipementForm;
+    this.navCtrl.push(EquipementPage, {equipementForm:equipementForm});
+  }
 
 }
