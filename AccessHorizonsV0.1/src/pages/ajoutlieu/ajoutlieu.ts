@@ -10,15 +10,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 import * as firebase from 'firebase';
 
-
-
 @Component({
   selector: 'page-ajoutlieu',
   templateUrl: 'ajoutlieu.html',
 })
 
 export class AjoutlieuPage {
-
 
 	lieuForm: FormGroup;
   entreeForm: FormGroup;
@@ -163,7 +160,7 @@ export class AjoutlieuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AjoutlieuPage1');
-    console.log(this.interieurForm.value); 
+    console.log(this.interieurForm.value);
   }
 
 
@@ -250,7 +247,6 @@ export class AjoutlieuPage {
     let interieurForm = this.interieurForm;
     this.navCtrl.push(InterieurPage, {lieuForm:lieuForm, interieurForm:interieurForm});
   }
-
 
   gotoExterieurPage(){
     let exterieurForm = this.exterieurForm;
