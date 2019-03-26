@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuController, NavController, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 import * as firebase from 'firebase';
 
-import { HomePage } from '../pages/home/home';
+//import { HomePage } from '../pages/home/home';
 import { AuthPage } from '../pages/auth/auth';
 import { ParametresPage } from '../pages/parametres/parametres';
 import { MenuServicesPage } from '../pages/menu-services/menu-services';
@@ -23,8 +23,8 @@ export class MyApp {
   @ViewChild('content') content: NavController;
 
   constructor(platform: Platform,
-              statusBar: StatusBar,
-              splashScreen: SplashScreen,
+              private statusBar: StatusBar,
+              private splashScreen: SplashScreen,
               private menuCtrl: MenuController) {
     platform.ready().then(() => {
       statusBar.styleDefault();
