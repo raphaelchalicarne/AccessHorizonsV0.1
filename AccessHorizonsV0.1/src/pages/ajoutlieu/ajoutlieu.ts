@@ -5,6 +5,7 @@ import { EntreePage } from '../entree/entree';
 import { InterieurPage } from '../interieur/interieur';
 import { ExterieurPage } from '../exterieur/exterieur';
 import { EquipementPage } from '../equipement/equipement';
+import { TestPage } from '../test/test';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -235,7 +236,7 @@ export class AjoutlieuPage {
     }
 
     this.db.list('lieu').push(this.lieu);
-    console.log('Lieu sauvegardé2');
+    console.log('Lieu sauvegardé');
     }
 
 
@@ -260,6 +261,10 @@ export class AjoutlieuPage {
   gotoEquipementPage(){
     let equipementForm = this.equipementForm;
     this.navCtrl.push(EquipementPage, {equipementForm:equipementForm});
+  }
+
+  gotoTestPage(){
+    this.navCtrl.push(TestPage);
   }
 
 }

@@ -9,12 +9,12 @@ import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
+import { FirebaseProvider } from '../providers/firebase/firebase';
 import { HttpClientModule } from '@angular/common/http';
+
 import { RecherchePage } from '../pages/recherche/recherche';
-import { ResultatsPage} from '../pages/resultats/resultats';
+import { ResultatsPage } from '../pages/resultats/resultats';
 import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
-//import { FiltrePersonnelPage } from '../pages/filtre-personnel/filtre-personnel';
-//import {PlaceResultPage} from '../pages/place-result/place-result';
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
 import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
@@ -22,10 +22,21 @@ import { EntreePage } from '../pages/entree/entree';
 import { InterieurPage } from '../pages/interieur/interieur';
 import { ExterieurPage } from '../pages/exterieur/exterieur';
 import { EquipementPage } from '../pages/equipement/equipement';
+import { TestPage } from '../pages/test/test';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { FIREBASE_CONFIG } from './firebase.credentials';
+//import { FIREBASE_CONFIG } from './firebase.credentials';
+import { HttpModule } from '@angular/http';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDnD8ksYh0fAI-tOlrIXdcXjO0w20ws1Gk",
+    authDomain: "access-horizons-862e8.firebaseapp.com",
+    databaseURL: "https://access-horizons-862e8.firebaseio.com",
+    projectId: "access-horizons-862e8",
+    storageBucket: "access-horizons-862e8.appspot.com",
+    messagingSenderId: "310689614362"
+    };
 
  
 @NgModule({
@@ -37,21 +48,21 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     RecherchePage,
     ResultatsPage,
     PlaceResultatPage,
-    //FiltrePersonnelPage,
     AuthPage,
     AjoutlieuPage,
-    //,PlaceResultPage
     AuthPage,
     EntreePage,
     InterieurPage,
     ExterieurPage,
-    EquipementPage ],
+    EquipementPage,
+    TestPage ],
   imports: [
     BrowserModule,
     HttpClientModule, 
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    HttpModule,
 
   ],
   bootstrap: [IonicApp],
@@ -63,14 +74,14 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     RecherchePage,
     ResultatsPage,
     PlaceResultatPage,
-    //FiltrePersonnelPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage,
     EntreePage,
     InterieurPage,
     ExterieurPage,
-    EquipementPage
+    EquipementPage,
+    TestPage
 
   ],
   providers: [
@@ -78,7 +89,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     SplashScreen,
     AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    JaccedeProvider
+    JaccedeProvider,
+    FirebaseProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
