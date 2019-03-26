@@ -1,0 +1,47 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Informations Equipement</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <div>
+        <input type="checkbox" id="toilettes" value="toilettes"><label for="toilettes"> Toilettes </label>
+      </div>
+      <B> Accès </B>
+      <div>
+        <input type="radio" id="plainpiedamenage" value="plainpiedamenage"><label for="plainpiedamenage"> De plain-pied et aménagés </label>
+        <input type="radio" id="plainpiednonamenage" value="plainpiednonamenage"><label for="plainpiednonamenage"> De plain-pied, sans aménagement </label>
+        <input type="radio" id="marche" value="marche"><label for="marche"> Marche(s) </label>
+      </div>
+      <div>
+        <input type="checkbox" id="automate" value=automate><label for="automate"> Automates </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="bouclemagn" value="bouclemagn"><label for="bouclemagn"> Boucle magnétique </label>
+      </div>
+      <div>
+        <input type="checkbox" id="personnelsigne" value="personnelsigne"><label for="personnelsigne"> Personnel inité à la langue des signes </label>
+      </div>  
+      <div>
+        <input type="checkbox" id="personnelaccueil" value="personnelaccueil"><label for="personnelaccueil"> Personnel formé à l'accueil des personnes en situation de handicap </label>
+      </div>  
+      <div>
+        <input type="checkbox" id="titrage" value="titrage"><label for="titrage"> Sous-titrage/sur-titrage</label>
+      </div>   
+      <div>
+        <input type="checkbox" id="hauteurcaisse" value="hauteurcaisse"><label for="hauteurcaisse"> Caisses à hauteur adaptée </label>
+      </div>      
+      <div>
+        <input type="checkbox" id="materieldispo" value="materieldispo"><label for="materieldispo"> Matériel à disposition </label>
+      </div> 
+  </ion-list>
+
+  <div>
+  <button ion-button round (click)="saveEquipement()"> Sauvegarder Equipement </button>
+  </div>
+
+</ion-content>
