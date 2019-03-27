@@ -15,7 +15,7 @@ import * as firebase from 'firebase';
 
 export class EntreePage {
 	lieuForm: any;
-	entreeForm: any;
+	entreeForm: any; 
   entree: any;
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {

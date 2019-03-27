@@ -95,7 +95,8 @@ export class PlaceResultatPage {
 
   laisserAvisModal(){
     let note = this.note_globale;
-    let modal = this.modalCtrl.create(LaisserAvisPage, {note_globale : note});
+    let selection = this.selection;
+    let modal = this.modalCtrl.create(LaisserAvisPage, {selection : selection});
     modal.present();
   }
 

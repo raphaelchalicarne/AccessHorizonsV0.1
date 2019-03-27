@@ -10,11 +10,44 @@
 <ion-content padding>
 	<div class="Note globale" text-center padding>
 		<h2>Note globale</h2>
-		<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="isOutline[element-1]" (click)="recalculerNote(element)">{{element}}</button>
+		<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="isOutlineGlobal[element-1]" (click)="recalculerNote(element)">{{element}}</button>
 	</div>
 
-	<div class="Note des autres critères">
-		<h3>Autres critères (à completer)</h3>
+    <div class="Note des autres critères" text-center>
+	  <div class="Acces" *ngIf="selection == 1 || selection == 2 || selection == 3 || selection == 4 || selection == 5">
+		<h3>Accès et mobilité:</h3>
+		<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="this.isOutline.Acces[element-1]" (click)="recalculerOutline(element, 'Acces')">{{element}}</button>
+	  </div>
+
+	  <div class="Accueil" *ngIf="selection == 1">
+		<h3>Accueil et accompagnement:</h3>
+		<button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="this.isOutline.Accueil[element-1]" (click)="recalculerOutline(element, 'Accueil')">{{element}}</button>
+		<!--<button ion-button round large outline color="dark"><h3>?</h3></button>-->
+		<h1></h1>
+	  </div>
+
+      <div class="Infos" *ngIf="selection == 1">
+        <h3>Transmission des informations</h3>
+        <button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="this.isOutline.Infos[element-1]" (click)="recalculerOutline(element, 'Infos')">{{element}}</button>
+        <h1></h1>
+      </div>
+
+      <div class="Etat" *ngIf="selection == 2 || selection == 3 || selection == 4">
+        <h3>Etat et ambiance</h3>
+        <button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="this.isOutline.Etat[element-1]" (click)="recalculerOutline(element, 'Etat')">{{element}}</button>
+        <h1></h1>
+      </div>
+
+      <div class="Services" *ngIf="selection == 1 || selection == 2 || selection == 3 || selection == 4 || selection == 5">
+        <h3>Services proposés</h3>
+        <button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="this.isOutline.Services[element-1]" (click)="recalculerOutline(element, 'Services')">{{element}}</button>
+        <h1></h1>
+      </div>
+
+      <div class="Personnel" *ngIf="selection == 1 || selection == 2 || selection == 5">
+        <h3>Personnel</h3> 
+        <button ion-button *ngFor="let element of buttons" round type=large color="dark" [outline]="this.isOutline.Personnel[element-1]" (click)="recalculerOutline(element, 'Personnel')">{{element}}</button>
+      </div>		
 	</div>
 	
 	<div class="Boutton pour sauvegarder les changements et envoyer l'avis" text-center>

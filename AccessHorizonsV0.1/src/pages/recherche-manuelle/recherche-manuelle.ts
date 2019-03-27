@@ -12,17 +12,19 @@ export class RechercheManuellePage {
   adresse: string = '';
   resultat: any[] = [];
   filtrage: any;
+  selection: number;
 
   constructor(public navCtrl: NavController, 
   			  public userService: JaccedeProvider, 
   			  public navParams: NavParams,
   			  public viewCtrl: ViewController) {
     this.filtrage = navParams.get('filtrage');
-    console.log(this.filtrage);
+    this.selection = navParams.get('selection');
+    //console.log(this.filtrage);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RechercheManuellePage');
+    //console.log('ionViewDidLoad RechercheManuellePage');
   }
   faireRecherche(){
   	this.userService.getAutocomplete(this.adresse)
@@ -42,8 +44,9 @@ export class RechercheManuellePage {
   }
   goToPlaceList(longitud: number, latitud: number){
     var filtrage = this.filtrage;
+    var selection = this.selection;
     console.log(filtrage)
-    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage});
+    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
 
   }
   }
