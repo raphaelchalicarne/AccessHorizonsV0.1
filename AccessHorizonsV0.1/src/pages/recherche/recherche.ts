@@ -30,14 +30,16 @@ export class RecherchePage {
     .subscribe(
       (data) => {
         this.resultat = data['features'];
+        console.log(data);
       },
       (error) =>{
         console.error(error);
       })
   }
 
-  goToPlaceList(longitud: number, latitud: number, adresse: string){
+  goToPlaceList(longitud: number, latitud: number, name: string, osm: any){
+    //console.log(osm);
     var filtrage = this.filtrage;
-    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, adresse:adresse, filtrage:filtrage});
+    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, name:name, filtrage:filtrage, osm: osm});
   }
 }

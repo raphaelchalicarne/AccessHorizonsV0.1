@@ -12,15 +12,18 @@ export class ResultatsPage {
   places: any[] = [];
   longitud: number; 
   latitud:  number;
-  adresse: string = '';
+  name: string = '';
   resultat: any[] = [];
   filtrage:any = [];
+  osm: any;
 
   ngOnInit() {
-      this.adresse = this.navParams.get('adresse');
+      this.name = this.navParams.get('name');
       this.longitud = this.navParams.get('longitud');
       this.latitud = this.navParams.get('latitud');
       this.filtrage = this.navParams.get('filtrage');
+      this.osm = this.navParams.get('osm');
+      console.log(this.osm);
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider) {

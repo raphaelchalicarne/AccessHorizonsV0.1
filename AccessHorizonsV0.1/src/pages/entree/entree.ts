@@ -8,7 +8,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
 
 
-@Component({
+@Component({ 
   selector: 'page-entree',
   templateUrl: 'entree.html',
 })
