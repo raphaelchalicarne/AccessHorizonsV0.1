@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
 @IonicPage() 
 @Component({
@@ -12,6 +12,7 @@ export class LaisserAvisPage {
   note_finale: number;
   nombre: number = 1;
   selection: number;
+  flag: boolean;
 
   isOutlineGlobal:any[] = [true,true,true,true,true];
 
@@ -29,18 +30,15 @@ export class LaisserAvisPage {
     Infos: 0,
     Etat: 0,
     Services: 0,
-    Personnel: 0
+    Personnel: 0 
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public alertController: AlertController) {
     this.selection = navParams.get('selection');
-    console.log(this.selection);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LaisserAvisPage');
-    //console.log(this.isOutline.Acces)
-    console.log(this.isOutline['Acces']);
+    //console.log(this.isOutline['Acces']);
   }
   closeModal(){ //fermer la fenetre SANS ENVOYER AUCUNE INFO
   	this.viewCtrl.dismiss(); 
@@ -72,15 +70,44 @@ export class LaisserAvisPage {
       }
     }
     this.notes[type] = element;
-    console.log(this.notes);
   
   }
+  Envoyer(){
+    let alert = this.presentAlertConfirm();
+    alert.present();
+  }
 
+  presentAlertConfirm(){
+    let alert = this.alertController.create({
+        title: 'Confirmation',
+        message: 'Voulez vous confirmer vos valorations ?',
+        buttons: [
+        {
+          text: 'Confirmer',
+          handler: () => {
+            alert.dismiss(true);
+            this.updateFirebase();
+            this.viewCtrl.dismiss();
+            return false;
+          }
+        },
+        {  
+          text: 'Annuler',
+          handler: () =>{
+            console.log('Anulado');
+            alert.dismiss(false);
+            return false;
+          }
+        }]
+      })
+    //alert.present();
+    return alert;
+  }
   /*lors qu'on retourne à la page principale de resultats en appuyant sur le 
   bouton d'Envoyer, les infos introduites par l'utilisateur 
   sont envoyés à la base de donnés*/
   updateFirebase(){
-    //ICI code pour envoyer donnés à la base de donnés
-    this.viewCtrl.dismiss(); 
+    let notes = this.notes;
+    console.log('update Firebae');
   }
 }

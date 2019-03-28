@@ -42,15 +42,13 @@ export class RecherchePage {
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private menuCtrl: MenuController){}
 
   ionViewDidEnter(){
-    /*console.log('entre');
-    this.count = this.count + 1
-    if (this.count > 1) {
-      console.log(map);
-      map.remove();
-      console.log(map);
-      //map.remove();
-    }*/
-     this.loadmap();
+    //console.log('this map', this.map);
+    //console.log('map', map); 
+    if (this.flag == false){
+      this.loadmap();  
+      this.flag = true;
+    }
+    
   }
   ionViewDidLoad(){
     //console.log(map);
@@ -90,7 +88,7 @@ export class RecherchePage {
             map.removeLayer(this.marker);
           }
           this.marker = new leaflet.marker(e.latlng).addTo(map);
-          this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h5 text-center>Cliquez le bouton</h5>");
+          this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h4 text-center>Appuyez sur Rechercher</h4>");
           this.id = this.marker._leaflet_id;
           map.clicked = 0;
         }

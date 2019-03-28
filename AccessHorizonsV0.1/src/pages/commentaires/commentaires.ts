@@ -23,7 +23,7 @@ export class CommentairesPage {
           this.flag = true;
           this.commentaires = data['items'];
         }
-        console.log('data', data);
+        //console.log('data', data);
       },
       (error) =>{
         console.log(error);

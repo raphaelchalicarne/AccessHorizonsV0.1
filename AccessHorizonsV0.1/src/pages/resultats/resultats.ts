@@ -25,8 +25,6 @@ export class ResultatsPage {
       this.latitud = this.navParams.get('latitud');     
       this.filtrage = this.navParams.get('filtrage');
       this.selection = this.navParams.get('selection');
-
-      console.log(this.filtrage);
   }
 
   constructor(public navCtrl: NavController,
@@ -55,7 +53,10 @@ export class ResultatsPage {
       }
     }
   )
-  }
+
+  } 
+
+
   goToPlace(name: string, adresse: string, googleID: string){ //Passer à la page de résultats d'une place individuelle
     var selection = this.selection;
     this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID, selection: selection});

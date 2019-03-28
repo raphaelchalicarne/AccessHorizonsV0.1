@@ -18,7 +18,6 @@ export class DetailsAccessPage {
   }
 
   ionViewDidLoad() {
-    //console.log(this.details);
     if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
     { 
   		this.flag = true;
@@ -29,8 +28,7 @@ export class DetailsAccessPage {
   	}
   }
   closeModal(){
-  	let message = "Modal closed";
-  	this.viewCtrl.dismiss({data : message});
+  	this.viewCtrl.dismiss();
   }
 
 }
