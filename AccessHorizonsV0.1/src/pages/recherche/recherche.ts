@@ -10,7 +10,7 @@ enableProdMode();
 
 
 @IonicPage()
-@Component({
+@Component({ 
   selector: 'page-recherche',
   templateUrl: 'recherche.html',
 })

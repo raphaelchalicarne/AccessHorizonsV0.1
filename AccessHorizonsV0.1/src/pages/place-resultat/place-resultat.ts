@@ -120,7 +120,9 @@ export class PlaceResultatPage {
     }
 
   }
-
+  InformationsCriteres(){
+    
+  }
   onToggleMenu() {
       this.menuCtrl.open();
   }
