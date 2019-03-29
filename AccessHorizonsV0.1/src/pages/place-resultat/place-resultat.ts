@@ -44,7 +44,6 @@ export class PlaceResultatPage {
     this.adresse = this.navParams.get('adresse');
     this.googleID = this.navParams.get('googleID');
     this.selection = this.navParams.get('selection');
-    console.log(this.selection );
   }
 
   constructor(public navCtrl: NavController,

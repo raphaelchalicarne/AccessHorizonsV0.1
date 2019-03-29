@@ -28,24 +28,21 @@ export class RecherchePage {
   adresse: any;
   filtrage: any[] = [];
   flag: boolean = false;
-  id: number;
   count: number = 0;
 
+  click: boolean = false;
   selection: number;
 
   ngOnInit() {
     this.filtrage = this.navParams.get('filtrage');
     this.selection = this.navParams.get('selection');
-    console.log(this.selection);
   }
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private menuCtrl: MenuController){}
 
   ionViewDidEnter(){
-    //console.log('this map', this.map);
-    //console.log('map', map); 
     if (this.flag == false){
-      this.loadmap();  
+      this.loadmap();   
       this.flag = true;
     }
     
@@ -89,7 +86,6 @@ export class RecherchePage {
           }
           this.marker = new leaflet.marker(e.latlng).addTo(map);
           this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h4 text-center>Appuyez sur Rechercher</h4>");
-          this.id = this.marker._leaflet_id;
           map.clicked = 0;
         }
       }, 200);
@@ -98,7 +94,7 @@ export class RecherchePage {
   this.map = map;
   this.adresse = map.addEventListener("click", function(e){ //Centrer
     map.panTo(e.latlng);
-    this.latlng = e.latlng;
+    this.latlng = e.latlng; //ajoute la property latlng à l'objet this.adresse
   });
   map.addEventListener("dblclick", function(e){
 
@@ -107,7 +103,6 @@ export class RecherchePage {
   map.on("dblclick", function(e){
     map.clicked = 0;
   });
-  //map.remove();
   
 }; //fin de la function loadMap()*/
   goToRechercheManuelle(){
@@ -117,12 +112,16 @@ export class RecherchePage {
     modal.present();
   }
   goToPlaceList(){
-    let adresse = this.adresse;
-    let longitud = this.adresse.latlng.lng;
-    let latitud = this.adresse.latlng.lat;
-    var filtrage = this.filtrage;
-    var selection = this.selection;
-    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
+    if (this.adresse.latlng){ //si la proprieté existe, il y a eu un click, on exécute la recherche de places
+      let adresse = this.adresse;
+      let longitud = this.adresse.latlng.lng;
+      let latitud = this.adresse.latlng.lat;
+      var filtrage = this.filtrage;
+      var selection = this.selection;
+      this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
+    } else {
+      console.log('No existe');
+    }    
   }
   onToggleMenu() {
       this.menuCtrl.open();

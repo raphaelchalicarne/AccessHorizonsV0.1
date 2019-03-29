@@ -23,7 +23,7 @@ export class LaisserAvisPage {
     Etat: [true, true, true, true, true],
     Services: [true, true, true, true, true],
     Personnel: [true, true, true, true, true]
-  }
+  };
   notes: any = {
     Acces: 0,
     Accueil: 0,
@@ -31,14 +31,13 @@ export class LaisserAvisPage {
     Etat: 0,
     Services: 0,
     Personnel: 0 
-  }
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public alertController: AlertController) {
     this.selection = navParams.get('selection');
   }
 
   ionViewDidLoad() {
-    //console.log(this.isOutline['Acces']);
   }
   closeModal(){ //fermer la fenetre SANS ENVOYER AUCUNE INFO
   	this.viewCtrl.dismiss(); 
@@ -57,10 +56,6 @@ export class LaisserAvisPage {
   }
   
   recalculerOutline(element: number, type: string){ 
-    /*console.log(element);
-    console.log(type);
-    console.log(this.isOutline[type]);
-    console.log(this.isOutline[type][element-1]);*/
     for (var i =1; i < 6; ++i){
       if (i != element) {
         this.isOutline[type][i-1] = true;
@@ -79,8 +74,8 @@ export class LaisserAvisPage {
 
   presentAlertConfirm(){
     let alert = this.alertController.create({
-        title: 'Confirmation',
-        message: 'Voulez vous confirmer vos valorations ?',
+        title: '<h2>Confirmer</h2>',
+        message: '<h3>Voulez vous confirmer vos valorations ?</h3>',
         buttons: [
         {
           text: 'Confirmer',
@@ -94,13 +89,11 @@ export class LaisserAvisPage {
         {  
           text: 'Annuler',
           handler: () =>{
-            console.log('Anulado');
             alert.dismiss(false);
             return false;
           }
         }]
       })
-    //alert.present();
     return alert;
   }
   /*lors qu'on retourne à la page principale de resultats en appuyant sur le 
