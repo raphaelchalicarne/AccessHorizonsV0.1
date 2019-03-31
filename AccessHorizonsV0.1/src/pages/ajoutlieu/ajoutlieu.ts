@@ -85,6 +85,7 @@ export class AjoutlieuPage {
   lieu = {
     name:'',
     ville:'',
+    categorie:'',
     entree:'',
     interieur:'',
     equipement:'',
@@ -156,6 +157,7 @@ export class AjoutlieuPage {
     this.lieuForm = this.formBuilder.group({
       name:[''],
       ville:[''],
+      categorie:[''],
       entree: [''],
       interieur: [''],
       exterieur: [''],
@@ -229,6 +231,7 @@ export class AjoutlieuPage {
     this.lieu = {
       nom: this.lieuForm.get('name').value,
       ville: this.lieuForm.get('ville').value,
+      categorie: this.lieuForm.get('categorie').value,
       entree: this.entree,
       interieur: this.interieur,
       exterieur: this.exterieur,
