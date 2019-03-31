@@ -11,7 +11,7 @@ export class CommentairesPage {
   googleID: string = '';
   commentaires: any = [];
   flag: boolean = false;
-
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider, public viewCtrl: ViewController) {
     this.googleID = navParams.get('googleID'); 
   }

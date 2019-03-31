@@ -11,21 +11,21 @@
 
 
 <ion-content text-center padding>
-	<div class="Titre">
+	<!--<div class="Titre">
       <h3>
-        Liste des places proches
+        Liste des places
       </h3>
-  </div>
+  </div>-->
 
   <div class="Liste avec les resultats">
     <ion-list>
-      <button ion-button color="dark" large outline round block *ngFor="let place of resultat" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
-          <h2>
-            <b>{{place.name}}, </b>
-          </h2>
-          <p>
+      <button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let place of resultat" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
+          <h3>
+            <b>{{place.name}}</b>
+          </h3>
+          <!--<p>
             {{place.category.label}},
-          </p>
+          </p>-->
       </button>
     </ion-list>
   </div>

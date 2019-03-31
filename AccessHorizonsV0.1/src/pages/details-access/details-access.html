@@ -3,33 +3,34 @@
   	<ion-buttons left>	
   		<button ion-button icon-left (click)="closeModal()"><ion-icon name="arrow-back"></ion-icon></button>
   	</ion-buttons>
-    <ion-title text-center>Details d'accessibilité de {{nom}}</ion-title>
+    <ion-title text-center>{{nom}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding text-center>
 	<div class="details Accessibility" *ngIf="flag == true" padding>
-		<h3><b>Details d'accessibilité</b></h3>
-		
+		<h1><b>Details d'accessibilité</b></h1>
+		<h1></h1>
 		<div *ngFor= "let detail of details" class="categorie d'accessibilité">
-			<h4>
-				<b>{{detail.label}}</b>
-			</h4>
+			<h2>
+				<b><u>{{detail.label}}</u></b>
+			</h2>
 			<div *ngFor="let element of detail.children" class="Elements individuels de chaque categorie">
-				<h6>
+				<h4>
 					{{element.label}}
-				</h6>
-				<p *ngIf="element.value != null"> 
-					-- {{element.value}}
-				</p>
+					<h1></h1>
+				</h4>
+					<h6 *ngIf="element.value != null"> 
+						-- {{element.value}} --
+					</h6>				
 			</div>
 		</div>
 	</div>
 	<div class="Pas de details" *ngIf="flag == false" padding text-center>
-		<h5>Aucun détail d'accessibilité disponible</h5><h5>Voulez vous ajouter des détails d'accessibilité ?</h5>
+		<h5>Aucun détail d'accessibilité disponible</h5><!--<h5>Voulez vous ajouter des détails d'accessibilité ?</h5>-->
 		<h1></h1>
-		<button ion-button round large color="dark" outline>Ajouter détails d'accessibilité</button>
+		<!--<button ion-button round large color="dark" outline>Ajouter détails d'accessibilité</button>-->
 	</div>
 
 </ion-content>

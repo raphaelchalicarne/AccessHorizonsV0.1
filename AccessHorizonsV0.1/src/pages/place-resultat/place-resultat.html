@@ -16,7 +16,9 @@
     	<ion-icon *ngFor="let i of stars_full" name="star"></ion-icon>
     	<ion-icon *ngIf="flag2 == true" name="star-half"></ion-icon>
     	<ion-icon *ngFor="let i of stars_empty" name="star-outline"></ion-icon>
-    	<h1>Note globale/générale: <b>{{note_globale}}/5</b></h1>
+    	<h1>Note globale: <b>{{note_globale}}/5</b></h1>
+      <h1></h1>
+      <h1></h1>
   	</div>
 
   	<div class="Message s'il y a pas de note globale" *ngIf="flag_note == false" text-center>
@@ -33,6 +35,8 @@
   		<h3>--------------------------------------</h3>
   	</div>-->
   	<div class="Critères d'Accessibilité" text-center>
+      <h1></h1>
+      <h1></h1>
       <h5>Accessibilité <button ion-button round small outline color="dark" (click)="InformationsCriteres()">?</button></h5>
   		<div class="Accès et mobilité" *ngIf="selection == 1 || selection == 2 || selection == 3 || selection == 4 || selection == 5">
   			<h3>

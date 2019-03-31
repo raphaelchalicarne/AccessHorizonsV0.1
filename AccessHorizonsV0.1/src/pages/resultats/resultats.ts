@@ -22,7 +22,7 @@ export class ResultatsPage {
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
       //this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');     
-      this.latitud = this.navParams.get('latitud');     
+      this.latitud = this.navParams.get('latitud');      
       this.filtrage = this.navParams.get('filtrage');
       this.selection = this.navParams.get('selection');
   }

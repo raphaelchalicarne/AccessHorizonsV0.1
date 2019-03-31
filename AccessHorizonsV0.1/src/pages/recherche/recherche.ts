@@ -47,9 +47,6 @@ export class RecherchePage {
     }
     
   }
-  ionViewDidLoad(){
-    //console.log(map);
-  }
   
   loadmap(){
     if (map == undefined){
@@ -85,12 +82,12 @@ export class RecherchePage {
             map.removeLayer(this.marker);
           }
           this.marker = new leaflet.marker(e.latlng).addTo(map);
-          this.marker.bindPopup("<h4 text-center>C'est ici ?</h4><h4 text-center>Appuyez sur Rechercher</h4>");
+          this.marker.bindPopup("<h5 text-center>Appuyez sur Rechercher</h5>");
           map.clicked = 0;
         }
       }, 200);
     
-  }; //fin de onMapClick()
+  }; //fin de onMapClick() 
   this.map = map;
   this.adresse = map.addEventListener("click", function(e){ //Centrer
     map.panTo(e.latlng);
@@ -105,7 +102,7 @@ export class RecherchePage {
   });
   
 }; //fin de la function loadMap()*/
-  goToRechercheManuelle(){
+  goToRechercheTextuelle(){
     var selection = this.selection;
     var filtrage = this.filtrage; 
     let modal = this.modalCtrl.create(RechercheManuellePage,{filtrage: filtrage, selection: selection});
