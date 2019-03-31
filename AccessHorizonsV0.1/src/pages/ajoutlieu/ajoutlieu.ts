@@ -264,7 +264,8 @@ export class AjoutlieuPage {
   }
 
   gotoTestPage(){
-    this.navCtrl.push(TestPage);
+    let lieu = this.lieu;
+    this.navCtrl.push(TestPage, {lieu:lieu});
   }
 
 }

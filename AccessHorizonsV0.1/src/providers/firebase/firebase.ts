@@ -3,11 +3,17 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
  
 @Injectable()
 export class FirebaseProvider {
+  resultat = {};
  
   constructor(public db: AngularFireDatabase) { }
  
   getLieuItems() {
     return this.db.list('/lieu/');
+  }
+
+  getLieuResultats(){
+    this.db.list('/resultats/').push(this.resultat);
+    return this.db.list('/resultats/');
   }
  
   addItem(name) {
