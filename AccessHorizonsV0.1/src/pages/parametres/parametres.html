@@ -16,7 +16,7 @@
 
   <div class="Type de handicap" padding text-center>
     <ion-label position="floating">
-      <h1>Quel type de handicap présentez vous?</h1>
+      <h1 text-wrap>Quel type de handicap présentez vous?</h1>
     </ion-label>
     <button ion-button color="dark" large outline round block (click)="saveHandicap('moteur')">Moteur</button>
     <button ion-button color="dark" large outline round block icon-start (click)="saveHandicap('visuel')"><ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>  Visuel</button>
@@ -24,7 +24,7 @@
 
   <div class="Liste options" padding text-center>
     <ion-label position="floating">
-      <h1>De quel niveau d'autonomie disposez-vous?</h1>
+      <h1 text-wrap>De quel niveau d'autonomie disposez-vous?</h1>
     </ion-label>
       <button ion-button color="dark" large outline  round block (click)="saveAutonomie('autonome')">Je suis autonome </button>
       <button *ngIf="typeHandicap === 'visuel' " ion-button color="dark" large outline round block (click)="saveAutonomie('chien')">J'ai un chien guide</button>
