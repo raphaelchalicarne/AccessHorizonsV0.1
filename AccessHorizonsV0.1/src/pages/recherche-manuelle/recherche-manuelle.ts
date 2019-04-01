@@ -60,5 +60,5 @@ export class RechercheManuellePage {
     let flag = true;
     this.viewCtrl.dismiss({longitud: longitud, latitud:latitud, flag: flag})
   }*/
-  */
+ 
 }
