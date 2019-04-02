@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { JaccedeProvider} from '../../providers/jaccede/jaccede';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @IonicPage()
 @Component({
@@ -11,13 +12,19 @@ export class CommentairesPage {
   googleID: string = '';
   commentaires: any = [];
   flag: boolean = false;
- 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService: JaccedeProvider, public viewCtrl: ViewController) {
+
+  apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams, 
+              public userService: JaccedeProvider, 
+              public viewCtrl: ViewController,
+              private http: HTTP) {
     this.googleID = navParams.get('googleID'); 
   }
 
   ionViewDidLoad() {
-    this.userService.getComments(this.googleID).subscribe(
+    /*this.userService.getComments(this.googleID).subscribe(
       (data) => {
         if (data != null){ //S'il n'y a pas de commentaires
           this.flag = true;
@@ -27,7 +34,18 @@ export class CommentairesPage {
       },
       (error) =>{
         console.log(error);
-      })
+      })*/
+    let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'/comments?api_key='+this.apiKey+'';
+    this.http.get(myUrl, {}, {})
+    .then(data =>{
+      if (data != null){
+        this.flag = true;
+        this.commentaires = JSON.parse(data.data.items);
+      }
+    })
+    .catch(error =>{
+      alert('Error !');
+    })
   }
   closeModal(){
   	this.viewCtrl.dismiss();

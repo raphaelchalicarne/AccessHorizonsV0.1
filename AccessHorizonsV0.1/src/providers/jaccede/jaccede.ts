@@ -8,7 +8,7 @@ export class JaccedeProvider {
 
   constructor(public http2: HttpClient, private http: HTTP) {
   }
-  getPlaces(longitud, latitud){
+  /*getPlaces(longitud, latitud){
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     /*this.http.get(myUrl,{}, {})
     .then(data => {
@@ -16,9 +16,9 @@ export class JaccedeProvider {
     })
     .catch(error => {
       console.log(error);
-    });*/
+    });
     return this.http2.get(myUrl);
-  }
+  }*/
   getAutocomplete(place){
     let limite = '5';
     let autoUrl = 'https://photon.komoot.de/api/?q='+place+'&limit='+limite+'';

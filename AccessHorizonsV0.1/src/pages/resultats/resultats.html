@@ -19,7 +19,7 @@
 
   <div class="Liste avec les resultats">
     <ion-list>
-      <button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let place of places.items" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
+      <button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let place of places" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
           <h3>
             <b>{{place.name}}</b>
           </h3>

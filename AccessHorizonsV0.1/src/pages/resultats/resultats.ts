@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { PlaceResultatPage } from '../place-resultat/place-resultat';
-import {HTTP} from '@ionic-native/http/ngx';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @IonicPage()
 @Component({
@@ -42,7 +42,19 @@ export class ResultatsPage {
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
-      this.places = JSON.parse(data.data);
+      this.places = JSON.parse(data.data.items);
+      // FILTRAGE
+      if (this.filtrage.length == 0){ 
+        this.resultat = this.places;
+      }
+      if (this.filtrage.length != 0){
+        var i;
+        for (i in this.places){
+          if (this.filtrage.includes(this.places[i].category.name)) {
+              this.resultat.push(this.places[i]);
+            }
+        }
+      }
     })
     .catch(error => {
       console.log('error');
