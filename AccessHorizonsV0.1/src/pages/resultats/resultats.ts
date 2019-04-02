@@ -42,19 +42,10 @@ export class ResultatsPage {
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
-      console.log(data);
-      //this.places = data.data['items'];
       this.places = JSON.parse(data.data);
-      //this.flag = true;
-      if (this.places != undefined) {
-        this.flag = true;  
-      }
-      //this.resultat = this.places[0];
     })
     .catch(error => {
-      console.log('error', error.error);
-      this.flag = false;
-      this.message = error.error;
+      console.log('error');
     });
     /*this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
