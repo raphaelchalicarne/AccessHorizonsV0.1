@@ -18,7 +18,7 @@ export class ResultatsPage {
   name: string = '';
   resultat: any[] = [];
   resultatFirebase: any[];
-  filtrage:any = [];
+  filtrage:any = []; 
   filtrage2: string;
   osm: any;
 
