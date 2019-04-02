@@ -51,9 +51,9 @@ export class ResultatsPage {
       //this.resultat = this.places[0];
     })
     .catch(error => {
-      console.log('error', error);
+      console.log('error', error.error);
       this.flag = false;
-      this.message = error;
+      this.message = error.error;
     });
     /*this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
