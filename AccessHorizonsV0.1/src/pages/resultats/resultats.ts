@@ -20,6 +20,8 @@ export class ResultatsPage {
 
   selection: number;
 
+  flag: boolean = false;
+  
   apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
 
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
@@ -42,6 +44,7 @@ export class ResultatsPage {
     .then(data => {
       console.log(data);
       this.places = data['items'];
+      this.flag = true;
     })
     .catch(error => {
       console.log('error', error);
