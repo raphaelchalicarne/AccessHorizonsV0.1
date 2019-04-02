@@ -43,9 +43,10 @@ export class ResultatsPage {
     this.http.get(myUrl,{}, {})
     .then(data => {
       console.log(data);
-      this.places = data.data['items'];
+      //this.places = data.data['items'];
+      this.places = JSON.parse(data.data);
       //this.flag = true;
-      if (this.places) {
+      if (this.places != undefined) {
         this.flag = true;  
       }
       //this.resultat = this.places[0];
