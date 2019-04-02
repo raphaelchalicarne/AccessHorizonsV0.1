@@ -44,10 +44,10 @@ export class ResultatsPage {
     .then(data => {
       console.log(data);
       this.places = data.data['items'];
-      this.flag = true;
-      /*if (this.places) {
+      //this.flag = true;
+      if (this.places) {
         this.flag = true;  
-      }*/
+      }
       //this.resultat = this.places[0];
     })
     .catch(error => {
