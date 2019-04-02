@@ -27,6 +27,7 @@ export class RecherchePage {
   newMarker: any;
   adresse: any;
   filtrage: any[] = [];
+  filtrage2: string;
   flag: boolean = false;
   count: number = 0;
 
@@ -35,6 +36,7 @@ export class RecherchePage {
 
   ngOnInit() {
     this.filtrage = this.navParams.get('filtrage');
+    this.filtrage2 = this.navParams.get('filtrage2');
     this.selection = this.navParams.get('selection');
   }
 
@@ -105,7 +107,8 @@ export class RecherchePage {
   goToRechercheTextuelle(){
     var selection = this.selection;
     var filtrage = this.filtrage; 
-    let modal = this.modalCtrl.create(RechercheManuellePage,{filtrage: filtrage, selection: selection});
+    var filtrage2 = this.filtrage2;
+    let modal = this.modalCtrl.create(RechercheManuellePage,{filtrage: filtrage, filtrage2: filtrage2, selection: selection});
     modal.present();
   }
   goToPlaceList(){
@@ -115,7 +118,7 @@ export class RecherchePage {
       let latitud = this.adresse.latlng.lat;
       var filtrage = this.filtrage;
       var selection = this.selection;
-      this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
+      this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, filtrage2:filtrage2, selection: selection});
     } else {
       console.log('No existe');
     }    

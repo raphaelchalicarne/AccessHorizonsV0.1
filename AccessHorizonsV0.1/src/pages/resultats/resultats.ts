@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { PlaceResultatPage } from '../place-resultat/place-resultat';
 
+import * as firebase from 'firebase';
+
 @IonicPage()
 @Component({
   selector: 'page-resultats',
@@ -12,18 +14,21 @@ export class ResultatsPage {
   places: any[] = []; //Les résultats bruts de la requête à J'accede
   adresse: string = '';
   resultat: any[] = []; //Les résultats qui vont être montrés
+  resultatFirebase:any[];
 
   longitud: number;
   latitud:  number;
   filtrage:any = []; //Le filtrage demandé par l'utilisateur
+  filtrage2: string;
 
   selection: number;
 
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
-      //this.adresse = this.navParams.get('adresse');
+      this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');     
       this.latitud = this.navParams.get('latitud');      
       this.filtrage = this.navParams.get('filtrage');
+      this.filtrage2 = this.navParams.get('filtrage2');
       this.selection = this.navParams.get('selection');
   }
 
@@ -33,6 +38,8 @@ export class ResultatsPage {
               private menuCtrl: MenuController) {
   }
   ionViewDidLoad() {
+    this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
+    console.log(this.resultatFirebase);
     this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
       (data) => {
@@ -56,6 +63,22 @@ export class ResultatsPage {
 
   } 
 
+   getLieu(ville: string, categorie: string){
+   var resultats = [];
+   var ref = firebase.database().ref('lieu');
+   ref.once("value")
+     .then(function(snapshot) {
+       snapshot.forEach(function(childSnapshot){
+         var data = childSnapshot.val();
+         if (data.nom == ville && data.categorie == categorie){
+           console.log(data);
+           resultats.push(data);
+           console.log(resultats);
+         }
+         })
+       })
+     return resultats;
+   }
 
   goToPlace(name: string, adresse: string, googleID: string){ //Passer à la page de résultats d'une place individuelle
     var selection = this.selection;
