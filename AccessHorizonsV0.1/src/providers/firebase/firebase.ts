@@ -1,26 +1,34 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
  
+import * as firebase from 'firebase'; 
+
 @Injectable()
 export class FirebaseProvider {
-  resultat = {};
+  lieu: FirebaseListObservable<any[]>;
+  resultats = [];
  
-  constructor(public db: AngularFireDatabase) { }
- 
-  getLieuItems() {
-    return this.db.list('/lieu/');
+  constructor(public db: AngularFireDatabase) {
+    this.lieu = this.db.list('/lieu/');
   }
 
-  getLieuResultats(){
-    this.db.list('/resultats/').push(this.resultat);
-    return this.db.list('/resultats/');
-  }
+  getLieu(ville: string, categorie: string){
+   var resultats = [];
+   var ref = firebase.database().ref('lieu');
+   ref.once("value")
+     .then(function(snapshot) {
+       snapshot.forEach(function(childSnapshot){
+         var data = childSnapshot.val();
+         if (data.nom == ville && data.categorie == categorie){
+           console.log(data);
+           resultats.push(data);
+           console.log(resultats);
+         }
+         })
+       })
+     this.resultats = resultats;
+     return this.resultats;
+   }
  
-  addItem(name) {
-    this.db.list('/lieu/').push(name);
-  }
- 
-  removeItem(id) {
-    this.db.list('/lieu/').remove(id);
-  }
+
 }

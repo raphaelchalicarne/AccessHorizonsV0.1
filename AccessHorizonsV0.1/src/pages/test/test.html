@@ -13,9 +13,6 @@
         <ion-input type="text" [(ngModel)]="newItem" placeholder="New Lieu item"></ion-input>
       </ion-item>
     </ion-col>
-<!--     <ion-col>
-      <button ion-item *ngFor="let item of lieuItems" (click)="getLieuItems()">View</button>
-    </ion-col> -->
   </ion-row>
  
   <ion-list>
@@ -29,11 +26,11 @@
 
 
   <B> Résultats triés </B>
-    <div class="Bouton pour montrer les résultats" padding text-center>
-    <button ion-button color="dark" large outline round icon-start (click)="getLieuItemsParNom('Orly')">Rechercher</button>
-  </div>
+<!--     <div class="Bouton pour montrer les résultats" padding text-center>
+    <button ion-button color="dark" large outline round icon-start (click)="getLieu('Musée du Louvre','Loisirs')">Rechercher</button>
+  </div> -->
     <ion-list>
-    <ion-item *ngFor="let item of resultat | async">
+    <ion-item *ngFor="let item of resultats">
       <ion-item>
         {{ item.nom }}
       </ion-item>

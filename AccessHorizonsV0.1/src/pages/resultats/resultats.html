@@ -22,5 +22,12 @@
           </p>
       </button>
     </ion-list>
+    <ion-list>
+    <ion-item *ngFor="let item of resultats">
+      <ion-item>
+        {{ item.nom }}
+      </ion-item>
+    </ion-item>
+  </ion-list>
   </div>
 </ion-content>

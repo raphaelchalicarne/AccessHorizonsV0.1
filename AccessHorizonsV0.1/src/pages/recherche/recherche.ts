@@ -14,9 +14,11 @@ export class RecherchePage {
   latitud:  number;
   resultat: any[] = [];
   filtrage: any = [];
+  filtrage2 : string;
 
   ngOnInit() {
     this.filtrage = this.navParams.get('filtrage');
+    this.filtrage2 = this.navParams.get('filtrage2');
   }
 
   constructor(public navCtrl: NavController, public userService: JaccedeProvider, public navParams: NavParams) {
@@ -25,6 +27,7 @@ export class RecherchePage {
   ionViewDidLoad() {
     //console.log(this.filtrage);
   }
+  
   faireRecherche(){
     this.userService.getAutocomplete(this.adresse)
     .subscribe(
@@ -40,6 +43,7 @@ export class RecherchePage {
   goToPlaceList(longitud: number, latitud: number, name: string, osm: any){
     //console.log(osm);
     var filtrage = this.filtrage;
-    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, name:name, filtrage:filtrage, osm: osm});
+    var filtrage2 = this.filtrage2;
+    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, name:name, filtrage:filtrage, filtrage2:filtrage2, osm: osm});
   }
 }
