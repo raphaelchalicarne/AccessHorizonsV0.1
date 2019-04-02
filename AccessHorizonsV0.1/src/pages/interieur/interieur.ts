@@ -17,7 +17,7 @@ export class InterieurPage {
 	lieuForm: any;
 	interieurForm: any;
   interieur: any;
-
+/*
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
@@ -60,7 +60,7 @@ export class InterieurPage {
     escaliermeca: this.interieurForm.get('escaliermeca').value,
     }
   }
-
+*/
 
 
   }

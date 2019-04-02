@@ -16,7 +16,7 @@ import * as firebase from 'firebase';
 export class ExterieurPage {
 	exterieurForm: any;
 
-
+/*
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
@@ -59,8 +59,8 @@ export class ExterieurPage {
       etroits: this.exterieurForm.get('etroits').value,
       devers: this.exterieurForm.get('devers').value,
       pente: this.exterieurForm.get('pente').value,
-    }*/
-  }
+    }
+  }*/
   }
 
 

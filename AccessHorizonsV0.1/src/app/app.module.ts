@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 //import { SplashScreen } from '@ionic-native/splash-screen';
 //import { StatusBar } from '@ionic-native/status-bar';
-
+import {HTTP} from '@ionic-native/http/ngx';
 import { HttpClientModule } from '@angular/common/http';
 
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
@@ -95,6 +95,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     StatusBar,
     SplashScreen,
     AuthService,
+    HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JaccedeProvider
   ],

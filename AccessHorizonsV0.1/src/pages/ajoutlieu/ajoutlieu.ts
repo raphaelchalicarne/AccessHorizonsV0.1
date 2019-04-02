@@ -16,7 +16,7 @@ import * as firebase from 'firebase';
 })
 
 export class AjoutlieuPage {
-
+/*
 	lieuForm: FormGroup;
   entreeForm: FormGroup;
   interieurForm: FormGroup;
@@ -257,5 +257,5 @@ export class AjoutlieuPage {
     let equipementForm = this.equipementForm;
     this.navCtrl.push(EquipementPage, {equipementForm:equipementForm});
   }
-
+*/
 }

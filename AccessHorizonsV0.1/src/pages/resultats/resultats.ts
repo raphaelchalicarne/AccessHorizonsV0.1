@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { PlaceResultatPage } from '../place-resultat/place-resultat';
+import {HTTP} from '@ionic-native/http/ngx';
 
 @IonicPage()
 @Component({
@@ -19,6 +20,8 @@ export class ResultatsPage {
 
   selection: number;
 
+  apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
+
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
       //this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');     
@@ -30,11 +33,24 @@ export class ResultatsPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public userService: JaccedeProvider,
-              private menuCtrl: MenuController) {
+              private menuCtrl: MenuController,
+              private http: HTTP) {
   }
   ionViewDidLoad() {
-    this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
-    .subscribe(
+    let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
+    this.http.get(myUrl,{}, {})
+    .then(data => {
+      console.log(data);
+      this.places = data['items'];
+    })
+    .catch(error => {
+      console.log('error', error);
+    });
+
+
+
+    //this.userService.getPlaces(this.longitud, this.latitud); //Requete à J'accede
+    /*.subscribe(
       (data) => {
         this.places = data['items'];
         if (this.filtrage.length == 0) { //S'il y a pas de filtrage, montrer TOUS les resultats
@@ -52,7 +68,7 @@ export class ResultatsPage {
         console.error(error);
       }
     }
-  )
+  )*/
 
   } 
 

@@ -16,7 +16,7 @@ import * as firebase from 'firebase';
 export class EquipementPage {
 	equipementForm: any[]=[];
 
-
+/*
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
@@ -60,7 +60,7 @@ export class EquipementPage {
       hauteurcaisse:this.equipementForm.get('hauteurcaisse').value,
       materieldispo:this.equipementForm.get('materieldispo').value,
     }
-  }
+  }*/
   }
 
 

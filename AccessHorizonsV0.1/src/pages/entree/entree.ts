@@ -17,7 +17,7 @@ export class EntreePage {
 	lieuForm: any;
 	entreeForm: any; 
   entree: any;
-
+/*
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
@@ -62,8 +62,7 @@ export class EntreePage {
     largeurporte: this.entreeForm.get('largeurporte').value,
     }
   }
-
-
+^*/
 
   }
 
