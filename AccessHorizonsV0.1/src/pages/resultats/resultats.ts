@@ -44,7 +44,7 @@ export class ResultatsPage {
           var i;
           for (i in this.places){
             if (this.filtrage.includes(this.places[i].category.name)) {
-              this.resultat.push(this.places[i]);
+              this.resultat.push(this.places[i]); 
             }
           }
         }
