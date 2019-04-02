@@ -22,6 +22,8 @@ export class ResultatsPage {
   filtrage2: string;
 
   selection: number;
+  osm: any; //pour recuperer le nom de la ville, nécessaire avec Firebase
+  city: string; //nom de la ville
 
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
       this.adresse = this.navParams.get('adresse');
@@ -30,6 +32,9 @@ export class ResultatsPage {
       this.filtrage = this.navParams.get('filtrage');
       this.filtrage2 = this.navParams.get('filtrage2');
       this.selection = this.navParams.get('selection');
+      this.osm = this.navParams.get('osm');
+      this.city = this.navParams.get('city');
+      console.log(this.osm);
   }
 
   constructor(public navCtrl: NavController,
@@ -38,7 +43,15 @@ export class ResultatsPage {
               private menuCtrl: MenuController) {
   }
   ionViewDidLoad() {
-    this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
+    //this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
+    if (this.osm == 'city' ){
+      console.log('cest une ville1');
+      this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
+    }
+    else {
+      this.resultatFirebase = this.getLieu(this.city, this.filtrage2);
+    }
+    
     console.log(this.adresse);
     console.log(this.filtrage2);
     console.log(this.resultatFirebase);
