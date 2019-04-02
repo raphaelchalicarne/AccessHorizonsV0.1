@@ -19,15 +19,17 @@
 
   <div class="Liste avec les resultats">
     <ion-list>
-      <button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let place of places" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
+      <!--<button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let place of places" (click)="goToPlace(place.name, place.address.full, place.google_place_id)">
           <h3>
             <b>{{place.name}}</b>
           </h3>
-          <!--<p>
+          <p>
             {{place.category.label}},
-          </p>-->
-      </button>
+          </p>
+      </button>-->
     </ion-list>
+    <h1 *ngIf="flag == true">Hemos accedido a la base de datos</h1>
+    <h1 *ngIf="flag == false">No hemos accedido a la base de datos</h1>
   </div>
 
 </ion-content>
