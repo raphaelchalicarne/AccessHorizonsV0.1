@@ -44,18 +44,22 @@ export class ResultatsPage {
     .then(data => {
       console.log(data);
       this.places = data['items'];
-      this.flag = true;
+      if (this.places) {
+        this.flag = true;  
+      }
+      //this.resultat = this.places[0];
     })
     .catch(error => {
       console.log('error', error);
     });
-
-
-
-    //this.userService.getPlaces(this.longitud, this.latitud); //Requete à J'accede
-    /*.subscribe(
+    /*this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
+    .subscribe(
       (data) => {
         this.places = data['items'];
+        if (this.places) {
+          this.flag = true;  
+        }
+        console.log(this.places);
         if (this.filtrage.length == 0) { //S'il y a pas de filtrage, montrer TOUS les resultats
           this.resultat = this.places;
         }

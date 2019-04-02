@@ -10,14 +10,14 @@ export class JaccedeProvider {
   }
   getPlaces(longitud, latitud){
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+longitud+'&lat='+latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
-    this.http.get(myUrl,{}, {})
+    /*this.http.get(myUrl,{}, {})
     .then(data => {
       console.log(data);
     })
     .catch(error => {
       console.log(error);
-    });
-    //return this.http.get(myUrl)
+    });*/
+    return this.http2.get(myUrl);
   }
   getAutocomplete(place){
     let limite = '5';
