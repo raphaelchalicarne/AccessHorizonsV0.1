@@ -10,12 +10,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 import * as firebase from 'firebase';
 
+
 @Component({
   selector: 'page-ajoutlieu',
   templateUrl: 'ajoutlieu.html',
 })
 
 export class AjoutlieuPage {
+
 
 	lieuForm: FormGroup;
   entreeForm: FormGroup;
@@ -79,11 +81,13 @@ export class AjoutlieuPage {
   }
 
   lieu = {
-    name:'',
+    nom:'',
     ville:'',
-    entree:'',
-    interieur:'',
-    equipement:'',
+    categorie:'',
+    entree:{},
+    interieur:{},
+    equipement:{},
+    exterieur:{},
     }
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private formBuilder: FormBuilder, public db: AngularFireDatabase) {
@@ -152,6 +156,7 @@ export class AjoutlieuPage {
     this.lieuForm = this.formBuilder.group({
       name:[''],
       ville:[''],
+      categorie:[''],
       entree: [''],
       interieur: [''],
       exterieur: [''],
@@ -225,6 +230,7 @@ export class AjoutlieuPage {
     this.lieu = {
       nom: this.lieuForm.get('name').value,
       ville: this.lieuForm.get('ville').value,
+      categorie: this.lieuForm.get('categorie').value,
       entree: this.entree,
       interieur: this.interieur,
       exterieur: this.exterieur,
@@ -232,7 +238,7 @@ export class AjoutlieuPage {
     }
 
     this.db.list('lieu').push(this.lieu);
-    console.log('Lieu sauvegardé2');
+    console.log('Lieu sauvegardé');
     }
 
 
@@ -248,6 +254,7 @@ export class AjoutlieuPage {
     this.navCtrl.push(InterieurPage, {lieuForm:lieuForm, interieurForm:interieurForm});
   }
 
+
   gotoExterieurPage(){
     let exterieurForm = this.exterieurForm;
     this.navCtrl.push(ExterieurPage, {exterieurForm:exterieurForm});
@@ -257,5 +264,6 @@ export class AjoutlieuPage {
     let equipementForm = this.equipementForm;
     this.navCtrl.push(EquipementPage, {equipementForm:equipementForm});
   }
+
 
 }

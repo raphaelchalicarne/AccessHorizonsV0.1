@@ -25,8 +25,8 @@ export class ResultatsPage {
 
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
       this.adresse = this.navParams.get('adresse');
-      this.longitud = this.navParams.get('longitud');     
-      this.latitud = this.navParams.get('latitud');      
+      this.longitud = this.navParams.get('longitud');
+      this.latitud = this.navParams.get('latitud');
       this.filtrage = this.navParams.get('filtrage');
       this.filtrage2 = this.navParams.get('filtrage2');
       this.selection = this.navParams.get('selection');
@@ -39,6 +39,8 @@ export class ResultatsPage {
   }
   ionViewDidLoad() {
     this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
+    console.log(this.adresse);
+    console.log(this.filtrage2);
     console.log(this.resultatFirebase);
     this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
@@ -61,7 +63,7 @@ export class ResultatsPage {
     }
   )
 
-  } 
+  }
 
    getLieu(ville: string, categorie: string){
    var resultats = [];
@@ -70,10 +72,14 @@ export class ResultatsPage {
      .then(function(snapshot) {
        snapshot.forEach(function(childSnapshot){
          var data = childSnapshot.val();
-         if (data.nom == ville && data.categorie == categorie){
+         console.log(data);
+         if (data.ville == ville && data.categorie == categorie){
            console.log(data);
            resultats.push(data);
            console.log(resultats);
+         }
+         else{
+           console.log('error');
          }
          })
        })

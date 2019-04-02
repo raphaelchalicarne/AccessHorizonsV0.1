@@ -30,4 +30,17 @@
     </ion-list>
   </div>
 
+  <div class="Liste avec les resultats Firebase">
+    <ion-list>
+      <button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let item of resultatFirebase">
+          <h3>
+            <b>{{item.nom}}</b>
+          </h3>
+          <!--<p>
+            {{place.category.label}},
+          </p>-->
+      </button>
+    </ion-list>
+  </div>
+
 </ion-content>
