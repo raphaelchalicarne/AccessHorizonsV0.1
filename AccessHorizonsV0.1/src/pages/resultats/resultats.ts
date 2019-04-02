@@ -19,7 +19,7 @@ export class ResultatsPage {
   filtrage:any = []; //Le filtrage demandé par l'utilisateur
 
   selection: number;
-
+  message: string;
   flag: boolean = false;
   
   apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
@@ -52,6 +52,8 @@ export class ResultatsPage {
     })
     .catch(error => {
       console.log('error', error);
+      this.flag = false;
+      this.message = error;
     });
     /*this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
