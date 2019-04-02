@@ -3,7 +3,7 @@ import { IonicPage, NavController, ModalController, NavParams, MenuController} f
 
 import { ResultatsPage } from '../resultats/resultats';
 import { RechercheManuellePage} from '../recherche-manuelle/recherche-manuelle';
-import leaflet from 'leaflet';
+import * as leaflet from '.staging/leaflet-18e1094c';
 
 import { enableProdMode } from '@angular/core';
 enableProdMode();
@@ -111,14 +111,17 @@ export class RecherchePage {
     let modal = this.modalCtrl.create(RechercheManuellePage,{filtrage: filtrage, filtrage2: filtrage2, selection: selection});
     modal.present();
   }
+  
   goToPlaceList(){
     if (this.adresse.latlng){ //si la proprieté existe, il y a eu un click, on exécute la recherche de places
       let adresse = this.adresse;
       let longitud = this.adresse.latlng.lng;
       let latitud = this.adresse.latlng.lat;
       var filtrage = this.filtrage;
+      //var filtrage2 = this.filtrage2;
       var selection = this.selection;
-      this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, filtrage2:filtrage2, selection: selection});
+
+      this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
     } else {
       console.log('No existe');
     }    

@@ -15,8 +15,8 @@ export class RechercheManuellePage {
   filtrage2: string;
   selection: number;
 
-  constructor(public navCtrl: NavController,
-  			  public userService: JaccedeProvider,
+  constructor(public navCtrl: NavController, 
+  			  public userService: JaccedeProvider, 
   			  public navParams: NavParams,
   			  public viewCtrl: ViewController) {
     this.filtrage = navParams.get('filtrage');
@@ -31,25 +31,25 @@ export class RechercheManuellePage {
   	.subscribe(
   		(data) => {
   			this.resultat = data['features'];
-  			//console.log(data);
+  			console.log(data);
   		},
   		(error) =>{
   			console.log(error);
   		})
   }
-
+ 
   closeModal(){
   	let flag = false;
   	this.viewCtrl.dismiss();
   }
-  goToPlaceList(longitud: number, latitud: number){
+  goToPlaceList(longitud: number, latitud: number, osm:any, city:any){
+    console.log(this.resultat);
     var filtrage = this.filtrage;
     var filtrage2 = this.filtrage2;
     var selection = this.selection;
     var adresse = this.adresse;
-    console.log(filtrage);
-    console.log(filtrage2);
-    this.navCtrl.push(ResultatsPage, {adresse:adresse,longitud :longitud, latitud: latitud, filtrage:filtrage, filtrage2:filtrage2, selection: selection});
+    console.log(this.filtrage2);
+    this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, filtrage2:filtrage2, selection: selection, adresse:adresse, osm:osm, city:city});
 
   }
   }

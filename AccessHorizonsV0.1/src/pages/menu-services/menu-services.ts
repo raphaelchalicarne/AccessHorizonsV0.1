@@ -29,23 +29,23 @@ export class MenuServicesPage {
     switch (selection) {
       case 1:
         var transports = this.transports;
-        this.navCtrl.push(RecherchePage, {filtrage: transports, filtrage2:'Transport',selection: selection});
+        this.navCtrl.push(RecherchePage, {filtrage: transports, filtrage2: 'Transport',selection: selection});
         break;
       case 2:
         var restaurants = this.restaurants;
-        this.navCtrl.push(RecherchePage, {filtrage: restaurants, filtrage2:'Restaurant',selection: selection});
+        this.navCtrl.push(RecherchePage, {filtrage: restaurants, filtrage2: 'Restaurants', selection: selection});
         break;
       case 3:
         var logement = this.logement;
-        this.navCtrl.push(RecherchePage, {filtrage: logement, filtrage2:'Logement',selection: selection});
+        this.navCtrl.push(RecherchePage, {filtrage: logement, filtrage2: 'Logement', selection: selection});
         break;
       case 4:
         var loisirs = this.loisirs;
-        this.navCtrl.push(RecherchePage, {filtrage: loisirs, filtrage2:'Loisirs',selection: selection});
+        this.navCtrl.push(RecherchePage, {filtrage: loisirs, filtrage2: 'Loisirs', selection: selection});
         break;
       case 5:
         var commerces = this.commerces;
-        this.navCtrl.push(RecherchePage, {filtrage: commerces, filtrage2:'Commerces',selection: selection});
+        this.navCtrl.push(RecherchePage, {filtrage: commerces, filtrage2: 'Commerces', selection: selection});
         break;
     }
   }

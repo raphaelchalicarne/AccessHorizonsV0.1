@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
-import leaflet from 'leaflet';
+import * as leaflet1 from '.staging/leaflet-18e1094c';
 
 import { enableProdMode } from '@angular/core';
 enableProdMode();

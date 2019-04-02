@@ -1,15 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
-//import { FirebaseProvider } from '../providers/firebase/firebase';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RecherchePage } from '../pages/recherche/recherche';
@@ -26,7 +25,6 @@ import { EquipementPage } from '../pages/equipement/equipement';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-//import { FIREBASE_CONFIG } from './firebase.credentials';
 import { HttpModule } from '@angular/http';
 
 const firebaseConfig = {
