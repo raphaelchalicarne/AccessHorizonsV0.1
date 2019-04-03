@@ -14,20 +14,18 @@ import * as firebase from 'firebase';
 })
 
 export class InterieurPage {
-	lieuForm: any;
-	interieurForm: any;
+	interieurForm: FormGroup;
   interieur: any;
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
   ngOnInit(){
-  	this.lieuForm = this.navParams.get('lieuForm');
   	this.interieurForm = this.navParams.get('interieurForm');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Intérieur1');
+    console.log('ionViewDidLoad Intérieur');
     console.log(this.interieurForm.value);
   }
 
@@ -36,7 +34,6 @@ export class InterieurPage {
   }
 
   saveInterieur(){
-    console.log(this.interieurForm.value);
 
     this.interieurForm.controls['alleeslarges'].setValue(document.getElementById('alleeslarges').checked);
     this.interieurForm.controls['eclairage'].setValue(document.getElementById('eclairage'));
@@ -46,8 +43,6 @@ export class InterieurPage {
     this.interieurForm.controls['ascenseur'].setValue(document.getElementById('ascenseur').checked),
     this.interieurForm.controls['marche'].setValue(document.getElementById('marche').checked),
     this.interieurForm.controls['escaliermeca'].setValue(document.getElementById('escaliermeca').checked), 
-
-    console.log(this.interieurForm.get('alleeslarges').value)
 
     this.interieur = {
     alleeslarges: this.interieurForm.get('alleeslarges').value,

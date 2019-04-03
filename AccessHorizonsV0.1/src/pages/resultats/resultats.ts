@@ -14,7 +14,7 @@ export class ResultatsPage {
   places: any[] = []; //Les résultats bruts de la requête à J'accede
   adresse: string = '';
   resultat: any[] = []; //Les résultats qui vont être montrés
-  resultatFirebase:any[];
+  resultatFirebase:any[]; //les résultats de Firebase
 
   longitud: number;
   latitud:  number;
@@ -92,7 +92,7 @@ export class ResultatsPage {
            console.log(resultats);
          }
          else{
-           console.log('error');
+           console.log('pas de lieu Firebase trouvé');
          }
          })
        })

@@ -30,6 +30,9 @@ export class ExterieurPage {
     console.log(this.exterieurForm.value);
   }
 
+  dismissModal(){
+    this.viewCtrl.dismiss();
+  }
 
   saveExterieur(){
 

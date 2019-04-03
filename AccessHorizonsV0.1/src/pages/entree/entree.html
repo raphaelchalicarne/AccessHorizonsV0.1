@@ -1,6 +1,9 @@
 <ion-header>
 	<ion-navbar>
 		<ion-title>Informations entrées</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-left (click)="dismissModal()"><ion-icon large name="arrow-back"></ion-icon></button>
+    </ion-buttons>
 	</ion-navbar>
 
 </ion-header>
@@ -8,7 +11,7 @@
 <ion-content padding>
     <ion-list>
       <div>
-        <input type="radio" name="pied" id="plainpied" value="plainpied" checked><label for="plain pied">Plain pied</label>
+        <input type="radio" name="pied" id="plainpied" value="plainpied"><label for="plain pied">Plain pied</label>
         <input type="radio" name="pied" id="pasplainpied" value="pasplainpied"><label for="pas plain pied">Pas de plain pied</label>
       </div>
       <div>

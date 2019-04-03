@@ -14,7 +14,8 @@ import * as firebase from 'firebase';
 })
 
 export class EquipementPage {
-	equipementForm: any[]=[];
+	equipementForm: FormGroup;
+  equipement: any;
 
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
@@ -27,8 +28,12 @@ export class EquipementPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad equipement3');
-    console.log(this.equipementForm.value);
   }
+
+  dismissModal(){
+    this.viewCtrl.dismiss();
+  }
+
 
 
   saveEquipement(){
