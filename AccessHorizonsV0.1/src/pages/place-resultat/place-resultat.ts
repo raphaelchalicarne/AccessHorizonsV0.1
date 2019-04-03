@@ -90,6 +90,7 @@ export class PlaceResultatPage {
     this.http.get(myUrl,{}, {})
     .then(data => {
       this.details = JSON.parse(data.data.accessibility);
+      
       this.latitud = JSON.parse(data.data.latitude);
       this.longitud = JSON.parse(data.data.longitude);
       this.note_globale = JSON.parse(data.data.rating);
@@ -100,14 +101,14 @@ export class PlaceResultatPage {
           }
           this.traitementNote(this.note_globale); //traiter les icons (étoiles à montrer)
        }
-       this.website = JSON.parse(data.data.website);
-       if (this.details != null) {//Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution 
-         this.flag = true;
-         this.label = this.details[0].children[0].label;
-       }
-       else {
-          this.label = 'Rien';
-       }
+      this.website = JSON.parse(data.data.website);
+      if (this.details != null) {//Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution 
+        this.flag = true;
+        this.label = this.details[0].children[0].label;
+      }
+      else {
+        this.label = 'Rien';
+      }
     })
     .catch(error =>{
        alert('Error !');
