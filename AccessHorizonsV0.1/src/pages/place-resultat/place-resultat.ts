@@ -14,15 +14,22 @@ import { MapModalPage } from '../map-modal/map-modal';
   templateUrl: 'place-resultat.html',
 })
 export class PlaceResultatPage {
+  
+  data: any = [];
+
   name: string='';
   adresse: string = '';
+
+  adresse2: any = [];
+
   googleID: string = '';
   details: any = [];
   website: string = '';
   label: string = '';
   flag: boolean = false;
-  longitud: any;
-  latitud: any;
+  longitude: any;
+  latitude1: any;
+  latitude2: any;
 
   flag_note: boolean = false;
   stars_full: any[] = [];
@@ -33,6 +40,7 @@ export class PlaceResultatPage {
   selection: number;
 
   note_globale: number;
+  note_globale2: number;
   note_access_mobilite: number = 2.4;  //A MODIFIER
   note_accueil: number = 2.4; //A MODIFIER
   note_infos: number = 3;
@@ -86,28 +94,34 @@ export class PlaceResultatPage {
       (error) =>{
         console.log(error);
     })*/
+    //https://apidev.jaccede.com/v4/places/ChIJE3ej1mD0ikcR2l81qN05xEM?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b
     let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
+      this.data = JSON.parse(data.data);
+
       this.details = JSON.parse(data.data.accessibility);
       
-      this.latitud = JSON.parse(data.data.latitude);
-      this.longitud = JSON.parse(data.data.longitude);
+      this.latitude1 = JSON.parse(data.data.latitude);
+      this.longitude = JSON.parse(data.data.longitude);
+      //this.longitude = JSON.parse(data.data.longitude);
+
       this.note_globale = JSON.parse(data.data.rating);
-      if (this.note_globale != null){ //si la note n'est pas null, montrer note
+      this.adresse2 = JSON.parse(data.data.address);
+      /*if (this.note_globale != null){ //si la note n'est pas null, montrer note
           this.flag_note = true;
           if ((Number.isInteger(this.note_globale)) == false) {
           this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
           }
           this.traitementNote(this.note_globale); //traiter les icons (étoiles à montrer)
-       }
+       }*/
       this.website = JSON.parse(data.data.website);
       if (this.details != null) {//Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution 
         this.flag = true;
-        this.label = this.details[0].children[0].label;
+        //this.label = this.details[0].children[0].label;
       }
       else {
-        this.label = 'Rien';
+        //this.label = 'Rien';
       }
     })
     .catch(error =>{
@@ -138,8 +152,8 @@ export class PlaceResultatPage {
   };
 
   mapModal(){ //Montrer la ubication du site
-    let latitud = parseFloat(this.latitud);
-    let longitud = parseFloat(this.longitud);
+    let latitud = parseFloat(this.latitude1);
+    let longitud = parseFloat(this.longitude);
     let modal = this.modalCtrl.create(MapModalPage, {latitud: latitud, longitud: longitud});
     modal.present();
   };

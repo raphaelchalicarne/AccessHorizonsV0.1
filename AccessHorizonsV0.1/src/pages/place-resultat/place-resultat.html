@@ -11,8 +11,24 @@
 
 
 <ion-content padding>
-
-  	<div class="Note globale" text-center *ngIf="flag_note == true">
+  <h5>Data: {{data.accessible_by_conviction}}</h5>
+  <h5>Data name: {{data.name}}</h5>
+  <div *ngFor="let ad of data.adress">
+      <h5>Data for: {{ad}}</h5>
+  </div>
+  <h5>Google ID: {{googleID}}</h5>
+  <h5>Adresse: {{adresse}}</h5>
+  <h5>Name: {{name}}</h5>
+  <h5>Note globale: {{note_globale}}</h5>
+  <h5>Latitude 1: {{latitude1}}</h5>
+  <h5>Phone data: {{data.phone}}</h5>
+  <h5 *ngIf = "flag == true">Details ne sont pas nulls: {{label}}</h5>
+  <h5>Details label: {{accessibility[0].label}}</h5>
+  <h5>Details : {{accessibility[1].label.</h5>
+  <div *ngFor="let element of adresse2">
+    <p>Bucle For Adresse: {{element}}</p>
+  </div>
+  	<!--<div class="Note globale" text-center *ngIf="flag_note == true">
     	<ion-icon *ngFor="let i of stars_full" name="star"></ion-icon>
     	<ion-icon *ngIf="flag2 == true" name="star-half"></ion-icon>
     	<ion-icon *ngFor="let i of stars_empty" name="star-outline"></ion-icon>
@@ -30,12 +46,12 @@
   		<h1>Pas de note !</h1>
   		<h1></h1>
   		<h1></h1>
-  	</div>
+  	</div>-->
   	<!--<div class="Separateur" text-center>
   		<h3>--------------------------------------</h3>
   	</div>-->
 
-  	<div class="Critères d'Accessibilité" text-center>
+  	<!--<div class="Critères d'Accessibilité" text-center>
       <h1></h1>
       <h1></h1>
       <h5>Accessibilité <button ion-button round small outline color="dark" (click)="InformationsCriteres()">?</button></h5>
@@ -82,9 +98,9 @@
         <h1></h1>
       </div>
 
-  	</div>
+  	</div>-->
 
-  <div class="Map" text-center>
+  <!--<div class="Map" text-center>
     <button ion-button color="dark" outline round large (click)="mapModal()">Montrer carte</button>
   </div>
 	<div class="Commentaires" text-center>
@@ -97,7 +113,7 @@
 
 	<div class="Laisser un avis" text-center>
 		<button ion-button color="dark" large outline round block (click)="laisserAvisModal()">Laisser un avis</button>
-	</div>
+	</div>-->
 
 	<div class="Website" text-center>
 		<h3> </h3>
