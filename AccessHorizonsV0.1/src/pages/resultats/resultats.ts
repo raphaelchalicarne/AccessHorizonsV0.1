@@ -42,7 +42,7 @@ export class ResultatsPage {
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
-      this.places = JSON.parse(data.data.items);
+      this.places = JSON.parse(data.data);
       // FILTRAGE
       if (this.filtrage.length == 0){ 
         this.resultat = this.places;
