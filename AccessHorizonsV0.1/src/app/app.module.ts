@@ -5,8 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +20,7 @@ import { EntreePage } from '../pages/entree/entree';
 import { InterieurPage } from '../pages/interieur/interieur';
 import { ExterieurPage } from '../pages/exterieur/exterieur';
 import { EquipementPage } from '../pages/equipement/equipement';
+import { ParametresPage } from '../pages/parametres/parametres';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -40,8 +39,6 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    UserProfilePage,
     MenuServicesPage,
     RecherchePage,
     ResultatsPage,
@@ -53,7 +50,8 @@ const firebaseConfig = {
     EntreePage,
     InterieurPage,
     ExterieurPage,
-    EquipementPage ],
+    EquipementPage,
+    ParametresPage ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -66,8 +64,6 @@ const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    UserProfilePage,
     MenuServicesPage,
     RecherchePage,
     RechercheManuellePage,
@@ -79,7 +75,8 @@ const firebaseConfig = {
     EntreePage,
     InterieurPage,
     ExterieurPage,
-    EquipementPage
+    EquipementPage,
+    ParametresPage
   ],
   providers: [
     StatusBar,
