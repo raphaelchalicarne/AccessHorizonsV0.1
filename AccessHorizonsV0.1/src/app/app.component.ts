@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuController, NavController, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
+//import { StatusBar } from '@ionic-native/status-bar';
 //import { SplashScreen } from '@ionic-native/splash-screen';
-//import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 import * as firebase from 'firebase';
 

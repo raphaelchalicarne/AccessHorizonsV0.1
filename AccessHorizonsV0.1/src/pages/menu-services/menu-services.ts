@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
-import {RecherchePage} from '../recherche/recherche';
+import { RecherchePage } from '../recherche/recherche';
 import { AjoutlieuPage } from '../ajoutlieu/ajoutlieu';
 import { HttpClient } from '@angular/common/http';
 

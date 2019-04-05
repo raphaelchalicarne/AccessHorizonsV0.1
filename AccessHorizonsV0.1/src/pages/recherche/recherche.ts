@@ -3,14 +3,15 @@ import { IonicPage, NavController, ModalController, NavParams, MenuController} f
 
 import { ResultatsPage } from '../resultats/resultats';
 import { RechercheManuellePage} from '../recherche-manuelle/recherche-manuelle';
-import * as leaflet from '.staging/leaflet-18e1094c';
+//import * as leaflet from '.staging/leaflet-18e1094c';
+import leaflet from 'leaflet';
 
 import { enableProdMode } from '@angular/core';
 enableProdMode();
 
 
 @IonicPage()
-@Component({ 
+@Component({
   selector: 'page-recherche',
   templateUrl: 'recherche.html',
 })
@@ -44,12 +45,12 @@ export class RecherchePage {
 
   ionViewDidEnter(){
     if (this.flag == false){
-      this.loadmap();   
+      this.loadmap();
       this.flag = true;
     }
-    
+
   }
-  
+
   loadmap(){
     if (map == undefined){
       var map = leaflet.map('map',{
@@ -65,10 +66,10 @@ export class RecherchePage {
       attribution: 'Map data &copy; ',
       id: 'mapbox.streets'});
     Mapbox.addTo(map);*/
-      
 
-    var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
+
+    var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       minZoom: 3,
       maxZoom: 18,
     });
@@ -88,8 +89,8 @@ export class RecherchePage {
           map.clicked = 0;
         }
       }, 200);
-    
-  }; //fin de onMapClick() 
+
+  }; //fin de onMapClick()
   this.map = map;
   this.adresse = map.addEventListener("click", function(e){ //Centrer
     map.panTo(e.latlng);
@@ -102,16 +103,16 @@ export class RecherchePage {
   map.on("dblclick", function(e){
     map.clicked = 0;
   });
-  
+
 }; //fin de la function loadMap()*/
   goToRechercheTextuelle(){
     var selection = this.selection;
-    var filtrage = this.filtrage; 
+    var filtrage = this.filtrage;
     var filtrage2 = this.filtrage2;
     let modal = this.modalCtrl.create(RechercheManuellePage,{filtrage: filtrage, filtrage2: filtrage2, selection: selection});
     modal.present();
   }
-  
+
   goToPlaceList(){
     if (this.adresse.latlng){ //si la proprieté existe, il y a eu un click, on exécute la recherche de places
       let adresse = this.adresse;
@@ -124,13 +125,13 @@ export class RecherchePage {
       this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
     } else {
       console.log('No existe');
-    }    
+    }
   }
   onToggleMenu() {
       this.menuCtrl.open();
   }
 }
-/* //VERSION ANCIENNE 
+/* //VERSION ANCIENNE
 export class RecherchePage {
   adresse: string = '';
   //longitud: number;

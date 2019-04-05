@@ -15,7 +15,7 @@ import * as firebase from 'firebase';
   selector: 'page-ajoutlieu',
   templateUrl: 'ajoutlieu.html',
 })
-
+ 
 export class AjoutlieuPage {
 
 
