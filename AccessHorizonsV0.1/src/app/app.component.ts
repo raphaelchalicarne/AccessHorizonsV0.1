@@ -2,19 +2,23 @@ import { Component, ViewChild } from '@angular/core';
 import { MenuController, NavController, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+//import { StatusBar } from '@ionic-native/status-bar/ngx';
+//import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 import * as firebase from 'firebase';
 
-import { HomePage } from '../pages/home/home';
 import { AuthPage } from '../pages/auth/auth';
+import { ParametresPage } from '../pages/parametres/parametres';
+import { MenuServicesPage } from '../pages/menu-services/menu-services';
 //import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = MenuServicesPage;
   authPage:any = AuthPage;
+  paramPage:any = ParametresPage;
   isAuth: boolean;
   @ViewChild('content') content: NavController;
 
@@ -38,7 +42,7 @@ export class MyApp {
       (user) => {
           if (user) {
               this.isAuth = true;
-              this.content.setRoot(HomePage);
+              this.content.setRoot(MenuServicesPage);
           } else {
               this.isAuth = false;
               this.content.setRoot(AuthPage, {mode: 'connect'});
