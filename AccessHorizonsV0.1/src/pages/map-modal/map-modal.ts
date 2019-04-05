@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
-import * as leaflet1 from '.staging/leaflet-18e1094c';
+//import * as leaflet1 from '.staging/leaflet-18e1094c';
+import leaflet from 'leaflet';
 
 import { enableProdMode } from '@angular/core';
 enableProdMode();
@@ -43,8 +44,8 @@ export class MapModalPage {
   		zoom: 16,
   	});
     //Tile (carte) de Open Street Map
-  	var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
-  		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
+  	var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
   		minZoom: 10,
   		maxZoom: 19,
 	  });
