@@ -28,7 +28,15 @@
   <div *ngFor="let element of adresse2">
     <p>Bucle For Adresse: {{element}}</p>
   </div>
-  	<!--<div class="Note globale" text-center *ngIf="flag_note == true">
+
+	<div class="Website" text-center>
+		<h3> </h3>
+		<h5>Site web: <a href="{{website}}">{{website}}</a></h5>
+	</div>
+
+</ion-content>
+
+    	<!--<div class="Note globale" text-center *ngIf="flag_note == true">
     	<ion-icon *ngFor="let i of stars_full" name="star"></ion-icon>
     	<ion-icon *ngIf="flag2 == true" name="star-half"></ion-icon>
     	<ion-icon *ngFor="let i of stars_empty" name="star-outline"></ion-icon>
@@ -115,9 +123,3 @@
 		<button ion-button color="dark" large outline round block (click)="laisserAvisModal()">Laisser un avis</button>
 	</div>-->
 
-	<div class="Website" text-center>
-		<h3> </h3>
-		<h5>Site web: <a href="{{website}}">{{website}}</a></h5>
-	</div>
-
-</ion-content>
