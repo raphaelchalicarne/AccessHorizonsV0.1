@@ -27,7 +27,25 @@
 			</div>
 		</div>
 	</div>
-	<div class="Pas de details" *ngIf="flag == false" padding text-center>
+
+	<div class="details Accessibility 1" *ngIf="flag1 == true" padding>
+		<h1><b>Details d'accessibilité</b></h1>
+		<h2><b><u> Entrée </u></b></h2>
+		<div *ngFor= "let item of infoentree" class="infoentree">
+			<h3>
+				{{item}}
+			</h3>
+		</div>
+		<h2><b><u> Intérieur </u></b></h2>
+		<div *ngFor= "let item of infointerieur" class="infointerieur">
+			<h3>
+				{{item}}
+			</h3>
+		</div>
+
+	</div>
+
+	<div class="Pas de details" *ngIf="flag == false && flag1 == false" padding text-center>
 		<h5>Aucun détail d'accessibilité disponible</h5><!--<h5>Voulez vous ajouter des détails d'accessibilité ?</h5>-->
 		<h1></h1>
 		<!--<button ion-button round large color="dark" outline>Ajouter détails d'accessibilité</button>-->

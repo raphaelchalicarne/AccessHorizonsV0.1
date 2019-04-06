@@ -105,10 +105,10 @@ export class ResultatsPage {
     this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID, selection: selection});
   }
 
-  goToLieu(nom:string){
+  goToLieu(nom:string, entree:any, interieur:any){
     var selection = this.selection;
     var resultatFirebase = this.resultatFirebase;
-    this.navCtrl.push(LieuResultatPage,{nom:nom,resultatFirebase:resultatFirebase, selection:selection});
+    this.navCtrl.push(LieuResultatPage,{nom:nom, entree:entree, interieur:interieur, resultatFirebase:resultatFirebase, selection:selection});
   }
 
   onToggleMenu() {

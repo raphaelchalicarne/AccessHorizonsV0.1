@@ -32,7 +32,7 @@
 
   <div class="Liste avec les resultats Firebase">
     <ion-list>
-      <button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let item of resultatFirebase" (click)="goToLieu(item.nom)">
+      <button style="text-transform: none;" ion-button color="dark" large outline round block *ngFor="let item of resultatFirebase" (click)="goToLieu(item.nom, item.entree, item.interieur)">
           <h3>
             <b>{{item.nom}}</b>
           </h3>
