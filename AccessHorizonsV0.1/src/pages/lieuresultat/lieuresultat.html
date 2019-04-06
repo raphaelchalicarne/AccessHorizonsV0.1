@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>{{nom}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<!--   	<div class="Note globale" text-center *ngIf="flag_note == true">
+    	<ion-icon *ngFor="let i of stars_full" name="star"></ion-icon>
+    	<ion-icon *ngIf="flag2 == true" name="star-half"></ion-icon>
+    	<ion-icon *ngFor="let i of stars_empty" name="star-outline"></ion-icon>
+    	<h1>Note globale: <b>{{note_globale}}/5</b></h1>
+      <h1></h1>
+      <h1></h1>
+  	</div> -->
+
+  	<div class="Message s'il y a pas de note globale" text-center>
+  		<ion-icon name="star-outline"></ion-icon>
+  		<ion-icon name="star-outline"></ion-icon>
+  		<ion-icon name="star-outline"></ion-icon>
+  		<ion-icon name="star-outline"></ion-icon>
+  		<ion-icon name="star-outline"></ion-icon>
+  		<h1>Pas de note !</h1>
+  		<h1></h1>
+  		<h1></h1>
+  	</div>
+  	<!--<div class="Separateur" text-center>
+  		<h3>--------------------------------------</h3>
+  	</div>-->
+  	<div class="Critères d'Accessibilité" text-center>
+      <h1></h1>
+      <h1></h1>
+      <h5>Accessibilité <button ion-button round small outline color="dark" (click)="InformationsCriteres()">?</button></h5>
+  		<div class="Accès et mobilité" *ngIf="selection == 1 || selection == 2 || selection == 3 || selection == 4 || selection == 5">
+  			<h3>
+          Accès et mobilité: <h1><b><u>{{note_access_mobilite}}/5</u></b></h1>
+        </h3>
+  			<h1></h1>
+  			<!--<button ion-button round large outline color="dark"><h3>?</h3></button>-->		
+  		</div>
+
+  		<div class="Accueil et accompagnement" *ngIf="selection == 1">
+  			<h3>
+          Accueil et accompagnement: <h1><b>{{note_accueil}}/5</b></h1>
+        </h3>
+  			<h1></h1>
+  			<!--<button ion-button round large outline color="dark"><h3>?</h3></button>-->
+  		</div>
+
+      <div class="Transmission d'informations" *ngIf="selection == 1">
+        <h3>
+          Transmission des informations:  <h1><b><u>{{note_infos}}/5</u></b></h1>
+        </h3>  
+        <h1></h1>
+      </div>
+
+      <div class="Ambiance et état" *ngIf="selection == 2 || selection == 3 || selection == 4">
+        <h3>
+          Etat et ambiance:  <h1><b><u>{{note_etat}}/5</u></b></h1>
+        </h3>
+        
+        <h1></h1>
+      </div>
+
+      <div class="Services proposés" *ngIf="selection == 1 || selection == 2 || selection == 3 || selection == 4 || selection == 5">
+        <h3>
+          Services proposés:  <h1><b><u>{{note_services}}/5</u></b></h1>
+        </h3>
+        <h1></h1>
+      </div>
+
+      <div class="Personnel" *ngIf="selection == 1 || selection == 2 || selection == 5">
+        <h3>
+          Personnel:  <h1><b><u>{{note_personnel}}/5</u></b></h1>
+        </h3>     
+        <h1></h1>
+      </div>
+
+  	</div>
+
+	<div class="Commentaires" text-center>
+		<button ion-button color="dark" outline round medium (click)="voirCommentaires()">Commentaires</button>
+	</div>
+
+	<div class="Details Accessibilité" text-center>
+		<button ion-button color="dark" large outline round block (click)="DetailsAccessModal()">Details Accessibilité</button>
+	</div>
+
+	<div class="Laisser un avis" text-center>
+		<button ion-button color="dark" large outline round block (click)="laisserAvisModal()">Laisser un avis</button>
+	</div>
+
+
+</ion-content>

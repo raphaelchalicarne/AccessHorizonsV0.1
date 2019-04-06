@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { PlaceResultatPage } from '../place-resultat/place-resultat';
+import { LieuResultatPage } from '../lieuresultat/lieuresultat';
 
 import * as firebase from 'firebase';
 
@@ -102,6 +103,12 @@ export class ResultatsPage {
   goToPlace(name: string, adresse: string, googleID: string){ //Passer à la page de résultats d'une place individuelle
     var selection = this.selection;
     this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID, selection: selection});
+  }
+
+  goToLieu(nom:string){
+    var selection = this.selection;
+    var resultatFirebase = this.resultatFirebase;
+    this.navCtrl.push(LieuResultatPage,{nom:nom,resultatFirebase:resultatFirebase, selection:selection});
   }
 
   onToggleMenu() {

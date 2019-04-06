@@ -3,8 +3,8 @@ import { IonicPage, NavController, ModalController, NavParams, MenuController} f
 
 import { ResultatsPage } from '../resultats/resultats';
 import { RechercheManuellePage} from '../recherche-manuelle/recherche-manuelle';
-//import * as leaflet from '.staging/leaflet-18e1094c';
-import leaflet from 'leaflet';
+import * as leaflet from '.staging/leaflet-18e1094c';
+//import leaflet from 'leaflet';
 
 import { enableProdMode } from '@angular/core';
 enableProdMode();

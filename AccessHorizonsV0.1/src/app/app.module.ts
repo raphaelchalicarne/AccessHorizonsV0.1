@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
@@ -13,6 +13,7 @@ import { RecherchePage } from '../pages/recherche/recherche';
 import { ResultatsPage } from '../pages/resultats/resultats';
 import { RechercheManuellePage } from '../pages/recherche-manuelle/recherche-manuelle';
 import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
+import { LieuResultatPage } from '../pages/lieuresultat/lieuresultat';
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
 import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
@@ -48,6 +49,7 @@ const firebaseConfig = {
     ResultatsPage,
     RechercheManuellePage,
     PlaceResultatPage,
+    LieuResultatPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage,
@@ -77,6 +79,7 @@ const firebaseConfig = {
     RechercheManuellePage,
     ResultatsPage,
     PlaceResultatPage,
+    LieuResultatPage,
     AuthPage,
     AjoutlieuPage,
     AuthPage,
