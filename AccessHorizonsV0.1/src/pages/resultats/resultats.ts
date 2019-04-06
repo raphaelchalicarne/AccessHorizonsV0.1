@@ -9,7 +9,7 @@ import { HTTP } from '@ionic-native/http/ngx';
   selector: 'page-resultats',
   templateUrl: 'resultats.html',
 })
-export class ResultatsPage {
+export class ResultatsPage {  
   places: any[] = []; //Les résultats bruts de la requête à J'accede
   adresse: string = '';
   resultat: any[] = []; //Les résultats qui vont être montrés
@@ -38,10 +38,13 @@ export class ResultatsPage {
               private menuCtrl: MenuController,
               private http: HTTP) {
   }
+
   ionViewDidLoad() {
+    //https://apidev.jaccede.com/v4/places/search?lng=4.833487&lat=45.76748&per_page=50&lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
+      //alert(data.data);
       this.places = JSON.parse(data.data);
       // FILTRAGE
       if (this.filtrage.length == 0){ 
@@ -84,7 +87,7 @@ export class ResultatsPage {
     }
   )*/
 
-  } 
+} 
 
 
   goToPlace(name: string, adresse: string, googleID: string){ //Passer à la page de résultats d'une place individuelle

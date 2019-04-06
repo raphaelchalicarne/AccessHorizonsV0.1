@@ -11,11 +11,19 @@
 
 
 <ion-content padding>
+  <div>
+  	<h5>GoogleID: {{googleID}}</h5>
+  <h5>URL555: {{url}}</h5>
+  <h5>Headers1: {{headers1}}</h5>
+  <h5>Headers2: {{headers2}}</h5>
+  <h5>Status1: {{status1}}</h5>
+  <h5>Tipo: {{tipo}}</h5>
+  <h5>Flag: {{flag}}</h5> 
+  <h5>Error: {{error}}</h5>
   <h5>Label: {{label}}</h5>
-  <h5>Latitude 1: {{latitude1}}</h5>
+  <h5>Latitude 1: {{info["latitude"]}}</h5>
   <h5>Latitude 2: {{latitude2}}</h5>
-  <h5>Phone : {{phone}}</h5>
-  <h5>Name: {{name}}</h5>
+  <h5>Phone : {{info.phone}}</h5>
   <h5>Details: {{label}}</h5>
   <div *ngFor="let element of adresse2">
     <p>Bucle For Adresse: {{element}}</p>
@@ -25,6 +33,7 @@
 		<h3> </h3>
 		<h5>Site web: <a href="{{website}}">{{website}}</a></h5>
 	</div>
+  </div>
 </ion-content>
 <!--
 	  <h5>Details label: {{accessibility[0].label}}</h5>

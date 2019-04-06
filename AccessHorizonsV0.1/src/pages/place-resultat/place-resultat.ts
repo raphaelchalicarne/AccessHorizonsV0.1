@@ -15,7 +15,7 @@ import { MapModalPage } from '../map-modal/map-modal';
 })
 export class PlaceResultatPage {
   
-  data: any = [];
+  info: any;
 
   name: string='';
   adresse: string = '';
@@ -26,7 +26,9 @@ export class PlaceResultatPage {
   details: any = [];
   website: string = '';
   label: string = '';
-  flag: boolean = false;
+  //flag: boolean = false;
+  url: string;
+  flag: string;
   longitude: any;
   latitude1: any;
   latitude2: any;
@@ -49,8 +51,14 @@ export class PlaceResultatPage {
   note_services:number = 3;
   note_personnel: number = 3;
 
+  headers1: any;
+  headers2: any;
+  status1: any;
+  status2: any;
+
   apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
 
+  tipo: any;
 
   ngOnInit() {
     this.name = this.navParams.get('name');
@@ -68,16 +76,43 @@ export class PlaceResultatPage {
   }
  
   ionViewDidLoad() {
+  	//this.url = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
+  	//https://apidev.jaccede.com/v4/places/ChIJE3ej1mD0ikcR2l81qN05xEM?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b
   	let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
-      this.data = JSON.parse(data.data);
-      this.latitude1 = this.data.latitude;
-      this.latitude2 = this.data['latitude'];
-      this.name = this.data['name'];
-      this.phone = this.data.phone;
-      this.adresse2 = this.data.address;
-      this.details = this.data.accessibility;
+      alert(data.data);
+      alert(data.data.latitude);
+      alert(data.data.address.city);
+      alert(typeof data.data);
+      //alert(data.headers);
+      //alert(data.status);
+      //alert(data.url);
+      
+      this.headers1 = data.headers;
+      //this.headers2 = JSON.parse(data.headers);
+      
+
+      this.status1 = data.status;
+      //this.data = data.data;
+
+      this.info = data.data;
+
+      this.latitude2 = data.data.latitude;
+
+      if (this.info != null) {
+      	this.flag = "Data existe";
+      	this.tipo = typeof this.info;
+      }
+      else{
+      	this.flag = "Data Es NULL";
+      }
+      this.error = "No hay error";
+      //this.latitude1 = this.info.latitude;
+      //this.latitude2 = this.info["latitude"];
+      //this.phone = this.info['phone'];
+      //this.adresse2 = this.info["address"];
+      //this.details = this.info.accessibility;
 
       //this.details = JSON.parse(data.data.accessibility);
       
@@ -95,17 +130,11 @@ export class PlaceResultatPage {
           this.traitementNote(this.note_globale); //traiter les icons (étoiles à montrer)
        }*/
       //this.website = JSON.parse(data.data.website);
-      if (this.details != null) {//Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution 
-        //this.flag = true;
-        this.label = this.details[0].children[0].label;
-      }
-      else {
-        this.label = 'Nulls';
-      }
     })
     .catch(error =>{
-    	this.error = "Error !";
-        alert('Error !');
+    	this.error = error;
+    	alert(error);
+        //alert('Error !');
     });
     /*this.userService.getDetails(this.googleID).subscribe(
       (data) => {
@@ -134,7 +163,6 @@ export class PlaceResultatPage {
       (error) =>{
         console.log(error);
     })*/
-    //https://apidev.jaccede.com/v4/places/ChIJE3ej1mD0ikcR2l81qN05xEM?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b
     
   }
 
