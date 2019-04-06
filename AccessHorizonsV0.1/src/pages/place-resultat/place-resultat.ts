@@ -14,7 +14,6 @@ import { MapModalPage } from '../map-modal/map-modal';
   templateUrl: 'place-resultat.html',
 })
 export class PlaceResultatPage {
-  
   info: any;
 
   name: string='';
@@ -27,7 +26,6 @@ export class PlaceResultatPage {
   website: string = '';
   label: string = '';
   //flag: boolean = false;
-  url: string;
   flag: string;
   longitude: any;
   latitude1: any;
@@ -76,7 +74,9 @@ export class PlaceResultatPage {
   }
  
   ionViewDidLoad() {
-  	//this.url = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
+  	this.tipo = "Ha funcionado";
+  /*
+
   	//https://apidev.jaccede.com/v4/places/ChIJE3ej1mD0ikcR2l81qN05xEM?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b
   	let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
@@ -84,10 +84,6 @@ export class PlaceResultatPage {
       alert(data.data);
       alert(data.data.latitude);
       alert(data.data.address.city);
-      alert(typeof data.data);
-      //alert(data.headers);
-      //alert(data.status);
-      //alert(data.url);
       
       this.headers1 = data.headers;
       //this.headers2 = JSON.parse(data.headers);
@@ -108,31 +104,17 @@ export class PlaceResultatPage {
       	this.flag = "Data Es NULL";
       }
       this.error = "No hay error";
-      //this.latitude1 = this.info.latitude;
-      //this.latitude2 = this.info["latitude"];
-      //this.phone = this.info['phone'];
-      //this.adresse2 = this.info["address"];
-      //this.details = this.info.accessibility;
-
-      //this.details = JSON.parse(data.data.accessibility);
-      
-      //this.latitude1 = JSON.parse(data.data.latitude);
-      //this.longitude = JSON.parse(data.data.longitude);
-      //this.longitude = JSON.parse(data.data.longitude);
-
-      //this.note_globale = JSON.parse(data.data.rating);
-      //this.adresse2 = JSON.parse(data.data.address);
       /*if (this.note_globale != null){ //si la note n'est pas null, montrer note
           this.flag_note = true;
           if ((Number.isInteger(this.note_globale)) == false) {
           this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
           }
           this.traitementNote(this.note_globale); //traiter les icons (étoiles à montrer)
-       }*/
+       }
       //this.website = JSON.parse(data.data.website);
     })
     .catch(error =>{
-    	this.error = error;
+    	//this.error = error;
     	alert(error);
         //alert('Error !');
     });
@@ -163,7 +145,7 @@ export class PlaceResultatPage {
       (error) =>{
         console.log(error);
     })*/
-    
+  
   }
 
   DetailsAccessModal(){

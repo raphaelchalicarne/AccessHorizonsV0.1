@@ -44,14 +44,13 @@ export class ResultatsPage {
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
-      //alert(data.data);
       this.places = JSON.parse(data.data);
       // FILTRAGE
       if (this.filtrage.length == 0){ 
         this.resultat = this.places;
       }
       if (this.filtrage.length != 0){
-        var i;
+        let i;
         for (i in this.places){
           if (this.filtrage.includes(this.places[i].category.name)) {
               this.resultat.push(this.places[i]);
@@ -86,12 +85,11 @@ export class ResultatsPage {
       }
     }
   )*/
-
 } 
 
 
   goToPlace(name: string, adresse: string, googleID: string){ //Passer à la page de résultats d'une place individuelle
-    var selection = this.selection;
+    let selection = this.selection;
     this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID, selection: selection});
   }
 
