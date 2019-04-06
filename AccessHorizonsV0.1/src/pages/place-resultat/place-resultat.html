@@ -11,20 +11,12 @@
 
 
 <ion-content padding>
-  <h5>Data: {{data.accessible_by_conviction}}</h5>
-  <h5>Data name: {{data.name}}</h5>
-  <div *ngFor="let ad of data.adress">
-      <h5>Data for: {{ad}}</h5>
-  </div>
-  <h5>Google ID: {{googleID}}</h5>
-  <h5>Adresse: {{adresse}}</h5>
-  <h5>Name: {{name}}</h5>
-  <h5>Note globale: {{note_globale}}</h5>
+  <h5>Label: {{label}}</h5>
   <h5>Latitude 1: {{latitude1}}</h5>
-  <h5>Phone data: {{data.phone}}</h5>
-  <h5 *ngIf = "flag == true">Details ne sont pas nulls: {{label}}</h5>
-  <h5>Details label: {{accessibility[0].label}}</h5>
-  <h5>Details : {{accessibility[1].label.</h5>
+  <h5>Latitude 2: {{latitude2}}</h5>
+  <h5>Phone : {{phone}}</h5>
+  <h5>Name: {{name}}</h5>
+  <h5>Details: {{label}}</h5>
   <div *ngFor="let element of adresse2">
     <p>Bucle For Adresse: {{element}}</p>
   </div>
@@ -33,8 +25,18 @@
 		<h3> </h3>
 		<h5>Site web: <a href="{{website}}">{{website}}</a></h5>
 	</div>
-
 </ion-content>
+<!--
+	  <h5>Details label: {{accessibility[0].label}}</h5>
+  <h5>Details : {{accessibility[1].label.</h5>
+	<h5>Note globale: {{note_globale}}</h5>
+	  <h5>Data: {{data.accessible_by_conviction}}</h5>
+  <h5>Data name: {{data.data.name}}</h5>
+	  <h5>Google ID: {{googleID}}</h5>
+  <h5>Adresse: {{adresse}}</h5>
+  <h5>Name: {{name}}</h5>
+-->
+
 
     	<!--<div class="Note globale" text-center *ngIf="flag_note == true">
     	<ion-icon *ngFor="let i of stars_full" name="star"></ion-icon>
