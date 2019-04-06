@@ -19,18 +19,17 @@ export class PlaceResultatPage {
   name: string='';
   adresse: string = '';
 
-  adresse2: any = [];
-
   googleID: string = '';
   details: any = [];
   website: string = '';
   label: string = '';
-  //flag: boolean = false;
-  flag: string;
-  longitude: any;
-  latitude1: any;
-  latitude2: any;
-  phone: number;
+  flag: boolean = false;
+  
+  longitud: any;
+  latitud: any;
+
+  phone: any;
+
   flag_note: boolean = false;
   stars_full: any[] = [];
   stars_empty: any[] = [];
@@ -56,7 +55,7 @@ export class PlaceResultatPage {
 
   apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
 
-  tipo: any;
+  //tipo: any;
 
   ngOnInit() {
     this.name = this.navParams.get('name');
@@ -74,51 +73,48 @@ export class PlaceResultatPage {
   }
  
   ionViewDidLoad() {
-  	this.tipo = "Ha funcionado";
-  /*
 
   	//https://apidev.jaccede.com/v4/places/ChIJE3ej1mD0ikcR2l81qN05xEM?lang=fr&api_key=93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b
   	let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
-      alert(data.data);
-      alert(data.data.latitude);
-      alert(data.data.address.city);
-      
-      this.headers1 = data.headers;
-      //this.headers2 = JSON.parse(data.headers);
-      
+      //alert(data.data); //data is a JSON String
+     // alert(typeof data.data); 
 
-      this.status1 = data.status;
-      //this.data = data.data;
+      //CODIGO CORRECTO
 
-      this.info = data.data;
-
-      this.latitude2 = data.data.latitude;
-
-      if (this.info != null) {
-      	this.flag = "Data existe";
-      	this.tipo = typeof this.info;
-      }
-      else{
-      	this.flag = "Data Es NULL";
-      }
-      this.error = "No hay error";
-      /*if (this.note_globale != null){ //si la note n'est pas null, montrer note
+      this.info = JSON.parse(data.data); // On transforme data (string) en OBJECT
+      //alert(typeof this.info); OBJECT
+      this.latitud = this.info['latitude'];
+      this.longitud = this.info['longitude'];
+      this.details = this.info['accessibility'];
+      alert(this.details);
+      alert(this.details[0].label);
+      this.note_globale = this.info['rating'];
+      this.phone = this.info['phone'];
+      this.website = this.info['website'];
+      if (this.note_globale != null){ //si la note n'est pas null, montrer note
           this.flag_note = true;
           if ((Number.isInteger(this.note_globale)) == false) {
           this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
           }
           this.traitementNote(this.note_globale); //traiter les icons (étoiles à montrer)
        }
-      //this.website = JSON.parse(data.data.website);
+      /*if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
+       { 
+         this.flag = true;
+         this.label = this.details[0].children[0].label;
+       }
+       else {
+         this.label = 'Rien';
+       }*/
     })
     .catch(error =>{
-    	//this.error = error;
     	alert(error);
-        //alert('Error !');
+        alert('Une erreur est apparue !');
     });
-    /*this.userService.getDetails(this.googleID).subscribe(
+    /* ANCIENNE VERSION
+    this.userService.getDetails(this.googleID).subscribe(
       (data) => {
         this.details = data['accessibility'];
         this.latitud = data['latitude'];
@@ -145,13 +141,12 @@ export class PlaceResultatPage {
       (error) =>{
         console.log(error);
     })*/
-  
   }
 
   DetailsAccessModal(){
      let details = this.details;
-     let nom = this.name;
-     let modal = this.modalCtrl.create(DetailsAccessPage, {details : details, nom : nom});
+     let name = this.name;
+     let modal = this.modalCtrl.create(DetailsAccessPage, {details : details, name : name});
      modal.present();
      modal.onDidDismiss((data) => {
      })
@@ -171,11 +166,12 @@ export class PlaceResultatPage {
   };
 
   mapModal(){ //Montrer la ubication du site
-    let latitud = parseFloat(this.latitude1);
-    let longitud = parseFloat(this.longitude);
+    let latitud = parseFloat(this.latitud);
+    let longitud = parseFloat(this.longitud);
     let modal = this.modalCtrl.create(MapModalPage, {latitud: latitud, longitud: longitud});
     modal.present();
   };
+
   traitementNote(note){ //Modifier la note globale reçue pour la pouvoir montrer comme étoiles
     for (var i = 0; i < Math.floor(note); ++i) {
       this.stars_full.push(i);
@@ -188,6 +184,7 @@ export class PlaceResultatPage {
   InformationsCriteres(){
     
   }
+
   onToggleMenu() {
       this.menuCtrl.open();
   }
