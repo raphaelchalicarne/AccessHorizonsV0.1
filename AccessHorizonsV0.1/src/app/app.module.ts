@@ -21,6 +21,10 @@ import { InterieurPage } from '../pages/interieur/interieur';
 import { ExterieurPage } from '../pages/exterieur/exterieur';
 import { EquipementPage } from '../pages/equipement/equipement';
 import { ParametresPage } from '../pages/parametres/parametres';
+import { CommentairesPage } from '../pages/commentaires/commentaires';
+import { DetailsAccessPage } from '../pages/details-access/details-access';
+import { LaisserAvisPage } from '../pages/laisser-avis/laisser-avis';
+import { MapModalPage } from '../pages/map-modal/map-modal';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -51,7 +55,11 @@ const firebaseConfig = {
     InterieurPage,
     ExterieurPage,
     EquipementPage,
-    ParametresPage ],
+    ParametresPage,
+    CommentairesPage,
+    DetailsAccessPage,
+    LaisserAvisPage,
+    MapModalPage ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -76,7 +84,11 @@ const firebaseConfig = {
     InterieurPage,
     ExterieurPage,
     EquipementPage,
-    ParametresPage
+    ParametresPage,
+    CommentairesPage,
+    DetailsAccessPage,
+    LaisserAvisPage,
+    MapModalPage
   ],
   providers: [
     StatusBar,

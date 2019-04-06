@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
-@IonicPage() 
+@IonicPage()
 @Component({
   selector: 'page-laisser-avis',
   templateUrl: 'laisser-avis.html',
@@ -24,13 +24,14 @@ export class LaisserAvisPage {
     Services: [true, true, true, true, true],
     Personnel: [true, true, true, true, true]
   };
+  
   notes: any = {
     Acces: 0,
     Accueil: 0,
     Infos: 0,
     Etat: 0,
     Services: 0,
-    Personnel: 0 
+    Personnel: 0
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public alertController: AlertController) {
@@ -40,7 +41,7 @@ export class LaisserAvisPage {
   ionViewDidLoad() {
   }
   closeModal(){ //fermer la fenetre SANS ENVOYER AUCUNE INFO
-  	this.viewCtrl.dismiss(); 
+  	this.viewCtrl.dismiss();
   }
   recalculerNote(element: number){
     for (var i =1; i < 6; ++i){
@@ -54,8 +55,8 @@ export class LaisserAvisPage {
     this.note_finale = (this.nombre/(this.nombre+1))*this.note_initiale + element/(this.nombre+1);
     this.note_finale = Math.round(this.note_finale*10)/10;
   }
-  
-  recalculerOutline(element: number, type: string){ 
+
+  recalculerOutline(element: number, type: string){
     for (var i =1; i < 6; ++i){
       if (i != element) {
         this.isOutline[type][i-1] = true;
@@ -65,7 +66,7 @@ export class LaisserAvisPage {
       }
     }
     this.notes[type] = element;
-  
+
   }
   Envoyer(){
     let alert = this.presentAlertConfirm();
@@ -86,7 +87,7 @@ export class LaisserAvisPage {
             return false;
           }
         },
-        {  
+        {
           text: 'Annuler',
           handler: () =>{
             alert.dismiss(false);
@@ -96,8 +97,8 @@ export class LaisserAvisPage {
       })
     return alert;
   }
-  /*lors qu'on retourne à la page principale de resultats en appuyant sur le 
-  bouton d'Envoyer, les infos introduites par l'utilisateur 
+  /*lors qu'on retourne à la page principale de resultats en appuyant sur le
+  bouton d'Envoyer, les infos introduites par l'utilisateur
   sont envoyés à la base de donnés*/
   updateFirebase(){
     let notes = this.notes;
