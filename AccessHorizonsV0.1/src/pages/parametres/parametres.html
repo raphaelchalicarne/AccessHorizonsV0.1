@@ -18,17 +18,17 @@
     <ion-label position="floating">
       <h1 text-wrap>Quel type de handicap présentez vous?</h1>
     </ion-label>
-    <button ion-button color="dark" large outline round block (click)="saveHandicap('moteur')">Moteur</button>
-    <button ion-button color="dark" large outline round block icon-start (click)="saveHandicap('visuel')"><ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>  Visuel</button>
+    <button ion-button color="dark" large round block [outline]="typeHandicap !== 'moteur'" (click)="saveHandicap('moteur')">Moteur</button>
+    <button ion-button color="dark" large round block icon-start [outline]="typeHandicap !== 'visuel'" (click)="saveHandicap('visuel')"><ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>  Visuel</button>
   </div>
 
   <div class="Liste options" padding text-center>
     <ion-label position="floating">
       <h1 text-wrap>De quel niveau d'autonomie disposez-vous?</h1>
     </ion-label>
-      <button ion-button color="dark" large outline  round block (click)="saveAutonomie('autonome')">Je suis autonome </button>
-      <button *ngIf="typeHandicap === 'visuel' " ion-button color="dark" large outline round block (click)="saveAutonomie('chien')">J'ai un chien guide</button>
-      <button ion-button color="dark" large outline  round block (click)="saveAutonomie('assistance')">J'ai besoin d'une assistance</button>
+      <button ion-button color="dark" large round block [outline]= "typeAutonomie !== 'autonome'" (click)="saveAutonomie('autonome')">Je suis autonome </button>
+      <button *ngIf="typeHandicap === 'visuel' " ion-button color="dark" large round block [outline]="typeAutonomie !== 'chien'" (click)="saveAutonomie('chien')">J'ai un chien guide</button>
+      <button ion-button color="dark" large round block [outline]="typeAutonomie !== 'assistance'" (click)="saveAutonomie('assistance')">J'ai besoin d'une assistance</button>
   </div>
 
   <button ion-button full (click)="goToMenu()">

@@ -10,6 +10,14 @@ import { MenuServicesPage } from '../menu-services/menu-services';
 })
 export class ParametresPage {
 
+  typeHandicap: string;
+  typeAutonomie: string;
+
+  ngOnInit() {
+    this.typeHandicap = 'moteur'; //On considère qu'un utilisateur est handicapé moteur par défaut
+    this.typeAutonomie = 'autonome'; //On considère qu'un utilisateur est autonome par défaut
+  }
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private menuCtrl: MenuController) {
@@ -28,9 +36,6 @@ export class ParametresPage {
     this.menuCtrl.close();
   }
 
-  typeHandicap: 'moteur'; //On considère qu'un utilisateur est handicapé moteur par défaut
-  typeAutonomie: 'autonome'; //On considère qu'un utilisateur est autonome par défaut
-
   saveHandicap(param) {
     this.typeHandicap = param;
   }
@@ -38,5 +43,7 @@ export class ParametresPage {
   saveAutonomie(param) {
     this.typeAutonomie = param;
   }
+
+  //isOutlineHandicap: any[] = [typeHandicap=='moteur',typeHandicap=='visuel'];
 
 }
