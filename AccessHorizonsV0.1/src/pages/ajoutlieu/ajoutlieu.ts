@@ -243,14 +243,12 @@ export class AjoutlieuPage {
 
 
   gotoEntreePage(){
-    let lieuForm = this.lieuForm;
     let entreeForm = this.entreeForm;
     let modal = this.modalCtrl.create(EntreePage, {entreeForm:entreeForm});
     modal.present();
   }
 
   gotoInterieurPage(){
-    let lieuForm = this.lieuForm;
     let interieurForm = this.interieurForm;
     let modal = this.modalCtrl.create(InterieurPage, {interieurForm:interieurForm});
     modal.present();

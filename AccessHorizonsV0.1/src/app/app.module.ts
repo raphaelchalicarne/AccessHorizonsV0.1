@@ -18,10 +18,10 @@ import { PlaceResultatPage } from '../pages/place-resultat/place-resultat';
 import { AuthPage } from '../pages/auth/auth';
 import { AuthService } from '../services/auth.service';
 import { AjoutlieuPage } from '../pages/ajoutlieu/ajoutlieu';
-import { EntreePage } from '../pages/entree/entree';
-import { InterieurPage } from '../pages/interieur/interieur';
-import { ExterieurPage } from '../pages/exterieur/exterieur';
-import { EquipementPage } from '../pages/equipement/equipement';
+//import { EntreePage } from '../pages/entree/entree';
+//import { InterieurPage } from '../pages/interieur/interieur';
+//import { ExterieurPage } from '../pages/exterieur/exterieur';
+//import { EquipementPage } from '../pages/equipement/equipement';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -49,11 +49,11 @@ const firebaseConfig = {
     PlaceResultatPage,
     AuthPage,
     AjoutlieuPage,
-    AuthPage,
-    EntreePage,
-    InterieurPage,
-    ExterieurPage,
-    EquipementPage ],
+    AuthPage],
+    //EntreePage,
+    //InterieurPage,
+    //ExterieurPage,
+    //EquipementPage ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -76,10 +76,10 @@ const firebaseConfig = {
     AuthPage,
     AjoutlieuPage,
     AuthPage,
-    EntreePage,
-    InterieurPage,
-    ExterieurPage,
-    EquipementPage
+    //EntreePage,
+    //InterieurPage,
+    //ExterieurPage,
+    //EquipementPage
   ],
   providers: [
     StatusBar,
@@ -89,6 +89,6 @@ const firebaseConfig = {
     JaccedeProvider,
     //FirebaseProvider
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  //schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
