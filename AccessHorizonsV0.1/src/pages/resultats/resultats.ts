@@ -53,6 +53,7 @@ export class ResultatsPage {
       this.resultatFirebase = this.getLieu(this.city, this.filtrage2);
     }
     
+    console.log(this.city);
     console.log(this.adresse);
     console.log(this.filtrage2);
     console.log(this.resultatFirebase);
