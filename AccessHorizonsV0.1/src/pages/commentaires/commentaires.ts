@@ -38,16 +38,18 @@ export class CommentairesPage {
 
     let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'/comments?api_key='+this.apiKey+'';
     this.http.get(myUrl, {}, {})
-    .then(data =>{
-      if (data != null){
+    .then(data => {
+      this.commentaires = JSON.parse(data.data.items);
+      alert(data.data);
+      alert(data.data.items);
+      if (this.commentaires != null){
         this.flag = true;
-        this.commentaires = JSON.parse(data.data.items);
         alert(this.commentaires);
       }
     })
     .catch(error =>{
-      alert('Error !');
-    })
+      alert(error);
+    });
   }
   closeModal(){
   	this.viewCtrl.dismiss();
