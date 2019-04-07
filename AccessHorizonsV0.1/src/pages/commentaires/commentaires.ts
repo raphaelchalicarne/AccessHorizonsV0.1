@@ -10,7 +10,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 })
 export class CommentairesPage {
   googleID: string = '';
-  commentaires: any = [];
+  commentaires: any[] = [];
   flag: boolean = false;
 
   apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
@@ -39,7 +39,7 @@ export class CommentairesPage {
     let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'/comments?api_key='+this.apiKey+'';
     this.http.get(myUrl, {}, {})
     .then(data => {
-      this.commentaires = JSON.parse(data.data.items);
+      this.commentaires = JSON.parse(data.data);
       alert(data.data);
       alert(data.data.items);
       if (this.commentaires != null){
