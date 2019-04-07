@@ -26,7 +26,7 @@ export class ResultatsPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public userService: JaccedeProvider,
+              public userService: JaccedeProvider, 
               private menuCtrl: MenuController) {
   }
   ionViewDidLoad() {
@@ -45,6 +45,7 @@ export class ResultatsPage {
             }
           }
         }
+        console.log(this.resultat);
       (error) =>{
         console.error(error);
       }

@@ -18,10 +18,11 @@ export class RechercheManuellePage {
   			  public navParams: NavParams,
   			  public viewCtrl: ViewController) {
     this.filtrage = navParams.get('filtrage');
+    //console.log(this.filtrage);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RechercheManuellePage');
+    //console.log('ionViewDidLoad RechercheManuellePage');
   }
   faireRecherche(){
   	this.userService.getAutocomplete(this.adresse)

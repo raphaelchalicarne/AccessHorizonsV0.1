@@ -81,7 +81,6 @@ export class RecherchePage {
   }; //fin de onMapClick()
   this.map = map;
   this.adresse = map.addEventListener("click", function(e){ //Centrer
-    console.log('this map', this.map);
     map.panTo(e.latlng);
     this.latlng = e.latlng;
   });
@@ -96,7 +95,8 @@ export class RecherchePage {
   
 }; //fin de la function loadMap()*/
   goToRechercheManuelle(){
-    let modal = this.modalCtrl.create(RechercheManuellePage);
+    let filtrage = this.filtrage;
+    let modal = this.modalCtrl.create(RechercheManuellePage, {filtrage: filtrage});
     modal.present();
   }
   /*goToRechercheManuelle(){
