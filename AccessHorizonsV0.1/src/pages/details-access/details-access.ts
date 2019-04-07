@@ -68,6 +68,8 @@ export class DetailsAccessPage {
       L.push('Ressault')};
     if (this.entree.marches == true){
       L.push('Présence de marches')};
+    if (this.entree.nbremarches != null){
+      L.push('Nombre de marches :', this.entree.nbremarches)};
     if (this.entree.enseignelisible == true){
       L.push('Enseigne visible et lisible')};
     if (this.entree.entreeprincipale == true){

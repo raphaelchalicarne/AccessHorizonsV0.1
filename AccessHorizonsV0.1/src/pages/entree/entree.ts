@@ -17,6 +17,7 @@ export class EntreePage {
 	lieuForm: any;
 	entreeForm: any; 
   entree: any;
+  nbremarches: any;
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
@@ -36,9 +37,18 @@ export class EntreePage {
   }
 
   saveEntree(){
-    this.entreeForm.controls['plainpied'].setValue((<HTMLInputElement> document.getElementById('plainpied')).checked),
-    this.entreeForm.controls['ressault'].setValue((<HTMLInputElement>document.getElementById('ressault')).checked),
-    this.entreeForm.controls['marches'].setValue((<HTMLInputElement> document.getElementById('marches')).checked),
+    this.entreeForm.controls['plainpied'].setValue((<HTMLInputElement> document.getElementById('plainpied')).checked);
+    this.entreeForm.controls['ressault'].setValue((<HTMLInputElement>document.getElementById('ressault')).checked);
+    this.entreeForm.controls['marches'].setValue((<HTMLInputElement> document.getElementById('marches')).checked);
+    var k;
+    for (k=1; k<4; k++){
+      console.log(k);
+          if ((<HTMLInputElement> document.getElementById(k)).checked == true){
+            this.nbremarches = k;
+          }}
+    if ((<HTMLInputElement> document.getElementById('4')).checked == true){
+            this.nbremarches = 'plus de 3';
+          }
     this.entreeForm.controls['maincourante'].setValue((<HTMLInputElement> document.getElementById('maincourante')).checked);
     this.entreeForm.controls['nez'].setValue((<HTMLInputElement> document.getElementById('nez')).checked);
     this.entreeForm.controls['bande'].setValue((<HTMLInputElement> document.getElementById('bande')).checked);
@@ -47,7 +57,7 @@ export class EntreePage {
     this.entreeForm.controls['entreeprincipale'].setValue((<HTMLInputElement> document.getElementById('entreeprincipale')).checked);
     this.entreeForm.controls['visiteurvisible'].setValue((<HTMLInputElement> document.getElementById('visiteurvisible')).checked);
     this.entreeForm.controls['interphone'].setValue((<HTMLInputElement> document.getElementById('interphone')).checked);
-    this.entreeForm.controls['marquageportevitre'].setValue((<HTMLInputElement> document.getElementById('marquageportevitre')).checked);
+    //this.entreeForm.controls['marquageportevitre'].setValue((<HTMLInputElement> document.getElementById('marquageportevitre')).checked);
     this.entreeForm.controls['porteautomatique'].setValue((<HTMLInputElement> document.getElementById('porteautomatique')).checked);
     this.entreeForm.controls['poigneeergo'].setValue((<HTMLInputElement> document.getElementById('poigneeergo')).checked);
     this.entreeForm.controls['portemaintienouvert'].setValue((<HTMLInputElement> document.getElementById('portemaintienouvert')).checked);
@@ -57,7 +67,7 @@ export class EntreePage {
     plainpied: this.entreeForm.get('plainpied').value,
     ressault: this.entreeForm.get('ressault').value,
     marches : this.entreeForm.get('marches').value,
-    nbremarches : this.entreeForm.get('nbremarches').value,
+    nbremarches : this.nbremarches,
     maincourante: this.entreeForm.get('maincourante').value,
     nez: this.entreeForm.get('nez').value,
     bande: this.entreeForm.get('bande').value,
