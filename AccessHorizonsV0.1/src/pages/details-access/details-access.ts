@@ -81,6 +81,7 @@ export class DetailsAccessPage {
     if (this.entree.largeurporte == true){
       L.push('Largeur du passage de la porte dentrée (cm) : 90cm et plus')};
   return L;  
+  console.log(L);
     }
 
     infoInterieur(){
@@ -100,7 +101,7 @@ export class DetailsAccessPage {
     if (this.interieur.marche == true){
       L.push('Présence de marche(s)')};
     return L;
-
+  console.log(L);
     }
 
     infoExterieur(){
@@ -110,7 +111,7 @@ export class DetailsAccessPage {
     if (this.exterieur.grande == true){
       L.push('Place plus grande que les autres places')};
     if (this.exterieur.danslenceinte == true){
-      L.push('Stationnement handicapé dans l','enceinte de létablissement')};
+      L.push('Stationnement handicapé dans lenceinte de létablissement')};
     if (this.exterieur.abaisses == true){
       L.push('Troittoirs abaissés à proximité')};
     if (this.exterieur.paves == true){
@@ -122,10 +123,11 @@ export class DetailsAccessPage {
     if (this.exterieur.pente == true){
       L.push('Rue en pente')};
     return L;
-    }
+  console.log(L);
+  }
 
     infoEquipement(){
-    var L;
+    var L = [];
     if (this.equipement.toilettes == true){
       L.push('Présence de toilettes')};
     if (this.equipement.planpiedamenage == true){
@@ -141,7 +143,7 @@ export class DetailsAccessPage {
     if (this.equipement.personnelsigne == true){
        L.push('Personnel initié à la langue des signes')};
     if (this.equipement.personnelaccueil == true){
-       L.push('Personnel formé à l','accueil des personnes en situation de handicap')};
+       L.push('Personnel formé à laccueil des personnes en situation de handicap')};
     if (this.equipement.titrage == true){
       L.push('Sous titrage')}; 
     if (this.equipement.hauteurcaisse == true){
@@ -149,6 +151,6 @@ export class DetailsAccessPage {
     if (this.equipement.materieldispo == true){
       L.push('Matériel à disposition')};       
     return L;
-
+  console.log(L);
     }
 }
