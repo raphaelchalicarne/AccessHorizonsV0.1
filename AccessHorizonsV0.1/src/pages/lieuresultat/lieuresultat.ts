@@ -11,7 +11,7 @@ import { CommentairesPage } from '../commentaires/commentaires';
   templateUrl: 'lieuresultat.html',
 })
 export class LieuResultatPage {
-	resultatFirebase: [];
+	resultatFirebase: any[];
 	nom: string;
 	entree: any;
 	interieur: any;
