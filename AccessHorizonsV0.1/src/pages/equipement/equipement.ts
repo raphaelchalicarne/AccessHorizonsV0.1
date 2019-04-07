@@ -15,6 +15,7 @@ import * as firebase from 'firebase';
 
 export class EquipementPage {
 	equipementForm: FormGroup;
+  equipement: any;
 
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
@@ -33,19 +34,16 @@ export class EquipementPage {
 
   saveEquipement(){
 
-    console.log(document.getElementById('toilettes').checked);
-    console.log(this.equipementForm.get('toilettes').value);
-
-    this.equipementForm.controls['toilettes'].setValue(document.getElementById('toilettes').checked);
-    this.equipementForm.controls['plainpiedamenage'].setValue(document.getElementById('plainpiedamenage').checked);
-    this.equipementForm.controls['marche'].setValue(document.getElementById('marche').checked);
-    this.equipementForm.controls['automate'].setValue(document.getElementById('automate').checked);
-    this.equipementForm.controls['bouclemagn'].setValue(document.getElementById('bouclemagn').checked);
-    this.equipementForm.controls['personnelsigne'].setValue(document.getElementById('personnelsigne').checked);
-    this.equipementForm.controls['personnelaccueil'].setValue(document.getElementById('personnelaccueil').checked);
-    this.equipementForm.controls['titrage'].setValue(document.getElementById('titrage').checked);
-    this.equipementForm.controls['hauteurcaisse'].setValue(document.getElementById('hauteurcaisse').checked);
-    this.equipementForm.controls['materieldispo'].setValue(document.getElementById('materieldispo').checked);
+    this.equipementForm.controls['toilettes'].setValue((<HTMLInputElement> document.getElementById('toilettes')).checked);
+    this.equipementForm.controls['plainpiedamenage'].setValue((<HTMLInputElement> document.getElementById('plainpiedamenage')).checked);
+    this.equipementForm.controls['marche'].setValue((<HTMLInputElement> document.getElementById('marche')).checked);
+    this.equipementForm.controls['automate'].setValue((<HTMLInputElement> document.getElementById('automate')).checked);
+    this.equipementForm.controls['bouclemagn'].setValue((<HTMLInputElement> document.getElementById('bouclemagn')).checked);
+    this.equipementForm.controls['personnelsigne'].setValue((<HTMLInputElement> document.getElementById('personnelsigne')).checked);
+    this.equipementForm.controls['personnelaccueil'].setValue((<HTMLInputElement> document.getElementById('personnelaccueil')).checked);
+    this.equipementForm.controls['titrage'].setValue((<HTMLInputElement> document.getElementById('titrage')).checked);
+    this.equipementForm.controls['hauteurcaisse'].setValue((<HTMLInputElement> document.getElementById('hauteurcaisse')).checked);
+    this.equipementForm.controls['materieldispo'].setValue((<HTMLInputElement> document.getElementById('materieldispo')).checked);
 
 
     this.equipement = {

@@ -7,7 +7,27 @@
 
 <ion-content padding>
 <ion-list>
-  <ion-radio-group>
+    <div>
+        <input type="radio" name="pied" id="plainpied" value="plainpied"><label for="plain pied">Plain pied</label>
+        <input type="radio" name="pied" id="pasplainpied" value="pasplainpied"><label for="pas plain pied">Pas de plain pied</label>
+      </div>
+      <div>
+        <input type="checkbox" id="ressault" value="ressault"><label for="ressault">Ressault</label>
+      </div>
+      <div>
+        <input type="checkbox" id="marches" value="marches"><label for="marches">Marche(s)/escaliers</label>
+      </div>
+      <B>Nombre de marches</B>
+      <div>
+        <input type="radio" name="nb" id="1" value="1"><label for="1">1</label>
+        <input type="radio" name="nb" id="2" value="2"><label for="2">2</label>
+        <input type="radio" name="nb" id="3" value="3"><label for="3">3</label>
+        <input type="radio" name="nb" id="4" value="3"><label for="3">plus de 3</label>     
+      </div>
+      <div>
+        <input type="checkbox" id="maincourante" value="maincourante"><label for="maincourante">Main courante</label>
+      </div>
+<!--   <ion-radio-group>
     <ion-list-header>
       <ion-label><b>Accès</b></ion-label>
     </ion-list-header>
@@ -52,7 +72,7 @@
     <ion-item>
     <ion-label>Main courante</ion-label>
     <ion-checkbox slot="end" id="main courante" value="main courante"></ion-checkbox>
-  </ion-item>
+  </ion-item> -->
 
 <!--       <div>
         <input type="checkbox" id="ressault" value="ressault"><label for="ressault">Ressault1</label>
@@ -86,13 +106,13 @@
         <input type="checkbox" id="entreeprincipale" value="entreeprincpale"><label for="entreeprincipale">L'entrée évaluée est l'entrée principale</label>
       </div>
       <div>
-        <input type="checkbox" id="visiteur" value="visiteur"><label for="visiteur">Visiteur visible depuis l'intérieur</label>
+        <input type="checkbox" id="visiteurvisible" value="visiteurvisible"><label for="visiteurvisible">Visiteur visible depuis l'intérieur</label>
       </div>
       <div>
-        <input type="checkbox" id="bouton" value="bouton"><label for="bouton">Interphone/Bouton d'appel</label>
+        <input type="checkbox" id="interphone" value="interphone"><label for="interphone">Interphone/Bouton d'appel</label>
       </div>
       <div>
-        <input type="checkbox" id="marquagevitre" value="marquagevitre"><label for="marquagevitre">Marquages sur porte vitrée</label>
+        <input type="checkbox" id="marquageportevitre" value="marquageportevitre"><label for="marquageportevitre">Marquages sur porte vitrée</label>
       </div>
 
       <B>Ouverture porte</B>

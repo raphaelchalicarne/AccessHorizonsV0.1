@@ -27,7 +27,7 @@ export class EntreePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Entrée');
+    console.log('ionViewDidLoad Entrée1');
     console.log(this.entreeForm.value);
   }
 
@@ -36,17 +36,23 @@ export class EntreePage {
   }
 
   saveEntree(){
-    console.log((<HTMLInputElement> document.getElementById('ressault')).checked);
-    console.log('ok');
-    console.log((<HTMLInputElement> document.getElementById('plainpied')).checked);
-    console.log((<HTMLInputElement> document.getElementById('plan')).checked);
     this.entreeForm.controls['plainpied'].setValue((<HTMLInputElement> document.getElementById('plainpied')).checked),
     this.entreeForm.controls['ressault'].setValue((<HTMLInputElement>document.getElementById('ressault')).checked),
     this.entreeForm.controls['marches'].setValue((<HTMLInputElement> document.getElementById('marches')).checked),
+    this.entreeForm.controls['maincourante'].setValue((<HTMLInputElement> document.getElementById('maincourante')).checked);
+    this.entreeForm.controls['nez'].setValue((<HTMLInputElement> document.getElementById('nez')).checked);
+    this.entreeForm.controls['bande'].setValue((<HTMLInputElement> document.getElementById('bande')).checked);
     this.entreeForm.controls['planincline'].setValue((<HTMLInputElement> document.getElementById('plan')).checked);
-
-
-
+    this.entreeForm.controls['enseignelisible'].setValue((<HTMLInputElement> document.getElementById('enseigne')).checked);
+    this.entreeForm.controls['entreeprincipale'].setValue((<HTMLInputElement> document.getElementById('entreeprincipale')).checked);
+    this.entreeForm.controls['visiteurvisible'].setValue((<HTMLInputElement> document.getElementById('visiteurvisible')).checked);
+    this.entreeForm.controls['interphone'].setValue((<HTMLInputElement> document.getElementById('interphone')).checked);
+    this.entreeForm.controls['marquageportevitre'].setValue((<HTMLInputElement> document.getElementById('marquageportevitre')).checked);
+    this.entreeForm.controls['porteautomatique'].setValue((<HTMLInputElement> document.getElementById('porteautomatique')).checked);
+    this.entreeForm.controls['poigneeergo'].setValue((<HTMLInputElement> document.getElementById('poigneeergo')).checked);
+    this.entreeForm.controls['portemaintienouvert'].setValue((<HTMLInputElement> document.getElementById('portemaintienouvert')).checked);
+    this.entreeForm.controls['largeurporte'].setValue((<HTMLInputElement> document.getElementById('largeurplus')).checked);
+   
     this.entree = {
     plainpied: this.entreeForm.get('plainpied').value,
     ressault: this.entreeForm.get('ressault').value,
@@ -66,6 +72,8 @@ export class EntreePage {
     portemaintienouvert: this.entreeForm.get('portemaintienouvert').value,
     largeurporte: this.entreeForm.get('largeurporte').value,
     }
+
+    console.log(this.entree);
   }
 
 

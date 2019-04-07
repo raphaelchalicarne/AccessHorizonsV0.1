@@ -14,7 +14,8 @@ import * as firebase from 'firebase';
 })
 
 export class ExterieurPage {
-	exterieurForm: any;
+	exterieurForm: FormGroup;
+  exterieur: any;
 
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
@@ -27,30 +28,25 @@ export class ExterieurPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Exterieur');
-    console.log(this.exterieurForm.value);
+    //console.log(this.exterieurForm.value);
   }
 
 
   saveExterieur(){
 
-    console.log(document.getElementById('aproximite').checked);
-    console.log(this.exterieurForm.get('aproximite').value);
-
-    this.exterieurForm.controls['aproximite'].setValue(document.getElementById('aproximite').checked);
-    this.exterieurForm.controls['grande'].setValue(document.getElementById('grande').checked);
-    this.exterieurForm.controls['danslenceinte'].setValue(document.getElementById('danslenceinte').checked);
-    this.exterieurForm.controls['abaisses'].setValue(document.getElementById('abaisses').checked);
-    this.exterieurForm.controls['paves'].setValue(document.getElementById('paves').checked);
-    this.exterieurForm.controls['etroits'].setValue(document.getElementById('etroits').checked);
-    this.exterieurForm.controls['devers'].setValue(document.getElementById('devers').checked);
-    this.exterieurForm.controls['pente'].setValue(document.getElementById('pente').checked);
+    this.exterieurForm.controls['aproximite'].setValue((<HTMLInputElement> document.getElementById('aproximite')).checked);
+    this.exterieurForm.controls['grande'].setValue((<HTMLInputElement> document.getElementById('grande')).checked);
+    this.exterieurForm.controls['danslenceinte'].setValue((<HTMLInputElement> document.getElementById('danslenceinte')).checked);
+    this.exterieurForm.controls['abaisses'].setValue((<HTMLInputElement> document.getElementById('abaisses')).checked);
+    this.exterieurForm.controls['paves'].setValue((<HTMLInputElement> document.getElementById('paves')).checked);
+    this.exterieurForm.controls['etroits'].setValue((<HTMLInputElement> document.getElementById('etroits')).checked);
+    this.exterieurForm.controls['devers'].setValue((<HTMLInputElement> document.getElementById('devers')).checked);
+    this.exterieurForm.controls['pente'].setValue((<HTMLInputElement> document.getElementById('pente')).checked);
 
 
-    //this.exterieurForm.controls['aproximite'].setValue(document.getElementById('aproximite').checked),
-    //this.exterieurForm.controls['grande'].setValue(document.getElementById('grande').checked),
-    //this.exterieurForm.controls['danslenceinte'].setValue(document.getElementById('danslenceinte').checked),
+ 
 
-    /*this.exterieur = {
+    this.exterieur = {
       aproximite:this.exterieurForm.get('aproximite').value,
       grande:this.exterieurForm.get('grande').value,
       danslenceinte: this.exterieurForm.get('danslenceinte').value,
@@ -59,7 +55,7 @@ export class ExterieurPage {
       etroits: this.exterieurForm.get('etroits').value,
       devers: this.exterieurForm.get('devers').value,
       pente: this.exterieurForm.get('pente').value,
-    }*/
+    }
   }
   }
 
