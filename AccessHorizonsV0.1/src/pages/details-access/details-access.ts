@@ -24,8 +24,8 @@ export class DetailsAccessPage {
   }
 
   ionViewDidLoad() {
-    alert(this.details);
-    alert(typeof this.details); // Array ?
+    //alert(this.details);
+    //alert(typeof this.details); // Array ?
     if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
     { 
   		this.flag = true;

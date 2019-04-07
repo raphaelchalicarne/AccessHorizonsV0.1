@@ -35,12 +35,14 @@ export class CommentairesPage {
       (error) =>{
         console.log(error);
       })*/
+
     let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'/comments?api_key='+this.apiKey+'';
     this.http.get(myUrl, {}, {})
     .then(data =>{
       if (data != null){
         this.flag = true;
         this.commentaires = JSON.parse(data.data.items);
+        alert(this.commentaires);
       }
     })
     .catch(error =>{

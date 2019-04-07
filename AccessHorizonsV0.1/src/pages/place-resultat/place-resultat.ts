@@ -88,8 +88,8 @@ export class PlaceResultatPage {
       this.latitud = this.info['latitude'];
       this.longitud = this.info['longitude'];
       this.details = this.info['accessibility'];
-      alert(this.details);
-      alert(this.details[0].label);
+      //alert(this.details);
+      //alert(this.details[0].label);
       this.note_globale = this.info['rating'];
       this.phone = this.info['phone'];
       this.website = this.info['website'];
@@ -113,7 +113,7 @@ export class PlaceResultatPage {
     	alert(error);
         alert('Une erreur est apparue !');
     });
-    /* ANCIENNE VERSION
+    /* ANCIENNE VERSION DE REQUETE A J'ACCEDE (Pour navigateur)
     this.userService.getDetails(this.googleID).subscribe(
       (data) => {
         this.details = data['accessibility'];

@@ -21,11 +21,26 @@
 					{{element.label}}
 					<h1></h1>
 				</h4>
-					<h6 *ngIf="element.value != null"> 
+					<h5 *ngIf="element.value != null"> 
 						-- {{element.value}} --
-					</h6>				
+					</h5>				
 			</div>
 		</div>
+
+		<!--<div *ngFor= "let detail of details" class="categorie d'accessibilité">
+			<h2>
+				<b><u>{{detail['label']}}</u></b>
+			</h2>
+			<div *ngFor="let element of detail['children']" class="Elements individuels de chaque categorie">
+				<h4>
+					{{element['label']}}
+					<h1></h1>
+				</h4>
+					<h6 *ngIf="element['value'] != null"> 
+						-- {{element['value']}} --
+					</h6>				
+			</div>
+		</div>-->
 	</div>
 	<div class="Pas de details" *ngIf="flag == false" padding text-center>
 		<h4>Aucun détail d'accessibilité disponible</h4><!--<h5>Voulez vous ajouter des détails d'accessibilité ?</h5>-->
