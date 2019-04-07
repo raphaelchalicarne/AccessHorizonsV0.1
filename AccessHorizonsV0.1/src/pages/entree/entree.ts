@@ -76,7 +76,9 @@ export class EntreePage {
     console.log(this.entree);
   }
 
-
+  closeModal(){
+    this.viewCtrl.dismiss();
+  }
 
   }
 

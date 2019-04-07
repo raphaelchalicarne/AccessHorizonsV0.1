@@ -57,6 +57,11 @@ export class ExterieurPage {
       pente: this.exterieurForm.get('pente').value,
     }
   }
+
+closeModal(){
+  this.viewCtrl.dismiss();
+  }
+
   }
 
 

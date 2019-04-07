@@ -58,6 +58,9 @@ export class InterieurPage {
     }
   }
 
+  closeModal(){
+    this.viewCtrl.dismiss();
+  }
 
 
   }

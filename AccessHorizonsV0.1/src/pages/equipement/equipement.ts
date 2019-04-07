@@ -59,6 +59,10 @@ export class EquipementPage {
       materieldispo:this.equipementForm.get('materieldispo').value,
     }
   }
+
+ closeModal(){
+  this.viewCtrl.dismiss();
+  }
   }
 
 

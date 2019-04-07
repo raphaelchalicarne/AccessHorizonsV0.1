@@ -243,26 +243,28 @@ export class AjoutlieuPage {
 
 
   gotoEntreePage(){
-    let lieuForm = this.lieuForm;
     let entreeForm = this.entreeForm;
-    this.navCtrl.push(EntreePage, {lieuForm:lieuForm, entreeForm:entreeForm});
+    let modal = this.modalCtrl.create(EntreePage, {entreeForm:entreeForm});
+    modal.present();
   }
 
   gotoInterieurPage(){
-    let lieuForm = this.lieuForm;
     let interieurForm = this.interieurForm;
-    this.navCtrl.push(InterieurPage, {lieuForm:lieuForm, interieurForm:interieurForm});
+    let modal = this.modalCtrl.create(InterieurPage, {interieurForm:interieurForm});
+    modal.present();
   }
 
 
   gotoExterieurPage(){
     let exterieurForm = this.exterieurForm;
-    this.navCtrl.push(ExterieurPage, {exterieurForm:exterieurForm});
+    let modal = this.modalCtrl.create(ExterieurPage, {exterieurForm:exterieurForm});
+    modal.present();
   }
 
   gotoEquipementPage(){
     let equipementForm = this.equipementForm;
-    this.navCtrl.push(EquipementPage, {equipementForm:equipementForm});
+    let modal = this.modalCtrl.create(EquipementPage, {equipementForm:equipementForm});
+    modal.present();
   }
 
 
