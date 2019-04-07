@@ -45,35 +45,26 @@ export class ResultatsPage {
     this.http.get(myUrl,{}, {})
     .then(data => {
       this.places = JSON.parse(data.data);
-      // FILTRAGE
-      //alert(this.filtrage);
+
+      // FILTRAGE 
       if (this.filtrage.length == 0){ 
         this.resultat = this.places;
       }
       if (this.filtrage.length != 0){
-        //Entra en el filtro y el filtro lo muestra
         let i;
-        //alert(this.places);
-        //alert(this.places['items']);
-        //alert(this.places['items'][1].category.name); // así si
-        //alert(this.places[1].category.name); MAL
-        //alert(typeof this.places); OBJECT
-        //alert(typeof this.resultat); OBJECT
-        for (i in this.places['items']){ //
-          if (this.filtrage.includes(this.places['items'][i].category.name)) { //Aquí ya no entra
-              //alert(this.places[i]); 
+        for (i in this.places['items']){ 
+          if (this.filtrage.includes(this.places['items'][i].category.name)) { 
               this.resultat.push(this.places['items'][i]);
             }
         }  
-      }
-      //alert(this.resultat[3]);
-      //alert(this.resultat);
-      //alert(this.resultat[3].category.name);
+      };
     })
     .catch(error => {
-      console.log('error');
+      alert('Error !');
     });
-    /*this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
+
+    /* Ancienne Version (Avec j'accede)
+    this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
       (data) => {
         this.places = data['items'];

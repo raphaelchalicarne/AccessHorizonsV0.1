@@ -22,17 +22,15 @@ export class RechercheManuellePage {
     this.selection = navParams.get('selection');
   }
 
-  ionViewDidLoad() {
-  }
+  ionViewDidLoad() {}
   faireRecherche(){
   	this.userService.getAutocomplete(this.adresse)
   	.subscribe(
   		(data) => {
   			this.resultat = data['features'];
-  			//console.log(data);
   		},
   		(error) =>{
-  			console.log(error);
+  			alert('Error !');
   		})
   }
  
@@ -43,7 +41,6 @@ export class RechercheManuellePage {
   goToPlaceList(longitud: number, latitud: number){
     let filtrage = this.filtrage;
     let selection = this.selection;
-    //console.log(filtrage)
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
 
     }

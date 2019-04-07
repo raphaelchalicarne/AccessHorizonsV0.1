@@ -45,7 +45,7 @@ export class CommentairesPage {
       }
     })
     .catch(error =>{
-      alert(error);
+      //alert(error);
     });
   }
   closeModal(){

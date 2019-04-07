@@ -78,18 +78,12 @@ export class PlaceResultatPage {
   	let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
     this.http.get(myUrl,{}, {})
     .then(data => {
-      //alert(data.data); //data is a JSON String
-     // alert(typeof data.data); 
-
-      //CODIGO CORRECTO
 
       this.info = JSON.parse(data.data); // On transforme data (string) en OBJECT
-      //alert(typeof this.info); OBJECT
+      
       this.latitud = this.info['latitude'];
       this.longitud = this.info['longitude'];
       this.details = this.info['accessibility'];
-      //alert(this.details);
-      //alert(this.details[0].label);
       this.note_globale = this.info['rating'];
       this.phone = this.info['phone'];
       this.website = this.info['website'];
@@ -110,9 +104,9 @@ export class PlaceResultatPage {
        }*/
     })
     .catch(error =>{
-    	alert(error);
-        alert('Une erreur est apparue !');
+      alert('Une erreur est apparue !');
     });
+
     /* ANCIENNE VERSION DE REQUETE A J'ACCEDE (Pour navigateur)
     this.userService.getDetails(this.googleID).subscribe(
       (data) => {
