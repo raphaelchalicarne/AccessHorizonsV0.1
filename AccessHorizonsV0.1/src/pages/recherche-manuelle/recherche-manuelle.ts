@@ -41,12 +41,12 @@ export class RechercheManuellePage {
   	this.viewCtrl.dismiss();
   }
   goToPlaceList(longitud: number, latitud: number){
-    var filtrage = this.filtrage;
-    var selection = this.selection;
+    let filtrage = this.filtrage;
+    let selection = this.selection;
     //console.log(filtrage)
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
 
-  }
+    }
   }
 
     /*faireRecherche2(){

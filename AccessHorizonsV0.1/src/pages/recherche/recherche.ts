@@ -17,8 +17,9 @@ enableProdMode();
 
 export class RecherchePage {
   @ViewChild('map') mapContainer: ElementRef;
-  center: any = [46.96525, 2.7885984];
-  message: string = 'Casa';
+
+  center: any = [46.96525, 2.7885984]; //Centrer la carte au milieu de la FRANCE
+  message: string;
   map: any;
   latitud: number;
   longitud: number;
@@ -65,7 +66,7 @@ export class RecherchePage {
     Mapbox.addTo(map);*/
       
 
-    var OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+    let OpenStreetMap = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
       minZoom: 3,
       maxZoom: 18,
@@ -103,8 +104,8 @@ export class RecherchePage {
   
 }; //fin de la function loadMap()*/
   goToRechercheTextuelle(){
-    var selection = this.selection;
-    var filtrage = this.filtrage; 
+    let selection = this.selection;
+    let filtrage = this.filtrage; 
     let modal = this.modalCtrl.create(RechercheManuellePage,{filtrage: filtrage, selection: selection});
     modal.present();
   }
@@ -113,11 +114,12 @@ export class RecherchePage {
       let adresse = this.adresse;
       let longitud = this.adresse.latlng.lng;
       let latitud = this.adresse.latlng.lat;
-      var filtrage = this.filtrage;
-      var selection = this.selection;
+      let filtrage = this.filtrage;
+      let selection = this.selection;
       this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
-    } else {
-      console.log('No existe');
+    } 
+    else {
+      console.log('Ne existe pas');
     }    
   }
   onToggleMenu() {
