@@ -40,11 +40,8 @@ export class CommentairesPage {
     this.http.get(myUrl, {}, {})
     .then(data => {
       this.commentaires = JSON.parse(data.data);
-      alert(data.data);
-      alert(data.data.items);
       if (this.commentaires != null){
         this.flag = true;
-        alert(this.commentaires);
       }
     })
     .catch(error =>{

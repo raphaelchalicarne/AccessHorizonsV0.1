@@ -43,7 +43,7 @@ export class RechercheManuellePage {
   goToPlaceList(longitud: number, latitud: number){
     var filtrage = this.filtrage;
     var selection = this.selection;
-    console.log(filtrage)
+    //console.log(filtrage)
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
 
   }

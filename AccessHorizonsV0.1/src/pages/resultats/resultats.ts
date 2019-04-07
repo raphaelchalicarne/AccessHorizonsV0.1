@@ -46,17 +46,29 @@ export class ResultatsPage {
     .then(data => {
       this.places = JSON.parse(data.data);
       // FILTRAGE
+      //alert(this.filtrage);
       if (this.filtrage.length == 0){ 
         this.resultat = this.places;
       }
       if (this.filtrage.length != 0){
+        //Entra en el filtro y el filtro lo muestra
         let i;
-        for (i in this.places){
-          if (this.filtrage.includes(this.places[i].category.name)) {
-              this.resultat.push(this.places[i]);
+        //alert(this.places);
+        //alert(this.places['items']);
+        //alert(this.places['items'][1].category.name); // así si
+        //alert(this.places[1].category.name); MAL
+        //alert(typeof this.places); OBJECT
+        //alert(typeof this.resultat); OBJECT
+        for (i in this.places['items']){ //
+          if (this.filtrage.includes(this.places['items'][i].category.name)) { //Aquí ya no entra
+              //alert(this.places[i]); 
+              this.resultat.push(this.places['items'][i]);
             }
-        }
+        }  
       }
+      //alert(this.resultat[3]);
+      //alert(this.resultat);
+      //alert(this.resultat[3].category.name);
     })
     .catch(error => {
       console.log('error');
