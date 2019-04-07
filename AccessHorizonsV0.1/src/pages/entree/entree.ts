@@ -36,10 +36,15 @@ export class EntreePage {
   }
 
   saveEntree(){
+    console.log((<HTMLInputElement> document.getElementById('ressault')).checked);
+    console.log('ok');
+    console.log((<HTMLInputElement> document.getElementById('plainpied')).checked);
+    console.log((<HTMLInputElement> document.getElementById('plan')).checked);
+    this.entreeForm.controls['plainpied'].setValue((<HTMLInputElement> document.getElementById('plainpied')).checked),
+    this.entreeForm.controls['ressault'].setValue((<HTMLInputElement>document.getElementById('ressault')).checked),
+    this.entreeForm.controls['marches'].setValue((<HTMLInputElement> document.getElementById('marches')).checked),
+    this.entreeForm.controls['planincline'].setValue((<HTMLInputElement> document.getElementById('plan')).checked);
 
-    this.entreeForm.controls['plainpied'].setValue(document.getElementById('plainpied').checked),
-    this.entreeForm.controls['ressault'].setValue(document.getElementById('ressault').checked),
-    this.entreeForm.controls['marches'].setValue(document.getElementById('marches').checked),
 
 
     this.entree = {

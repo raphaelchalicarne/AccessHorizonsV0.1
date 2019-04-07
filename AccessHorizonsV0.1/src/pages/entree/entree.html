@@ -6,22 +6,55 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-  <ion-item>
-    <ion-label>Pepperoni</ion-label>
-    <ion-checkbox slot="end" value="pepperoni"></ion-checkbox>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Plain pied></ion-label>
-    <ion-radio value="plainpied"></ion-radio>
-  </ion-item>
-</ion-list>
 <ion-list>
-<div>
-        <input type="radio" name="pied" id="pasplainpied" value="pasplainpied"><label for="pas plain pied">Pas de plain pied</label>
-      </div>
-      <div>
+  <ion-radio-group>
+    <ion-list-header>
+      <ion-label><b>Accès</b></ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label >De plain pied</ion-label>
+      <ion-radio id=plainpied value="plainpied"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pas de plain pied</ion-label>
+      <ion-radio slot="end" id="pasplainpied" value="pasdeplainpied"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>Ressault</ion-label>
+    <ion-checkbox slot="end" id="ressault" name="ressault" value="ressault"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Marches</ion-label>
+    <ion-checkbox slot="end" id="marches" value="marches"></ion-checkbox>
+  </ion-item>
+
+  <ion-radio-group>
+    <ion-list-header>
+      <ion-label>Nombre de marches</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>1</ion-label>
+      <ion-radio slot="end" id="1" value="1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>2</ion-label>
+      <ion-radio slot="end" id="2" value="2"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+    <ion-item>
+    <ion-label>Main courante</ion-label>
+    <ion-checkbox slot="end" id="main courante" value="main courante"></ion-checkbox>
+  </ion-item>
+
+<!--       <div>
         <input type="checkbox" id="ressault" value="ressault"><label for="ressault">Ressault1</label>
       </div>
       <div>
@@ -33,10 +66,10 @@
         <input type="radio" name="nb" value="2"><label for="2">2</label>
         <input type="radio" name="nb" value="3"><label for="3">3</label>
         <input type="radio" name="nb" value="3"><label for="3">plus de 3</label>     
-      </div>
-      <div>
+      </div> -->
+<!--       <div>
         <input type="checkbox" id="maincourante" value="maincourante"><label for="maincourante">Main courante</label>
-      </div>
+      </div> -->
       <div>
         <input type="checkbox" id="nez" value="nez"><label for="nez">Nez de marches contrastés et antidérapants</label>
       </div>
