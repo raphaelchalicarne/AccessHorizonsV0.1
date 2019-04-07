@@ -15,6 +15,8 @@ export class LieuResultatPage {
 	nom: string;
 	entree: any;
 	interieur: any;
+  exterieur: any;
+  equipement: any;
 	selection: number;
 
 	constructor(public navCtrl: NavController,
@@ -28,12 +30,14 @@ export class LieuResultatPage {
   	this.nom = this.navParams.get('nom');
   	this.entree = this.navParams.get('entree');
   	this.interieur = this.navParams.get('interieur');
+    this.exterieur = this.navParams.get('exterieur');
+    this.equipement = this.navParams.get('equipement');
   	this.selection = this.navParams.get('selection');
   }
 
   ionViewDidLoad(){
   	console.log(this.nom);
-  	console.log(this.entree);
+  	//console.log(this.entree);
   }
 
   onToggleMenu() {
@@ -44,7 +48,9 @@ export class LieuResultatPage {
      let nom = this.nom;
      let entree = this.entree;
      let interieur = this.interieur;
-     let modal = this.modalCtrl.create(DetailsAccessPage, {nom:nom, entree:entree, interieur:interieur});
+     let exterieur = this.exterieur;
+     let equipement = this.equipement;
+     let modal = this.modalCtrl.create(DetailsAccessPage, {nom:nom, entree:entree, interieur:interieur, exterieur:exterieur, equipement:equipement});
      modal.present();
      modal.onDidDismiss((data) => {
      })

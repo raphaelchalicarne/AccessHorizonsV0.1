@@ -14,14 +14,21 @@ export class DetailsAccessPage {
   nom: string;
   entree: any;
   interieur: any;
+  exterieur: any;
+  equipement: any;
   infoentree: any;
   infointerieur: any;
+  infoexterieur: any;
+  infoequipement: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   	this.details = navParams.get('details');
     this.nom = navParams.get('nom');
     this.entree = navParams.get('entree');
     this.interieur = navParams.get('interieur');
+    this.exterieur = navParams.get('exterieur');
+    this.equipement = navParams.get('equipement');
+
   }
 
   ionViewDidLoad() {
@@ -35,6 +42,8 @@ export class DetailsAccessPage {
       this.flag1 = true;
       this.infoentree = this.infoEntree();
       this.infointerieur = this.infoInterieur();
+      this.infoexterieur = this.infoExterieur();
+      this.infoequipement = this.infoEquipement();
 
     }
   	else {
@@ -42,7 +51,7 @@ export class DetailsAccessPage {
   	}
 
     console.log(this.infointerieur);
-    console.log(this.interieur);
+    console.log(this.exterieur);
     console.log(this.flag1);
   }
   closeModal(){
@@ -90,7 +99,56 @@ export class DetailsAccessPage {
       L.push('Présence dascenseur(s)')};
     if (this.interieur.marche == true){
       L.push('Présence de marche(s)')};
+    return L;
 
     }
 
+    infoExterieur(){
+    var L=[];
+    if (this.exterieur.aproximite == true){
+      L.push('Stationnement handicapé à proximité de l','établissement')};
+    if (this.exterieur.grande == true){
+      L.push('Place plus grande que les autres places')};
+    if (this.exterieur.danslenceinte == true){
+      L.push('Stationnement handicapé dans l','enceinte de létablissement')};
+    if (this.exterieur.abaisses == true){
+      L.push('Troittoirs abaissés à proximité')};
+    if (this.exterieur.paves == true){
+       L.push('Présence de pavés')};
+    if (this.exterieur.etroits == true){
+       L.push('Trottoirs étroits')};
+    if (this.exterieur.devers == true){
+       L.push('Dévers important')};
+    if (this.exterieur.pente == true){
+      L.push('Rue en pente')};
+    return L;
+    }
+
+    infoEquipement(){
+    var L;
+    if (this.equipement.toilettes == true){
+      L.push('Présence de toilettes')};
+    if (this.equipement.planpiedamenage == true){
+      L.push('Les toilettes sont de plain pied et aménagées')};
+    if (this.equipement.planpiedamenage == false){
+      L.push('Toilettes non aménagées')};    
+    if (this.equipement.marche == true){
+      L.push('Marche(s) pour accéder aux toilettes')};
+    if (this.equipement.automate == true){
+      L.push('')};
+    if (this.equipement.bouclemagn == true){
+       L.push('')};
+    if (this.equipement.personnelsigne == true){
+       L.push('Personnel initié à la langue des signes')};
+    if (this.equipement.personnelaccueil == true){
+       L.push('Personnel formé à l','accueil des personnes en situation de handicap')};
+    if (this.equipement.titrage == true){
+      L.push('Sous titrage')}; 
+    if (this.equipement.hauteurcaisse == true){
+       L.push('Caisses à hauteur adaptée')};
+    if (this.equipement.materieldispo == true){
+      L.push('Matériel à disposition')};       
+    return L;
+
+    }
 }

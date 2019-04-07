@@ -42,7 +42,18 @@
 				{{item}}
 			</h3>
 		</div>
-
+		<h2><b><u> Extérieur </u></b></h2>
+		<div *ngFor= "let item of infoexterieur" class="infoexterieur">
+			<h3>
+				{{item}}
+			</h3>
+		</div>
+		<h2><b><u> Equipement </u></b></h2>
+		<div *ngFor= "let item of infoequipement" class="infoequipement">
+			<h3>
+				{{item}}
+			</h3>
+		</div>
 	</div>
 
 	<div class="Pas de details" *ngIf="flag == false && flag1 == false" padding text-center>

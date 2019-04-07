@@ -106,10 +106,10 @@ export class ResultatsPage {
     this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID, selection: selection});
   }
 
-  goToLieu(nom:string, entree:any, interieur:any){
+  goToLieu(nom:string, entree:any, interieur:any, exterieur: any, equipement: any){
     var selection = this.selection;
     var resultatFirebase = this.resultatFirebase;
-    this.navCtrl.push(LieuResultatPage,{nom:nom, entree:entree, interieur:interieur, resultatFirebase:resultatFirebase, selection:selection});
+    this.navCtrl.push(LieuResultatPage,{nom:nom, entree:entree, interieur:interieur, exterieur:exterieur, equipement:equipement, resultatFirebase:resultatFirebase, selection:selection});
   }
 
   onToggleMenu() {
