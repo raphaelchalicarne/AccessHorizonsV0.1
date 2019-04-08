@@ -50,17 +50,17 @@ export class ResultatsPage {
   ionViewDidLoad() {
     //this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
     if (this.osm == 'city' ){
-      console.log('cest une ville1');
+      //console.log('cest une ville1');
       this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
     }
     else {
       this.resultatFirebase = this.getLieu(this.city, this.filtrage2);
     }
     
-    console.log(this.city);
-    console.log(this.adresse);
-    console.log(this.filtrage2);
-    console.log(this.resultatFirebase);
+    //console.log(this.city);
+    //console.log(this.adresse);
+    //console.log(this.filtrage2);
+    //console.log(this.resultatFirebase);
     
 
     let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
@@ -82,7 +82,7 @@ export class ResultatsPage {
       };
     })
     .catch(error => {
-      alert('Error !');
+      alert(error);
     });
     /* ANCIENNE VERSION
     this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
