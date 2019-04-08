@@ -67,7 +67,7 @@ export class MenuServicesPage {
   			//console.log(myUrl);
   			//console.log(this.latitud);
   		},
-  		(error) =>{
+  		(error) =>{  
   			alert(error);
   		})
   	
