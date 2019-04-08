@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, NavParams } from 'ionic-angular';
-import {FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import { EntreePage } from '../entree/entree';
 import { InterieurPage } from '../interieur/interieur';
 import { ExterieurPage } from '../exterieur/exterieur';
@@ -8,7 +8,6 @@ import { EquipementPage } from '../equipement/equipement';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
-import * as firebase from 'firebase';
 
 
 @Component({
