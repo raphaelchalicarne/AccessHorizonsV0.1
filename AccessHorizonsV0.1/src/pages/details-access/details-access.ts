@@ -63,7 +63,7 @@ export class DetailsAccessPage {
     if (this.entree.bande == true){
       L.push('')};
     if (this.entree.plainpied == true){
-      L.push('Accès : De plain pied')}; //La liste est remplie par les 
+      L.push('Accès : De plain pied')}; //La liste est remplie par ce que les informations que l'on souhaite voir afficher
     if (this.entree.ressault == true){
       L.push('Ressault')};
     if (this.entree.marches == true){
