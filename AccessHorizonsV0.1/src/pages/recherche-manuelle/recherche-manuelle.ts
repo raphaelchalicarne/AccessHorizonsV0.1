@@ -43,13 +43,12 @@ export class RechercheManuellePage {
   	let flag = false;
   	this.viewCtrl.dismiss();
   }
-  goToPlaceList(longitud: number, latitud: number, osm:any, city:string){
+  goToPlaceList(longitud: number, latitud: number, osm:any, city:string){ //les variables osm et city permettent de gérer la recherche sur Firebase
     console.log(this.resultat);
     var filtrage = this.filtrage;
     var filtrage2 = this.filtrage2;
     var selection = this.selection;
     var adresse = this.adresse;
-    //console.log(this.city);
     this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, filtrage2:filtrage2, selection: selection, adresse:adresse, osm:osm, city:city});
 
   }

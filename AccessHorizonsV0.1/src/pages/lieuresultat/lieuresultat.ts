@@ -10,6 +10,10 @@ import { CommentairesPage } from '../commentaires/commentaires';
   selector: 'page-lieuresultat',
   templateUrl: 'lieuresultat.html',
 })
+
+//Cette page n'affiche que les détails de résultats issus de la base de données Firebase. Les résultats issus de J'accède sont 
+//pris en charge par la page PlaceResultat
+
 export class LieuResultatPage {
 	resultatFirebase: any[];
 	nom: string;
@@ -44,7 +48,7 @@ export class LieuResultatPage {
     this.menuCtrl.open();
   }
 
-  DetailsAccessModal(){
+  DetailsAccessModal(){ //pour accéder aux détails d'accessibilité
      let nom = this.nom;
      let entree = this.entree;
      let interieur = this.interieur;

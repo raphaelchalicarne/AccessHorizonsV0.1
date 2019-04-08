@@ -27,7 +27,7 @@ export class ResultatsPage {
   city: string; //nom de la ville
 
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
-      this.adresse = this.navParams.get('adresse');
+      this.adresse = this.navParams.get('adresse'); //la localisation tapée par l'utilisateur dans sa recherche
       this.longitud = this.navParams.get('longitud');
       this.latitud = this.navParams.get('latitud');
       this.filtrage = this.navParams.get('filtrage');
@@ -44,19 +44,18 @@ export class ResultatsPage {
               private menuCtrl: MenuController) {
   }
   ionViewDidLoad() {
-    //this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
-    if (this.osm == 'city' ){
-      console.log('cest une ville1');
-      this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
+    if (this.osm == 'city' ){ //osm prend la valeur 'city' si la localisation rentrée est une ville
+      console.log('cest une ville');
+      this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2); //dans ce cas, le nom de la ville est stockée dans this.adresse
     }
-    else {
+    else { //si la localisation rentrée n'est pas une ville, le nom de la ville associée est stockée dans la propriété city
       this.resultatFirebase = this.getLieu(this.city, this.filtrage2);
     }
     
-    console.log(this.city);
-    console.log(this.adresse);
-    console.log(this.filtrage2);
-    console.log(this.resultatFirebase);
+    // console.log(this.city);
+    // console.log(this.adresse);
+    // console.log(this.filtrage2);
+    // console.log(this.resultatFirebase);
     this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
       (data) => {
@@ -81,7 +80,7 @@ export class ResultatsPage {
   }
 
    getLieu(ville: string, categorie: string){
-   var resultats = [];
+   var resultats = []; //liste regroupant les nom des lieux correspondant à la recherche
    var ref = firebase.database().ref('lieu');
    ref.once("value")
      .then(function(snapshot) {
@@ -106,7 +105,7 @@ export class ResultatsPage {
     this.navCtrl.push(PlaceResultatPage, {name:name, adresse:adresse, googleID:googleID, selection: selection});
   }
 
-  goToLieu(nom:string, entree:any, interieur:any, exterieur: any, equipement: any){
+  goToLieu(nom:string, entree:any, interieur:any, exterieur: any, equipement: any){ //les données du lieu considéré sont passée à la page LieuResultat qui affichera les détaisls sur le lieu
     var selection = this.selection;
     var resultatFirebase = this.resultatFirebase;
     this.navCtrl.push(LieuResultatPage,{nom:nom, entree:entree, interieur:interieur, exterieur:exterieur, equipement:equipement, resultatFirebase:resultatFirebase, selection:selection});

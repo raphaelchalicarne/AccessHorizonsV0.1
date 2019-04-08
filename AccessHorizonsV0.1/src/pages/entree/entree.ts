@@ -14,16 +14,15 @@ import * as firebase from 'firebase';
 })
 
 export class EntreePage {
-	lieuForm: any;
 	entreeForm: any; 
   entree: any;
-  nbremarches: any;
+  nbremarches: any; //le nombre de marche est la seule variable non booléenne de entree
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
   ngOnInit(){
-  	this.lieuForm = this.navParams.get('lieuForm');
+    //récupération du formulaire entreeForm provenant de la page AjoutLieu
   	this.entreeForm = this.navParams.get('entreeForm');
   }
 
@@ -36,6 +35,8 @@ export class EntreePage {
   	this.viewCtrl.dismiss();
   }
 
+//pour sauvergarder les informations sur l'entrée, this.entree prend des booléens (sauf pour le nbre de marches)
+//comme variable selon si la case a été cochée ou non par l'utilisateur
   saveEntree(){
     this.entreeForm.controls['plainpied'].setValue((<HTMLInputElement> document.getElementById('plainpied')).checked);
     this.entreeForm.controls['ressault'].setValue((<HTMLInputElement>document.getElementById('ressault')).checked);

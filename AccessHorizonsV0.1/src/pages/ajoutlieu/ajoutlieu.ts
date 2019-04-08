@@ -18,13 +18,14 @@ import * as firebase from 'firebase';
  
 export class AjoutlieuPage {
 
-
+//Création des formulaires pour récupérer les informations rentrées par l'utilisateur
 	lieuForm: FormGroup;
   entreeForm: FormGroup;
   interieurForm: FormGroup;
   exterieurForm: FormGroup;
   equipementForm: FormGroup;
 
+//Création de l'objet lieu comprenant toutes les informations (nom, ville, categorie, entree, interieur, exterieur, equipement) qui sera transmis à Firebase
   entree = {
       plainpied: '',
       ressault: '',
@@ -163,10 +164,10 @@ export class AjoutlieuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AjoutlieuPage1');
-    console.log(this.interieurForm.value);
   }
 
 
+//Création de la fonction qui enregistre et envoie le lieu créé à la base de données
   saveLieu(){
 
     this.entree = {
@@ -187,8 +188,6 @@ export class AjoutlieuPage {
       portemaintienouvert: this.entreeForm.get('portemaintienouvert').value,
       largeurporte: this.entreeForm.get('largeurporte').value,
     }
-
-    console.log(this.entree.nbremarches);
 
     this.interieur = {
     alleeslarges: this.interieurForm.get('alleeslarges').value,
@@ -236,33 +235,33 @@ export class AjoutlieuPage {
       equipement: this.equipement,
     }
 
-    this.db.list('lieu').push(this.lieu);
+    this.db.list('lieu').push(this.lieu); //envoie des informations à la base de données
     console.log('Lieu sauvegardé');
     }
 
 
   gotoEntreePage(){
     let entreeForm = this.entreeForm;
-    let modal = this.modalCtrl.create(EntreePage, {entreeForm:entreeForm});
+    let modal = this.modalCtrl.create(EntreePage, {entreeForm:entreeForm}); //la variable entreeFrom est envoyée vers la page Entree où elle sera complétée
     modal.present();
   }
 
   gotoInterieurPage(){
     let interieurForm = this.interieurForm;
-    let modal = this.modalCtrl.create(InterieurPage, {interieurForm:interieurForm});
+    let modal = this.modalCtrl.create(InterieurPage, {interieurForm:interieurForm}); //envoie de interieurForm vers la page Interieur pour qu'elle soit complétée
     modal.present();
   }
 
 
   gotoExterieurPage(){
     let exterieurForm = this.exterieurForm;
-    let modal = this.modalCtrl.create(ExterieurPage, {exterieurForm:exterieurForm});
+    let modal = this.modalCtrl.create(ExterieurPage, {exterieurForm:exterieurForm}); //envoie de exterieurForm vers la page Exterieur pour qu'elle soit complétée
     modal.present();
   }
 
   gotoEquipementPage(){
     let equipementForm = this.equipementForm;
-    let modal = this.modalCtrl.create(EquipementPage, {equipementForm:equipementForm});
+    let modal = this.modalCtrl.create(EquipementPage, {equipementForm:equipementForm}); //envoie de equipementForm vers la page Equipement pour qu'elle soit complétée
     modal.present();
   }
 
