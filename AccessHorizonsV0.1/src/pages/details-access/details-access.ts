@@ -13,10 +13,10 @@ export class DetailsAccessPage {
   flag1: boolean = false; //true si il y a des données firebase à afficher
   nom: string;
   entree: any;
-  interieur: any;
+  interieur: any; 
   exterieur: any;
   equipement: any;
-  infoentree: any;
+  infoentree: any; //liste qui comprendra les informations connues sur l'entrée
   infointerieur: any;
   infoexterieur: any;
   infoequipement: any;
@@ -58,18 +58,18 @@ export class DetailsAccessPage {
   	this.viewCtrl.dismiss();
   }
 
-  infoEntree(){
+  infoEntree(){ //fonction pour récupérer les informations connues (valeur true dans firebase)
     var L = [];
     if (this.entree.bande == true){
       L.push('')};
     if (this.entree.plainpied == true){
-      L.push('Accès : De plain pied')};
+      L.push('Accès : De plain pied')}; //La liste est remplie par les 
     if (this.entree.ressault == true){
       L.push('Ressault')};
     if (this.entree.marches == true){
       L.push('Présence de marches')};
     if (this.entree.nbremarches != null){
-      L.push('Nombre de marches :', this.entree.nbremarches)};
+      L.push('Nombre de marches :', this.entree.nbremarches)}; //ici on récupère le nombre de marches
     if (this.entree.enseignelisible == true){
       L.push('Enseigne visible et lisible')};
     if (this.entree.entreeprincipale == true){
