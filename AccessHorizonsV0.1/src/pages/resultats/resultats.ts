@@ -4,6 +4,7 @@ import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 import { PlaceResultatPage } from '../place-resultat/place-resultat';
 import { LieuResultatPage } from '../lieuresultat/lieuresultat';
 
+import { HTTP } from '@ionic-native/http/ngx';
 import * as firebase from 'firebase';
 
 @IonicPage()
@@ -26,6 +27,8 @@ export class ResultatsPage {
   osm: any; //pour recuperer le nom de la ville, nécessaire avec Firebase
   city: string; //nom de la ville
 
+  apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
+
   ngOnInit() { //On obtient les valeurs envoyés de la page anterieure
       this.adresse = this.navParams.get('adresse');
       this.longitud = this.navParams.get('longitud');
@@ -35,13 +38,14 @@ export class ResultatsPage {
       this.selection = this.navParams.get('selection');
       this.osm = this.navParams.get('osm');
       this.city = this.navParams.get('city');
-      console.log(this.osm);
+      //console.log(this.osm);
   }
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public userService: JaccedeProvider,
-              private menuCtrl: MenuController) {
+              private menuCtrl: MenuController,
+              private http: HTTP) {
   }
   ionViewDidLoad() {
     //this.resultatFirebase = this.getLieu(this.adresse, this.filtrage2);
@@ -57,6 +61,30 @@ export class ResultatsPage {
     console.log(this.adresse);
     console.log(this.filtrage2);
     console.log(this.resultatFirebase);
+    
+
+    let myUrl = 'https://apidev.jaccede.com/v4/places/search?lng='+this.longitud+'&lat='+this.latitud+'&per_page=50&lang=fr&api_key='+this.apiKey+'';
+    this.http.get(myUrl,{}, {})
+    .then(data => {
+      this.places = JSON.parse(data.data);
+
+      // FILTRAGE 
+      if (this.filtrage.length == 0){ 
+        this.resultat = this.places;
+      }
+      if (this.filtrage.length != 0){
+        let i;
+        for (i in this.places['items']){ 
+          if (this.filtrage.includes(this.places['items'][i].category.name)) { 
+              this.resultat.push(this.places['items'][i]);
+            }
+        }  
+      };
+    })
+    .catch(error => {
+      alert('Error !');
+    });
+    /* ANCIENNE VERSION
     this.userService.getPlaces(this.longitud, this.latitud) //Requete à J'accede
     .subscribe(
       (data) => {
@@ -75,8 +103,7 @@ export class ResultatsPage {
       (error) =>{
         console.error(error);
       }
-    }
-  )
+    })*/
 
   }
 

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, MenuController} from 'ionic-angular';
 import { JaccedeProvider } from '../../providers/jaccede/jaccede';
 
+import { HTTP } from '@ionic-native/http/ngx';
+
 import { DetailsAccessPage } from '../details-access/details-access';
 import { LaisserAvisPage } from '../laisser-avis/laisser-avis';
 import { CommentairesPage } from '../commentaires/commentaires';
@@ -13,15 +15,21 @@ import { MapModalPage } from '../map-modal/map-modal';
   templateUrl: 'place-resultat.html',
 })
 export class PlaceResultatPage {
+  info: any;
+
   name: string='';
-  adresse: string = '';
+  adresse: string = ''; 
+
   googleID: string = '';
   details: any = [];
   website: string = '';
   label: string = '';
   flag: boolean = false;
+
   longitud: any;
   latitud: any;
+
+  phone: any;
 
   flag_note: boolean = false;
   stars_full: any[] = [];
@@ -39,6 +47,8 @@ export class PlaceResultatPage {
   note_services:number = 3;
   note_personnel: number = 3;
 
+  apiKey: string = '93e6cdc203eeca0079b935f2370dee27d9840c34f1b064a9b71cd7292bde6a9b';
+
   ngOnInit() {
     this.name = this.navParams.get('name');
     this.adresse = this.navParams.get('adresse');
@@ -50,11 +60,43 @@ export class PlaceResultatPage {
               public navParams: NavParams,
               public userService: JaccedeProvider,
               public modalCtrl: ModalController,
-              private menuCtrl: MenuController) {
+              private menuCtrl: MenuController,
+              private http: HTTP) {
   }
  
   ionViewDidLoad() {
-    this.userService.getDetails(this.googleID).subscribe(
+    let myUrl = 'https://apidev.jaccede.com/v4/places/'+this.googleID+'?lang=fr&api_key='+this.apiKey+'';
+    this.http.get(myUrl,{}, {})
+    .then(data => {
+
+      this.info = JSON.parse(data.data); // On transforme data (string) en OBJECT
+      
+      this.latitud = this.info['latitude'];
+      this.longitud = this.info['longitude'];
+      this.details = this.info['accessibility'];
+      this.note_globale = this.info['rating'];
+      this.phone = this.info['phone'];
+      this.website = this.info['website'];
+      if (this.note_globale != null){ //si la note n'est pas null, montrer note
+          this.flag_note = true;
+          if ((Number.isInteger(this.note_globale)) == false) {
+          this.flag2 = true; //si note est decimale, montrer une moitié d'une étoile
+          }
+          this.traitementNote(this.note_globale); //traiter les icons (étoiles à montrer)
+       }
+      /*if (this.details != null) //Pour verifier que le vecteur de details n'est pas nul, sinon on trouve des erreurs d'execution
+       { 
+         this.flag = true;
+         this.label = this.details[0].children[0].label;
+       }
+       else {
+         this.label = 'Rien';
+       }*/
+    })
+    .catch(error =>{
+      alert('Une erreur est apparue !');
+    });
+    /*this.userService.getDetails(this.googleID).subscribe(
       (data) => {
         this.details = data['accessibility'];
         this.latitud = data['latitude'];
@@ -80,7 +122,7 @@ export class PlaceResultatPage {
       },
       (error) =>{
         console.log(error);
-    })
+    })*/
   }
 
   DetailsAccessModal(){
@@ -111,6 +153,7 @@ export class PlaceResultatPage {
     let modal = this.modalCtrl.create(MapModalPage, {latitud: latitud, longitud: longitud});
     modal.present();
   };
+
   traitementNote(note){ //Modifier la note globale reçue pour la pouvoir montrer comme étoiles
     for (var i = 0; i < Math.floor(note); ++i) {
       this.stars_full.push(i);

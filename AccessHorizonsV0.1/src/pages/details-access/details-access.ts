@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
+//import { HTTP } from '@ionic-native/http/ngx';
+
 @IonicPage()
 @Component({
   selector: 'page-details-access',

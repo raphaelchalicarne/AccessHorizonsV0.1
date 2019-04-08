@@ -18,8 +18,9 @@ enableProdMode();
 
 export class RecherchePage {
   @ViewChild('map') mapContainer: ElementRef;
-  center: any = [46.96525, 2.7885984];
-  message: string = 'Casa';
+
+  center: any = [46.96525, 2.7885984]; //Centrer la carte au milieu de la FRANCE
+  message: string;
   map: any;
   latitud: number;
   longitud: number;
@@ -58,8 +59,6 @@ export class RecherchePage {
         zoom: 6
       });
     }
-
-     //console.log(map);
     //Tile (carte) de Mapbox --> API gratuite jusqu'à 50000 requetes
     /*var Mapbox = leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JpczExc2lyayIsImEiOiJjanRrMDh5NGEwMm1lM3ltc21kMDRtd3h3In0.SrKlBOp57MHXmgwFT6wSPw',{
       maxZoom: 19, //zoom possible de faire
@@ -118,9 +117,9 @@ export class RecherchePage {
       let adresse = this.adresse;
       let longitud = this.adresse.latlng.lng;
       let latitud = this.adresse.latlng.lat;
-      var filtrage = this.filtrage;
+      let filtrage = this.filtrage;
       //var filtrage2 = this.filtrage2;
-      var selection = this.selection;
+      let selection = this.selection;
 
       this.navCtrl.push(ResultatsPage, {longitud :longitud, latitud: latitud, filtrage:filtrage, selection: selection});
     } else {
