@@ -49,6 +49,7 @@ export class EntreePage {
     if ((<HTMLInputElement> document.getElementById('4')).checked == true){
             this.nbremarches = 'plus de 3';
           }
+    this.entreeForm.controls['nbremarches'].setValue(this.nbremarches);
     this.entreeForm.controls['maincourante'].setValue((<HTMLInputElement> document.getElementById('maincourante')).checked);
     this.entreeForm.controls['nez'].setValue((<HTMLInputElement> document.getElementById('nez')).checked);
     this.entreeForm.controls['bande'].setValue((<HTMLInputElement> document.getElementById('bande')).checked);
@@ -57,7 +58,6 @@ export class EntreePage {
     this.entreeForm.controls['entreeprincipale'].setValue((<HTMLInputElement> document.getElementById('entreeprincipale')).checked);
     this.entreeForm.controls['visiteurvisible'].setValue((<HTMLInputElement> document.getElementById('visiteurvisible')).checked);
     this.entreeForm.controls['interphone'].setValue((<HTMLInputElement> document.getElementById('interphone')).checked);
-    //this.entreeForm.controls['marquageportevitre'].setValue((<HTMLInputElement> document.getElementById('marquageportevitre')).checked);
     this.entreeForm.controls['porteautomatique'].setValue((<HTMLInputElement> document.getElementById('porteautomatique')).checked);
     this.entreeForm.controls['poigneeergo'].setValue((<HTMLInputElement> document.getElementById('poigneeergo')).checked);
     this.entreeForm.controls['portemaintienouvert'].setValue((<HTMLInputElement> document.getElementById('portemaintienouvert')).checked);
@@ -76,14 +76,12 @@ export class EntreePage {
     entreeprincipale: this.entreeForm.get('entreeprincipale').value,
     visiteurvisible: this.entreeForm.get('visiteurvisible').value,
     interphone: this.entreeForm.get('interphone').value,
-    marquageportevitree: this.entreeForm.get('marquageportevitree').value,
     porteautomatique:this.entreeForm.get('porteautomatique').value,
     poigneeergo: this.entreeForm.get('poigneeergo').value,
     portemaintienouvert: this.entreeForm.get('portemaintienouvert').value,
     largeurporte: this.entreeForm.get('largeurporte').value,
     }
 
-    console.log(this.entree);
   }
 
   closeModal(){

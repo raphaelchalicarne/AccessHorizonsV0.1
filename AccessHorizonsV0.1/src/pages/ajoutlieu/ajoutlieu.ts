@@ -38,7 +38,6 @@ export class AjoutlieuPage {
       entreeprincipale:'',
       visiteurvisible:'',
       interphone:'',
-      marquageportevitree:'',
       porteautomatique:'',
       poigneeergo:'',
       portemaintienouvert:'',
@@ -111,7 +110,6 @@ export class AjoutlieuPage {
       entreeprincipale:[''],
       visiteurvisible:[''],
       interphone:[''],
-      marquageportevitree:[''],
       porteautomatique:[''],
       poigneeergo:[''],
       portemaintienouvert:[''],
@@ -184,12 +182,13 @@ export class AjoutlieuPage {
       entreeprincipale: this.entreeForm.get('entreeprincipale').value,
       visiteurvisible: this.entreeForm.get('visiteurvisible').value,
       interphone: this.entreeForm.get('interphone').value,
-      marquageportevitree: this.entreeForm.get('marquageportevitree').value,
       porteautomatique:this.entreeForm.get('porteautomatique').value,
       poigneeergo: this.entreeForm.get('poigneeergo').value,
       portemaintienouvert: this.entreeForm.get('portemaintienouvert').value,
       largeurporte: this.entreeForm.get('largeurporte').value,
     }
+
+    console.log(this.entree.nbremarches);
 
     this.interieur = {
     alleeslarges: this.interieurForm.get('alleeslarges').value,
