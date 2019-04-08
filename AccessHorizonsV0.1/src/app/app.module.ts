@@ -10,6 +10,8 @@ import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
 import { HttpClientModule } from '@angular/common/http';
 
+import { HTTP } from '@ionic-native/http/ngx';
+
 import { RecherchePage } from '../pages/recherche/recherche';
 import { ResultatsPage } from '../pages/resultats/resultats';
 import { RechercheManuellePage } from '../pages/recherche-manuelle/recherche-manuelle';
@@ -98,6 +100,7 @@ const firebaseConfig = {
     StatusBar,
     SplashScreen,
     AuthService,
+    HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JaccedeProvider,
     //FirebaseProvider
