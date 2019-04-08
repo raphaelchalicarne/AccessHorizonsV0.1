@@ -16,6 +16,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { MenuServicesPage} from '../pages/menu-services/menu-services';
+import {RechercheDirectePage } from '../pages/recherche-directe/recherche-directe'
 import { RecherchePage } from '../pages/recherche/recherche';
 import {RechercheManuellePage} from '../pages/recherche-manuelle/recherche-manuelle';
 import { ResultatsPage} from '../pages/resultats/resultats';
@@ -46,6 +47,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     HomePage,
     UserProfilePage,
     MenuServicesPage,
+    RechercheDirectePage,
     RecherchePage,
     RechercheManuellePage,
     ResultatsPage,
@@ -75,6 +77,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     HomePage,
     UserProfilePage,
     MenuServicesPage,
+    RechercheDirectePage,
     RecherchePage,
     RechercheManuellePage,
     ResultatsPage,

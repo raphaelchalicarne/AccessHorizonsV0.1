@@ -13,6 +13,17 @@
 
 
 <ion-content padding>
+  <div class="Barre de recherche" padding text-center>
+      <ion-label>
+        <h4>Écrivez le lieu que vous cherchez</h4>
+      </ion-label>
+      <ion-input text-center clearInput="true" placeholder="Ville ou Endroit ?" type="text" [(ngModel)]="adresse"></ion-input>
+      <ion-input text-center clearInput="true" placeholder="Type de service" type="text" [(ngModel)]="service"></ion-input>
+  </div>
+
+  <div class="Bouton pour montrer les résultats" padding text-center>
+    <button ion-button color="dark" large outline round icon-start (click)="faireRecherche()">Rechercher</button>
+  </div>
 
   <div class="Liste de services">
     <button ion-button color="dark" large outline round block (click)="goToRecherchePage(1)">Transports</button>
