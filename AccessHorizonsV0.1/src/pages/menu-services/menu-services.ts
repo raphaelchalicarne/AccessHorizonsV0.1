@@ -29,7 +29,7 @@ export class MenuServicesPage {
     switch (selection) {
       case 1:
         var transports = this.transports;
-        this.navCtrl.push(RecherchePage, {filtrage: transports, filtrage2: 'Transport',selection: selection});
+        this.navCtrl.push(RecherchePage, {filtrage: transports, filtrage2: 'Transports',selection: selection});
         break;
       case 2:
         var restaurants = this.restaurants;
@@ -37,7 +37,7 @@ export class MenuServicesPage {
         break;
       case 3:
         var logement = this.logement;
-        this.navCtrl.push(RecherchePage, {filtrage: logement, filtrage2: 'Logement', selection: selection});
+        this.navCtrl.push(RecherchePage, {filtrage: logement, filtrage2: 'Logements', selection: selection});
         break;
       case 4:
         var loisirs = this.loisirs;

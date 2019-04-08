@@ -19,8 +19,13 @@
         <ion-label>Ville</ion-label>
         <ion-input placeholder="Indiquez la ville" formControlName="ville"></ion-input>
       </ion-item>
-<!--       <ion-item-divider>Informations entrée</ion-item-divider> -->
+      <ion-item>
+        <ion-label>Catégorie</ion-label>
+        <ion-input placeholder="Choisissez parmi Transports, Restaurants, Logements, Loisirs ou Commerces" formControlName="categorie"></ion-input>
+      </ion-item>
+    </ion-list>
 
+<ion-list>
   <div>
   <button ion-button round (click)="gotoEntreePage()"> Entrée </button>
   </div>
@@ -41,7 +46,7 @@
   </form>
 
   <div>
-  <button ion-button round (click)="saveLieu()"> Enregistrer </button>
+  <button ion-button shape ="round" size ="large" (click)="saveLieu()"> Enregistrer </button>
   </div>
 
 </ion-content>

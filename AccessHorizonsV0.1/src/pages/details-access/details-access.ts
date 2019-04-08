@@ -83,7 +83,6 @@ export class DetailsAccessPage {
     if (this.entree.largeurporte == true){
       L.push('Largeur du passage de la porte dentrée (cm) : 90cm et plus')};
   return L;  
-  console.log(L);
     }
 
     infoInterieur(){
@@ -103,7 +102,6 @@ export class DetailsAccessPage {
     if (this.interieur.marche == true){
       L.push('Présence de marche(s)')};
     return L;
-  console.log(L);
     }
 
     infoExterieur(){
@@ -125,7 +123,6 @@ export class DetailsAccessPage {
     if (this.exterieur.pente == true){
       L.push('Rue en pente')};
     return L;
-  console.log(L);
   }
 
     infoEquipement(){
@@ -153,6 +150,5 @@ export class DetailsAccessPage {
     if (this.equipement.materieldispo == true){
       L.push('Matériel à disposition')};       
     return L;
-  console.log(L);
     }
 }
