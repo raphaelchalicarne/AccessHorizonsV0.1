@@ -16,7 +16,7 @@ export class DetailsAccessPage {
   interieur: any; 
   exterieur: any;
   equipement: any;
-  infoentree: any; //liste qui comprendra les informations connues sur l'entrée
+  infoentree: any; //liste qui comprendra les informations connues sur l'entrée 
   infointerieur: any;
   infoexterieur: any;
   infoequipement: any;
