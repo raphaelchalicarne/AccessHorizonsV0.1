@@ -2,9 +2,11 @@
   <ion-navbar>
     <ion-buttons start>
       <button ion-button icon-only (click)="onToggleMenu()">
-        <ion-icon name="menu"></ion-icon>
+        <ion-icon name="menu"></ion-icon> <!-- Il faudrait remplacer cette icône
+        par un texte "Menu" pour les handicapés visuels -->
       </button>
     </ion-buttons>
+    <!-- Selon le mode de connexion, le titre de la page est modifié -->
     <ion-title *ngIf="mode === 'new'">Nouvel utilisateur</ion-title>
     <ion-title *ngIf="mode === 'connect'">Connexion</ion-title>
   </ion-navbar>

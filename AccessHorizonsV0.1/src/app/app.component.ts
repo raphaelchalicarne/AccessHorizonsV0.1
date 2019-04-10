@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuController, NavController, Platform } from 'ionic-angular';
-//import { StatusBar } from '@ionic-native/status-bar';
-//import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
@@ -10,7 +8,6 @@ import * as firebase from 'firebase';
 import { AuthPage } from '../pages/auth/auth';
 import { ParametresPage } from '../pages/parametres/parametres';
 import { MenuServicesPage } from '../pages/menu-services/menu-services';
-//import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -41,9 +38,14 @@ export class MyApp {
       firebase.auth().onAuthStateChanged(
       (user) => {
           if (user) {
+              // Lorsqu'un utilisateur est connecté, la base de l'application est la page MenuServices.
               this.isAuth = true;
               this.content.setRoot(MenuServicesPage);
           } else {
+              /* Lorsqu'un utilisateur est déconnecté, la page racine de
+              l'application est la page d'authentification, qui change
+              d'apparence selon que l'on cherche à se connecter ou à créer
+              un nouveau compte */
               this.isAuth = false;
               this.content.setRoot(AuthPage, {mode: 'connect'});
           }

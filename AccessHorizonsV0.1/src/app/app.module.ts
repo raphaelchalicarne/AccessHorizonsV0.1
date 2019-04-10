@@ -9,6 +9,7 @@ import { MenuServicesPage} from '../pages/menu-services/menu-services';
 import { JaccedeProvider } from '../providers/jaccede/jaccede';
 import { HttpClientModule } from '@angular/common/http';
 
+// Importation de toutes les pages apparaissant dans l'application
 import { RecherchePage } from '../pages/recherche/recherche';
 import { ResultatsPage } from '../pages/resultats/resultats';
 import { RechercheManuellePage } from '../pages/recherche-manuelle/recherche-manuelle';
@@ -27,12 +28,13 @@ import { DetailsAccessPage } from '../pages/details-access/details-access';
 import { LaisserAvisPage } from '../pages/laisser-avis/laisser-avis';
 import { MapModalPage } from '../pages/map-modal/map-modal';
 
+// Importation du module permettant de communique avec Firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpModule } from '@angular/http';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDnD8ksYh0fAI-tOlrIXdcXjO0w20ws1Gk",
+    apiKey: "AIzaSyDnD8ksYh0fAI-tOlrIXdcXjO0w20ws1Gk",          // Clé API nous permettant d'accéder à la base de données de Firebase
     authDomain: "access-horizons-862e8.firebaseapp.com",
     databaseURL: "https://access-horizons-862e8.firebaseio.com",
     projectId: "access-horizons-862e8",
@@ -42,6 +44,8 @@ const firebaseConfig = {
 
 
 @NgModule({
+  /* IL faut nécéssairement déclarer les pages dans "declarations" et
+  "entryComponents" pour qu'elles apparaissent dans l'application.*/
   declarations: [
     MyApp,
     MenuServicesPage,

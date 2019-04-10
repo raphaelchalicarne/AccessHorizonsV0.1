@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import * as firebase from 'firebase';
 
+/*La définition des pages est nécéssaire pour pouvoir rediriger vers ces pages*/
 import { ParametresPage } from '../parametres/parametres';
 import { MenuServicesPage } from '../menu-services/menu-services';
 
@@ -47,6 +48,9 @@ export class AuthPage implements OnInit {
           this.authService.signUpUser(email,password).then(
           () => {
               this.navCtrl.setRoot(ParametresPage);
+              /* Si l'utilisateur crée un nouveau compte, il est redirigé vers
+              la page de paramètres pour pouvoir rentrer les informations liées
+              à son handicap*/
           },
           (error) => {
               this.errorMessage = error;
@@ -56,6 +60,9 @@ export class AuthPage implements OnInit {
           this.authService.signInUser(email,password).then(
           () => {
               this.navCtrl.setRoot(MenuServicesPage);
+              /* Si l'utilisateur se connecte pour une enième fois,
+              il est redirigé vers la page d'accueil et il n'a pas à rentrer
+              à nouveau les informations liées à son handicap.*/
           },
           (error) => {
               this.errorMessage = error;
